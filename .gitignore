@@ -6,3 +6,12 @@ typings
 maven
 velocity.private.data.js
 test/e2e/screenshots
+*.swp
+npm-debug.log
+lib/
+test-kit-lib/
+.history
+storybook-static
+storybook-e2e
+*.iml
+test/e2e
