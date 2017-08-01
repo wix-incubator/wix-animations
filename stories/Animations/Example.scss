@@ -1,0 +1,71 @@
+.basic-div {
+  background: beige;
+  border: 1px solid black;
+  font-size: 16px;
+  padding: 5px 20px;
+}
+
+.basic-wrapper {
+  display: flex;
+  height: 35px;
+}
+
+.flex-parent {
+  display: flex;
+  width: 100%;
+}
+
+.height-50 {
+  height: 50px;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.shuki-inner {
+  border: 1px solid black;
+}
+
+.shuki-child {
+  flex-grow:1;
+}
+
+.shuki-wrapper {
+  display: flex;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.enter {
+  transform: translate(100px, 0);
+  transition: all 1s linear;
+  opacity: 0;
+}
+
+.enter-active {
+  transform: translate(0, 0);
+  opacity: 1
+}
+
+.exit {
+  transform: translate(0, 0);
+  transition: all 1s linear;
+  opacity: 1
+}
+
+.exit-active {
+  transform: translate(100px, 0);
+  opacity: 0;
+}
+
+.orange {
+  color: orange;
+}
+
+.flex-grow-4 {
+  color: purple;
+  flex-grow: 10;
+}

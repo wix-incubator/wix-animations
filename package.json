@@ -1,0 +1,56 @@
+{
+  "name": "wix-animations",
+  "version": "1.0.0",
+  "homepage": "",
+  "author": {
+    "name": "Alon Bartur",
+    "email": "alonbt@wix.com",
+    "url": ""
+  },
+  "scripts": {
+    "start": "yoshi start --entry-point=./test/fakes/start-fake-server.js",
+    "pretest": "yoshi lint && yoshi build",
+    "build": ":",
+    "test": "yoshi test",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.2.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "copy-to-clipboard": "^3.0.8",
+    "enzyme": "^2.3.0",
+    "express": "^4.13.4",
+    "express-session": "^1.14.2",
+    "github-markdown-css": "^2.8.0",
+    "highlight.js": "^9.12.0",
+    "jsdom-global": "^2.1.0",
+    "react-addons-test-utils": "^15.3.2",
+    "react-collapse": "^4.0.3",
+    "react-motion": "^0.5.0",
+    "react-remarkable": "^1.1.1",
+    "react-test-renderer": "^15.5.4",
+    "require-reload": "^0.2.2",
+    "velocity": "^0.7.2",
+    "yoshi": "latest"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-transition-group": "^2.2.0"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "wix/react"
+  }
+}

@@ -1,0 +1,257 @@
+// HTML/REACT Structure
+///////////////////////
+
+/*
+ *
+ * React Element Structure
+ * <Animate>
+ *   <ChildAnimate>
+ *     {children}
+ *   </ChildAnimate>
+ * </Animate>
+ *
+ *
+ * HTML Structure
+ *                     Animation Classes
+ *                     -----------------
+ * <div class="        ...    Parent classes   ...  ">  <--- Animator
+ *   <div class="      ...Child layer 1 classes...  ">  <--- ChildAnimate: layer 1
+ *     <div class="    ...Child layer 2 classes...  ">  <--- ChildAnimate: layer 2
+ *       <div class="  ...Child layer 2 classes...  ">  <--- ChildAnimate: layer 3
+ *         {children}                                   <--- Content from the outside world
+ *       </div>
+ *     </div>
+ *   </div>
+ * </div>
+ *
+ * */
+
+// Cubic Bezier
+///////////////
+
+$easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
+
+//Basics CSS
+////////////
+
+.child-layer-1, .child-layer-2, .child-layer-3 {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin layer3Enter() {
+  .child-layer-3 {
+    transition: transform .3s $easeOutCubic;
+  }
+}
+
+@mixin layer3Exit() {
+  .child-layer-3 {
+    transition: transform .3s $easeInOutQuint;
+  }
+}
+
+// Duration
+///////////
+
+$timing-micro: .12s;
+$timing-small: .15s;
+$timing-medium: .2s;
+$timing-large: .3s;
+$timing-translate: $timing-large;
+
+@mixin timing() {
+  .timing-micro {
+    transition-duration: $timing-micro;
+  }
+
+  .timing-small {
+    transition-duration: $timing-small;
+  }
+
+  .timing-medium {
+    transition-duration: $timing-medium;
+  }
+
+  .timing-large {
+    transition-duration: $timing-large;
+  }
+
+  .translate-wrapper {
+    transition-duration: $timing-translate;
+  }
+
+}
+
+// TimingFunction
+/////////////////
+
+@mixin timingFunction() {
+  .timing-micro, .timing-small {
+    transition-timing-function: $easeOutCubic;
+  }
+
+  .timing-medium, .timing-large {
+    transition-timing-function: $easeOutQuint;
+  }
+}
+
+// Sequence Delay
+/////////////////
+
+@keyframes hide-animation-hack {
+  0% {
+    opacity: 1
+  }
+  99% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+@mixin delayEnter() {
+  &.child-sequence {
+    transition-property: opacity;
+    transition-duration: 0s;
+    transition-timing-function: linear;
+    opacity: 0;
+  }
+}
+
+@mixin delayEnterActive() {
+  &.child-sequence {
+    opacity: 1;
+  }
+}
+
+@mixin delayExit() {
+  &.child-sequence {
+    animation-name: hide-animation-hack;
+    animation-fill-mode: forwards;
+  }
+}
+
+// Opacity
+//////////
+
+@mixin opacityEnter() {
+  .opacity {
+    &.timing-micro {
+      opacity: .9;
+    }
+    &.timing-small, &.timing-medium {
+      opacity: .5;
+    }
+    &.timing-large {
+      opacity: .66;
+    }
+  }
+}
+
+@mixin opacityEnterActive() {
+  .opacity {
+    &.timing-micro, &.timing-small, &.timing-medium, &.timing-large {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin opacityExit() {
+  .opacity {
+    opacity: 1;
+  }
+}
+
+@mixin opacityExitActive() {
+  .opacity {
+    opacity: 0;
+  }
+}
+
+// Height
+/////////
+
+@mixin heightEnter() {
+  .height {
+    overflow: hidden;
+  }
+}
+
+@mixin heightExit() {
+  .height {
+    overflow: hidden;
+  }
+}
+
+// Width
+/////////
+
+@mixin widthEnter() {
+  .width {
+    overflow: hidden;
+  }
+}
+
+@mixin widthExit() {
+  .width {
+    overflow: hidden;
+  }
+}
+
+// Translate
+////////////
+
+
+@mixin translateEnterActive() {
+  .translate {
+    transform: translate(0, 0) !important;
+  }
+}
+
+@mixin translateExit() {
+  .translate {
+    transform: translate(0, 0);
+  }
+}
+
+// Animation classes
+////////////////////
+
+.enter, .exit {
+  @include timing();
+}
+
+.enter {
+  transition-property: all;
+  @include layer3Enter();
+  @include timingFunction();
+  @include opacityEnter();
+  @include delayEnter();
+  @include heightEnter();
+  @include widthEnter();
+}
+
+.enter-active {
+  @include opacityEnterActive();
+  @include translateEnterActive();
+  @include delayEnterActive();
+}
+
+.exit {
+  transition-property: all;
+  @include layer3Exit();
+  @include timingFunction();
+  @include opacityExit();
+  @include translateExit();
+  @include delayExit();
+  @include heightExit();
+  @include widthExit();
+}
+
+.exit-active {
+  @include opacityExitActive();
+}
