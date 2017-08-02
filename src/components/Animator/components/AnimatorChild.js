@@ -6,6 +6,8 @@ import AnimatorChildClasses from '../helpers/animator-child-classes';
 import ReactDOM from 'react-dom';
 import getDimensions from '../helpers/get-dimensions';
 
+/* eslint-disable */
+
 class AnimatorChild extends Component {
 
   styles;
@@ -69,3 +71,5 @@ AnimatorChild.propTypes = {
 };
 
 export default AnimatorChild;
+
+/* eslint-enable */

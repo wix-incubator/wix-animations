@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [{
+      "name": "Launch Mocha",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+      "args": ["{test,src}/**/*.spec.js{,x}", "--no-timeouts"],
+      "cwd": "${workspaceRoot}",
+      "sourceMaps": true,
+      "env": {
+        "NODE_ENV": "test"
+      },
+      "runtimeArgs": [
+        "--nolazy",
+        "--harmony",
+        "--require", "babel-register",
+        "--require", "${workspaceRoot}/test/mocha-setup",
+        "--require", "${workspaceRoot}/node_modules/yoshi/lib/ignore-extensions.js"
+      ]
+    },
+    {
+      "name": "Launch Protractor",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+      "args": ["${workspaceRoot}/node_modules/yoshi/config/protractor.conf.js"],
+      "cwd": "${workspaceRoot}",
+      "sourceMaps": true,
+      "env": {
+        "NODE_ENV": "test"
+      },
+      "runtimeArgs": [
+        "--nolazy"
+      ]
+    }
+  ]
+}
