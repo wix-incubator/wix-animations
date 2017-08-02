@@ -7,6 +7,12 @@
     "email": "alonbt@wix.com",
     "url": ""
   },
+  "files": [
+    "dist",
+    "src",
+    ".babelrc",
+    "testkit"
+  ],
   "scripts": {
     "start": "yoshi start --entry-point=./test/fakes/start-fake-server.js",
     "pretest": "yoshi lint && yoshi build",
@@ -15,6 +21,10 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "release": "yoshi release && gh-pages-auto-release --dist=storybook-static"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0"
   },
   "devDependencies": {
     "@storybook/react": "^3.2.0",
