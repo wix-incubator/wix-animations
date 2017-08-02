@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77753b89-ed49-4e3f-9352-7f40bd8a5baa" name="Default" comment="pushing storybook-statics">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storybook-static/static/manager.bd2b0ab91cc7f69b4c5d.bundle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storybook-static/static/preview.4b5f89b58c9be3b32b13.bundle.js" afterPath="" />
+    <list default="true" id="77753b89-ed49-4e3f-9352-7f40bd8a5baa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stories/Animations/ExampleClasses.js" afterPath="$PROJECT_DIR$/stories/Animations/ExampleClasses.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stories/Animations/ExampleHeight.js" afterPath="$PROJECT_DIR$/stories/Animations/ExampleHeight.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stories/Animations/ExampleOpacityAndScale.js" afterPath="$PROJECT_DIR$/stories/Animations/ExampleOpacityAndScale.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stories/Animations/ExampleSequence.js" afterPath="$PROJECT_DIR$/stories/Animations/ExampleSequence.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stories/Animations/ExampleTranslate.js" afterPath="$PROJECT_DIR$/stories/Animations/ExampleTranslate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stories/Animations/ExampleTranslateDirection.js" afterPath="$PROJECT_DIR$/stories/Animations/ExampleTranslateDirection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stories/Animations/ExampleTranslateSize.js" afterPath="$PROJECT_DIR$/stories/Animations/ExampleTranslateSize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stories/Animations/ExampleWidth.js" afterPath="$PROJECT_DIR$/stories/Animations/ExampleWidth.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stories/index.js" afterPath="$PROJECT_DIR$/stories/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storybook-static/iframe.html" afterPath="$PROJECT_DIR$/storybook-static/iframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storybook-static/index.html" afterPath="$PROJECT_DIR$/storybook-static/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,8 +34,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+            <state relative-caret-position="114">
+              <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -893,12 +880,20 @@
       <option name="presentableId" value="Default" />
       <updated>1501592288571</updated>
       <workItem from="1501592293090" duration="4009000" />
-      <workItem from="1501598278389" duration="3199000" />
+      <workItem from="1501598278389" duration="3231000" />
     </task>
+    <task id="LOCAL-00001" summary="pushing pom.xml and changes">
+      <created>1501657521980</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1501657521980</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7208000" />
+    <option name="totallyTimeSpent" value="7240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="979" extended-state="6" />
@@ -942,7 +937,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pushing storybook-statics" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushing storybook-statics" />
+    <MESSAGE value="pushing pom.xml and changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="pushing pom.xml and changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1321,8 +1317,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        <state relative-caret-position="114">
+          <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
           <folding />
         </state>
       </provider>

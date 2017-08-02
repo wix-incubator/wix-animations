@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <groupId>com.wixpress.restaurants</groupId>
-    <artifactId>wix-style-react</artifactId>
+    <artifactId>wix-animations</artifactId>
     <name>Wix Animations</name>
     <description>Tools for easy and simple animating capabilities</description>
 
