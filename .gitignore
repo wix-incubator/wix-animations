@@ -15,3 +15,4 @@ storybook-static
 storybook-e2e
 *.iml
 test/e2e
+/.idea/
