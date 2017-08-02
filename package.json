@@ -39,6 +39,9 @@
     "velocity": "^0.7.2",
     "yoshi": "latest"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "dependencies": {
     "babel-polyfill": "^6.9.1",
     "react": "^15.3.2",
