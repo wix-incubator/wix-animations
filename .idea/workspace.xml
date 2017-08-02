@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77753b89-ed49-4e3f-9352-7f40bd8a5baa" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storybook-static/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storybook-static/iframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/storybook-static/index.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Animator/components/AnimatorChild.js" afterPath="$PROJECT_DIR$/src/components/Animator/components/AnimatorChild.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/App/App.js" afterPath="$PROJECT_DIR$/src/components/App/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stories/Animations/ExampleTiming.js" afterPath="$PROJECT_DIR$/stories/Animations/ExampleTiming.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,14 +47,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnimatorChild.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AnimatorChild.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Animator/components/AnimatorChild.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="55" column="71" lean-forward="false" selection-start-line="55" selection-start-column="71" selection-end-line="55" selection-end-column="71" />
+            <state relative-caret-position="395">
+              <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,16 +128,6 @@
                 <folding />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExampleHeight.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stories/Animations/ExampleHeight.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -219,6 +220,7 @@
         <option value="$PROJECT_DIR$/src/components/App/App.js" />
         <option value="$PROJECT_DIR$/stories/Animations/ExampleTiming.js" />
         <option value="$PROJECT_DIR$/src/components/Animator/components/AnimatorChild.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -260,38 +262,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="wix-animations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wix-animations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wix-animations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wix-animations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wix-animations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stories" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Animations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -895,7 +865,7 @@
       <option name="presentableId" value="Default" />
       <updated>1501592288571</updated>
       <workItem from="1501592293090" duration="4009000" />
-      <workItem from="1501598278389" duration="5406000" />
+      <workItem from="1501598278389" duration="5667000" />
     </task>
     <task id="LOCAL-00001" summary="pushing pom.xml and changes">
       <created>1501657521980</created>
@@ -911,11 +881,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501657780827</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix tslint">
+      <created>1501660250185</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1501660250185</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9415000" />
+    <option name="totallyTimeSpent" value="9676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="979" extended-state="6" />
@@ -961,7 +938,8 @@
     <MESSAGE value="pushing storybook-statics" />
     <MESSAGE value="pushing pom.xml and changes" />
     <MESSAGE value="fix pom.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix pom.xml" />
+    <MESSAGE value="fix tslint" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix tslint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1362,11 +1340,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Animator/components/AnimatorChild.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="55" column="71" lean-forward="false" selection-start-line="55" selection-start-column="71" selection-end-line="55" selection-end-column="71" />
+        <state relative-caret-position="395">
+          <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
