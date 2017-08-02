@@ -15,7 +15,7 @@
     "testkit"
   ],
   "scripts": {
-    "start": "yoshi start --entry-point=./test/fakes/start-fake-server.js",
+    "start": "yoshi start & npm run storybook",
     "pretest": "yoshi lint && yoshi build",
     "build": "yoshi lint && yoshi build && build-storybook",
     "test": "yoshi test",
@@ -28,7 +28,7 @@
     "react-dom": "^15.0.0"
   },
   "devDependencies": {
-    "@storybook/react": "^3.2.0",
+    "@storybook/react": "^3.1.7",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
@@ -55,8 +55,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.9.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
     "react-transition-group": "^2.2.0"
   },
   "babel": {

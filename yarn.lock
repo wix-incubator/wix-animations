@@ -61,15 +61,15 @@
     fuse.js "^3.0.1"
     prop-types "^15.5.9"
 
-"@storybook/react@^3.2.0":
-  version "3.2.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/react/-/react-3.2.0.tgz#bcd681d2bb81b0f361eeeb6ad5aa86ba14a26216"
+"@storybook/react@^3.1.7":
+  version "3.2.3"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/react/-/react-3.2.3.tgz#4e5aff80b61328288dcf9e3a6b2a2890eab880be"
   dependencies:
     "@storybook/addon-actions" "^3.2.0"
     "@storybook/addon-links" "^3.2.0"
     "@storybook/addons" "^3.2.0"
     "@storybook/channel-postmessage" "^3.2.0"
-    "@storybook/ui" "^3.2.0"
+    "@storybook/ui" "^3.2.3"
     airbnb-js-shims "^1.1.1"
     autoprefixer "^7.1.1"
     babel-core "^6.25.0"
@@ -115,9 +115,9 @@
     webpack-dev-middleware "^1.10.2"
     webpack-hot-middleware "^2.18.0"
 
-"@storybook/ui@^3.2.0":
-  version "3.2.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/ui/-/ui-3.2.0.tgz#ce60155412bfd700d6f8bac2bae40efca4f6d768"
+"@storybook/ui@^3.2.3":
+  version "3.2.3"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/ui/-/ui-3.2.3.tgz#9579c191a1695d3d5aaabcef93a7a5456d8f19af"
   dependencies:
     "@storybook/react-fuzzy" "^0.4.0"
     babel-runtime "^6.23.0"
@@ -357,6 +357,13 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
+argparse@~0.1.15:
+  version "0.1.16"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/argparse/-/argparse-0.1.16.tgz#cfd01e0fbba3d6caed049fbd758d40f65196f57c"
+  dependencies:
+    underscore "~1.7.0"
+    underscore.string "~2.4.0"
+
 arr-diff@^2.0.0:
   version "2.0.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/arr-diff/-/arr-diff-2.0.0.tgz#8f3b827f955a8bd669697e4a4256ac3ceae356cf"
@@ -366,6 +373,12 @@ arr-diff@^2.0.0:
 arr-flatten@^1.0.1:
   version "1.1.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/arr-flatten/-/arr-flatten-1.1.0.tgz#36048bbff4e7b47e136644316c99669ea5ae91f1"
+
+array-back@^1.0.3, array-back@^1.0.4:
+  version "1.0.4"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/array-back/-/array-back-1.0.4.tgz#644ba7f095f7ffcf7c43b5f0dc39d3c1f03c063b"
+  dependencies:
+    typical "^2.6.0"
 
 array-differ@^1.0.0:
   version "1.0.0"
@@ -502,6 +515,10 @@ asynckit@^0.4.0:
 atob@~1.1.0:
   version "1.1.3"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/atob/-/atob-1.1.3.tgz#95f13629b12c3a51a5d215abdce2aa9f32f80773"
+
+autolinker@~0.15.0:
+  version "0.15.3"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/autolinker/-/autolinker-0.15.3.tgz#342417d8f2f3461b14cf09088d5edf8791dc9832"
 
 autoprefixer@^6.0.0, autoprefixer@^6.3.1:
   version "6.7.7"
@@ -1929,6 +1946,15 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
+command-line-args@^3.0.0:
+  version "3.0.5"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/command-line-args/-/command-line-args-3.0.5.tgz#5bd4ad45e7983e5c1344918e40280ee2693c5ac0"
+  dependencies:
+    array-back "^1.0.4"
+    feature-detect-es6 "^1.3.1"
+    find-replace "^1.0.2"
+    typical "^2.6.0"
+
 commander@2.11.x, commander@^2.9.0, commander@~2.11.0:
   version "2.11.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
@@ -2071,6 +2097,12 @@ cookie-signature@1.0.6:
 cookie@0.3.1:
   version "0.3.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+
+copy-to-clipboard@^3.0.8:
+  version "3.0.8"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/copy-to-clipboard/-/copy-to-clipboard-3.0.8.tgz#f4e82f4a8830dce4666b7eb8ded0c9bcc313aba9"
+  dependencies:
+    toggle-selection "^1.0.3"
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -2854,8 +2886,8 @@ es-to-primitive@^1.1.1:
     is-symbol "^1.0.1"
 
 es5-ext@^0.10.13, es5-ext@^0.10.14, es5-ext@^0.10.9, es5-ext@~0.10.14, es5-ext@~0.10.2:
-  version "0.10.24"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/es5-ext/-/es5-ext-0.10.24.tgz#a55877c9924bc0c8d9bd3c2cbe17495ac1709b14"
+  version "0.10.26"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/es5-ext/-/es5-ext-0.10.26.tgz#51b2128a531b70c4f6764093a73cbebb82186372"
   dependencies:
     es6-iterator "2"
     es6-symbol "~3.1"
@@ -2953,8 +2985,8 @@ escope@^3.6.0:
     estraverse "^4.1.1"
 
 eslint-config-wix@~1.1.14:
-  version "1.1.15"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint-config-wix/-/eslint-config-wix-1.1.15.tgz#0584bc97c793eae983eaf50be0b57c3f63ced424"
+  version "1.1.16"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint-config-wix/-/eslint-config-wix-1.1.16.tgz#c2e805184c09c5394490f9bfe6922b9fed4b177f"
   dependencies:
     babel-eslint "^7.0.0"
     eslint-config-xo "^0.16.0"
@@ -2995,8 +3027,8 @@ eslint-plugin-mocha@^4.0.0:
     ramda "^0.24.1"
 
 eslint-plugin-react-native-wix@^1.0.0:
-  version "1.1.499"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint-plugin-react-native-wix/-/eslint-plugin-react-native-wix-1.1.499.tgz#ca10fd1638c417683e95618b338e2e88c64de462"
+  version "1.1.504"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint-plugin-react-native-wix/-/eslint-plugin-react-native-wix-1.1.504.tgz#1033d3085be6099bcf7edc8ac0cb1465611c62fd"
 
 eslint-plugin-react@^6.10.0:
   version "6.10.3"
@@ -3344,6 +3376,12 @@ fd-slicer@~1.0.1:
   dependencies:
     pend "~1.2.0"
 
+feature-detect-es6@^1.3.1:
+  version "1.3.1"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/feature-detect-es6/-/feature-detect-es6-1.3.1.tgz#f888736af9cb0c91f55663bfa4762eb96ee7047f"
+  dependencies:
+    array-back "^1.0.3"
+
 figures@^1.3.5:
   version "1.7.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/figures/-/figures-1.7.0.tgz#cbe1e3affcf1cd44b80cadfed28dc793a9701d2e"
@@ -3419,6 +3457,13 @@ find-cache-dir@^1.0.0:
 find-index@^0.1.1:
   version "0.1.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/find-index/-/find-index-0.1.1.tgz#675d358b2ca3892d795a1ab47232f8b6e2e0dde4"
+
+find-replace@^1.0.2:
+  version "1.0.3"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/find-replace/-/find-replace-1.0.3.tgz#b88e7364d2d9c959559f388c66670d6130441fa0"
+  dependencies:
+    array-back "^1.0.4"
+    test-value "^2.1.0"
 
 find-up@^1.0.0:
   version "1.1.2"
@@ -3672,14 +3717,25 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+gh-pages-auto-release@^1.1.5:
+  version "1.1.5"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/gh-pages-auto-release/-/gh-pages-auto-release-1.1.5.tgz#26002eb664c99379b20739df05c19f656e2fd94e"
+  dependencies:
+    command-line-args "^3.0.0"
+
+github-markdown-css@^2.8.0:
+  version "2.8.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/github-markdown-css/-/github-markdown-css-2.8.0.tgz#9c03f646f550b7e3fd9ee0ae29ee03ea2fe683a3"
+
 glamor@^2.20.25:
-  version "2.20.37"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/glamor/-/glamor-2.20.37.tgz#3cd576deb760eaaf475dcc1f9b77bf6a7d2f8b26"
+  version "2.20.38"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/glamor/-/glamor-2.20.38.tgz#5aa908fc044891588ed05bdbeda59c5328a615a4"
   dependencies:
     fbjs "^0.8.12"
     inline-style-prefixer "^3.0.6"
     object-assign "^4.1.1"
     prop-types "^15.5.10"
+    through "^2.3.8"
 
 glamorous@^3.22.1:
   version "3.25.0"
@@ -4112,6 +4168,10 @@ hawk@~3.1.3:
 he@1.1.x:
   version "1.1.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
+
+highlight.js@^9.12.0:
+  version "9.12.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -6593,6 +6653,10 @@ performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
 
+performance-now@^2.1.0:
+  version "2.1.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
+
 petri-specs@latest:
   version "1.1.11"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/petri-specs/-/petri-specs-1.1.11.tgz#690877fb465903d363efb900a449073fc1953bc0"
@@ -7194,6 +7258,12 @@ radium@^0.19.0:
     inline-style-prefixer "^2.0.5"
     prop-types "^15.5.8"
 
+raf@^3.1.0:
+  version "3.3.2"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/raf/-/raf-3.3.2.tgz#0c13be0b5b49b46f76d6669248d527cf2b02fe27"
+  dependencies:
+    performance-now "^2.1.0"
+
 ramda@^0.24.1:
   version "0.24.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ramda/-/ramda-0.24.1.tgz#c3b7755197f35b8dc3502228262c4c91ddb6b857"
@@ -7244,6 +7314,12 @@ react-addons-test-utils@^15.3.2:
   version "15.6.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-addons-test-utils/-/react-addons-test-utils-15.6.0.tgz#062d36117fe8d18f3ba5e06eb33383b0b85ea5b9"
 
+react-collapse@^4.0.3:
+  version "4.0.3"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-collapse/-/react-collapse-4.0.3.tgz#b96de959ed0092a43534630b599a4753dd76d543"
+  dependencies:
+    prop-types "^15.5.8"
+
 react-docgen@^2.15.0:
   version "2.17.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-docgen/-/react-docgen-2.17.0.tgz#b0f3e85af955714e1067593c1043cb82611a93d1"
@@ -7260,7 +7336,7 @@ react-dom-factories@^1.0.0:
   version "1.0.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-dom-factories/-/react-dom-factories-1.0.0.tgz#f43c05e5051b304f33251618d5bc859b29e46b6d"
 
-react-dom@^15.3.2:
+react-dom@^15.5.4:
   version "15.6.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
   dependencies:
@@ -7324,6 +7400,20 @@ react-modal@^1.7.7:
     lodash.assign "^4.2.0"
     prop-types "^15.5.7"
     react-dom-factories "^1.0.0"
+
+react-motion@^0.5.0:
+  version "0.5.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-motion/-/react-motion-0.5.0.tgz#1708fc2aee552900d21c1e6bed28346863e017b6"
+  dependencies:
+    performance-now "^0.2.0"
+    prop-types "^15.5.8"
+    raf "^3.1.0"
+
+react-remarkable@^1.1.1:
+  version "1.1.1"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react-remarkable/-/react-remarkable-1.1.1.tgz#37908ac95894576d0d39187bd289bc2cbb5ac6de"
+  dependencies:
+    remarkable "^1.4.1"
 
 react-simple-di@^1.2.0:
   version "1.2.0"
@@ -7391,7 +7481,7 @@ react-treebeard@^2.0.3:
     shallowequal "^0.2.2"
     velocity-react "^1.3.1"
 
-react@^15.3.2:
+react@^15.5.4:
   version "15.6.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
   dependencies:
@@ -7608,6 +7698,13 @@ regjsparser@^0.1.4:
 relateurl@0.2.x:
   version "0.2.7"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
+
+remarkable@^1.4.1:
+  version "1.7.1"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/remarkable/-/remarkable-1.7.1.tgz#aaca4972100b66a642a63a1021ca4bac1be3bff6"
+  dependencies:
+    argparse "~0.1.15"
+    autolinker "~0.15.0"
 
 remove-trailing-separator@^1.0.1:
   version "1.0.2"
@@ -8527,8 +8624,8 @@ table@^4.0.1:
     string-width "^2.0.0"
 
 tapable@^0.2.7, tapable@~0.2.5:
-  version "0.2.7"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/tapable/-/tapable-0.2.7.tgz#e46c0daacbb2b8a98b9b0cea0f4052105817ed5c"
+  version "0.2.8"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/tapable/-/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"
 
 tar-pack@^3.4.0:
   version "3.4.0"
@@ -8560,6 +8657,13 @@ test-exclude@^4.1.1:
     object-assign "^4.1.0"
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
+
+test-value@^2.1.0:
+  version "2.1.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/test-value/-/test-value-2.1.0.tgz#11da6ff670f3471a73b625ca4f3fdcf7bb748291"
+  dependencies:
+    array-back "^1.0.3"
+    typical "^2.6.0"
 
 text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
@@ -8599,7 +8703,7 @@ through2@^0.6.1, through2@^0.6.3, through2@~0.6.1:
     readable-stream ">=1.0.33-1 <1.1.0-0"
     xtend ">=4.0.0 <4.1.0-0"
 
-"through@>=2.2.7 <3", through@^2.3.6, through@~2.3.4, through@~2.3.6:
+"through@>=2.2.7 <3", through@^2.3.6, through@^2.3.8, through@~2.3.4, through@~2.3.6:
   version "2.3.8"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
@@ -8672,6 +8776,10 @@ to-arraybuffer@^1.0.0:
 to-fast-properties@^1.0.1:
   version "1.0.3"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/to-fast-properties/-/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"
+
+toggle-selection@^1.0.3:
+  version "1.0.6"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/toggle-selection/-/toggle-selection-1.0.6.tgz#6e45b1263f2017fa0acc7d89d78b15b8bf77da32"
 
 tough-cookie@^2.3.2, tough-cookie@~2.3.0:
   version "2.3.2"
@@ -8747,8 +8855,8 @@ tslib@^1.0.0, tslib@^1.7.1:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/tslib/-/tslib-1.7.1.tgz#bc8004164691923a79fe8378bbeb3da2017538ec"
 
 tslint-config-wix@~1.0.23:
-  version "1.0.25"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/tslint-config-wix/-/tslint-config-wix-1.0.25.tgz#ebf971fcbb995602777032897adc2677a3c0ad7d"
+  version "1.0.27"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/tslint-config-wix/-/tslint-config-wix-1.0.27.tgz#acc63f319e95936ecc4b4d33d3b86f0c348fed65"
   dependencies:
     tslint-eslint-rules "^4.0.0"
 
@@ -8832,6 +8940,10 @@ typescript@~2.3.0:
   version "2.3.4"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/typescript/-/typescript-2.3.4.tgz#3d38321828231e434f287514959c37a82b629f42"
 
+typical@^2.6.0:
+  version "2.6.1"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/typical/-/typical-2.6.1.tgz#5c080e5d661cbbe38259d2e70a3c7253e873881d"
+
 ua-parser-js@^0.7.9:
   version "0.7.14"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ua-parser-js/-/ua-parser-js-0.7.14.tgz#110d53fa4c3f326c121292bbeac904d2e03387ca"
@@ -8881,6 +8993,14 @@ ultron@1.0.x:
 unc-path-regex@^0.1.0:
   version "0.1.2"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
+
+underscore.string@~2.4.0:
+  version "2.4.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/underscore.string/-/underscore.string-2.4.0.tgz#8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b"
+
+underscore@~1.7.0:
+  version "1.7.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/underscore/-/underscore-1.7.0.tgz#6bbaf0877500d36be34ecaa584e0db9fef035209"
 
 uniq@^1.0.1:
   version "1.0.1"
@@ -9678,8 +9798,8 @@ yoshi-wnpm-release@latest:
     wnpm-ci latest
 
 yoshi@latest:
-  version "1.1.199"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/yoshi/-/yoshi-1.1.199.tgz#4f15f3d3452917c7a916b725c1bd90b789ccf459"
+  version "1.1.200"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/yoshi/-/yoshi-1.1.200.tgz#4392550db520070641f556386b92f0b85c2f428b"
   dependencies:
     autoprefixer "~7.1.2"
     babel-jest "~20.0.3"
