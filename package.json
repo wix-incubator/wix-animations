@@ -10,7 +10,7 @@
   "scripts": {
     "start": "yoshi start --entry-point=./test/fakes/start-fake-server.js",
     "pretest": "yoshi lint && yoshi build",
-    "build": ":",
+    "build": "yoshi lint && yoshi build && build-storybook",
     "test": "yoshi test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
