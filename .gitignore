@@ -16,3 +16,4 @@ storybook-e2e
 *.iml
 test/e2e
 /.idea/
+package-lock.json
