@@ -1,3 +1,11 @@
+$purple: #733ca6;
+$pinkish: #b13dac;
+$blue: #459fed;
+$turquise: #3cc7c5;
+$green: #65c888;
+$orange: #faad4d;
+$red: #f27052;
+
 .basic-div {
   background: beige;
   border: 1px solid black;
@@ -68,4 +76,18 @@
 .flex-grow-4 {
   color: purple;
   flex-grow: 10;
+}
+
+///////////
+
+.show-hide-wrapper {
+  margin-top: 20px;
+}
+
+.styled-div {
+  background: $pinkish;
+  color: white;
+  font-size: 18px;
+  padding: 20px 30px;
+  line-height: 30px;
 }

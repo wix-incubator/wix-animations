@@ -9,29 +9,8 @@ import {Button, Welcome} from '@storybook/react/demo';
 import CodeExample from './utils/Components/CodeExample';
 // import Readme from '../../src/Animator/README.md';
 
-import ExampleOpacity from '../stories/Animations/ExampleOpacity';
-import ExampleOpacityRaw from '!raw-loader!../stories/Animations/ExampleOpacity';
-
 import ExampleTiming from '../stories/Animations/ExampleTiming';
 import ExampleTimingRaw from '!raw-loader!../stories/Animations/ExampleTiming';
-
-import ExampleOpacityAndScale from '../stories/Animations/ExampleOpacityAndScale';
-import ExampleOpacityAndScaleRaw from '!raw-loader!../stories/Animations/ExampleOpacityAndScale';
-
-import ExampleTranslate from '../stories/Animations/ExampleTranslate';
-import ExampleTranslateRaw from '!raw-loader!../stories/Animations/ExampleTranslate';
-
-import ExampleTranslateSize from '../stories/Animations/ExampleTranslateSize';
-import ExampleTranslateSizeRaw from '!raw-loader!../stories/Animations/ExampleTranslateSize';
-
-import ExampleTranslateDirection from '../stories/Animations/ExampleTranslateDirection';
-import ExampleTranslateDirectionRaw from '!raw-loader!../stories/Animations/ExampleTranslateDirection';
-
-import ExampleHeight from '../stories/Animations/ExampleHeight';
-import ExampleHeightRaw from '!raw-loader!../stories/Animations/ExampleHeight';
-
-import ExampleWidth from '../stories/Animations/ExampleWidth';
-import ExampleWidthRaw from '!raw-loader!../stories/Animations/ExampleWidth';
 
 import ExampleClasses from '../stories/Animations/ExampleClasses';
 import ExampleClassesRaw from '!raw-loader!../stories/Animations/ExampleClasses';
@@ -39,65 +18,57 @@ import ExampleClassesRaw from '!raw-loader!../stories/Animations/ExampleClasses'
 import ExampleSequence from '../stories/Animations/ExampleSequence';
 import ExampleSequenceRaw from '!raw-loader!../stories/Animations/ExampleSequence';
 
+import ExampleNesting from '../stories/Animations/ExampleNesting';
+import ExampleNestingRaw from '!raw-loader!../stories/Animations/ExampleNesting';
+
+import ExampleDebug from '../stories/Animations/ExampleDebug';
+import ExampleDebugRaw from '!raw-loader!../stories/Animations/ExampleDebug';
+
+import HowToUse from './Animations/HowToUse/HowToUse';
+import CssStyles from './Animations/CssStyles/CssStyles';
+
 
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')}/>);
 
 storiesOf('Animator', module)
-  .add('Opacity', () => (
-    <CodeExample title="Opacity"
-                 code={ExampleOpacityRaw}>
-      <ExampleOpacity/>
+  .add('Basic Usage', () => (
+    <HowToUse/>
+  ))
+  .add('What can be animated', () => (
+  <div>
+    <CssStyles />
+  </div>
+  ))
+  .add('Multiple children', () => (
+    <CodeExample title="Sequence"
+                 code={ExampleSequenceRaw}>
+      <ExampleSequence/>
     </CodeExample>
   ))
-  .add('Scale', () => (
-    <CodeExample title="Scale"
-                 code={ExampleOpacityAndScaleRaw}>
-      <ExampleOpacityAndScale/>
-    </CodeExample>
-  ))
-  .add('Translate (moving around)', () => (
-    <div>
-      <CodeExample title="Translate Examples"
-                   code={ExampleTranslateRaw}>
-        <ExampleTranslate/>
-      </CodeExample>
-      <CodeExample title="Translate Sizes"
-                   code={ExampleTranslateSizeRaw}>
-        <ExampleTranslateSize/>
-      </CodeExample>
-      <CodeExample title="Translate Directions"
-                   code={ExampleTranslateDirectionRaw}>
-        <ExampleTranslateDirection/>
-      </CodeExample>
-    </div>
-  ))
-  .add('Height', () => (
-    <CodeExample title="Scale"
-                 code={ExampleHeightRaw}>
-      <ExampleHeight/>
-    </CodeExample>
-  ))
-  .add('Width', () => (
-    <CodeExample title="Scale"
-                 code={ExampleWidthRaw}>
-      <ExampleWidth/>
-    </CodeExample>
-  ))
-  .add('Timing', () => (
+  .add('Duration & Delay', () => (
     <CodeExample title="Timing"
                  code={ExampleTimingRaw}>
       <ExampleTiming/>
     </CodeExample>
   ))
-  .add('Classes & Styles', () => (
+  .add('Nesting', () => (
+    <CodeExample title="Nesting"
+                 code={ExampleNestingRaw}>
+      <ExampleNesting/>
+    </CodeExample>
+  ))
+  .add('Custom Classes & Styles', () => (
     <CodeExample title="Scale"
                  code={ExampleClassesRaw}>
       <ExampleClasses/>
     </CodeExample>
   ))
-  .add('Sequence', () => (
-    <CodeExample title="Scale"
-                 code={ExampleSequenceRaw}>
-      <ExampleSequence/>
+  .add('Debug', () => (
+    <CodeExample title="Debug"
+                 code={ExampleDebugRaw}>
+      <ExampleDebug/>
     </CodeExample>
-  ));
+  ))
+  .add('Full API', () => (
+    <div>api goes here</div>
+  ))

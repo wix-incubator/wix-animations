@@ -48,7 +48,9 @@ const animationProps = ['opacity', 'scale', 'height', 'translate', 'width'];
 const validChildProps = ['debug', 'sequence', 'timing', ...animationProps];
 const transitionClassNames = {
   enter: css.enter,
+  appear: css.enter,
   enterActive: css.enterActive,
+  appearActive: css.enterActive,
   exit: css.exit,
   exitActive: css.exitActive
 };

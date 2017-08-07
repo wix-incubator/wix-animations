@@ -1,9 +1,8 @@
 import React from 'react';
-import {Button} from 'wix-style-react/Backoffice';
 import Animator from '../../src/components/Animator';
-import {Container, Row, Col} from '../../src/Grid';
+import {Container, Row, Col} from 'wix-style-react/dist/src/Grid';
 import * as css from './Example.scss';
-import Dropdown from '../../src/Dropdown';
+import Dropdown from 'wix-style-react/dist/src/Dropdown';
 
 class ExampleDebug extends React.Component {
 

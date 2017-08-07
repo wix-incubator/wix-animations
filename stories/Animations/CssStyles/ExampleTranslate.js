@@ -1,14 +1,14 @@
 import React from 'react';
-import Animator from '../../src/components/Animator';
-import * as css from './Example.scss';
-import AnimationTemplate from './AnimationTemplate';
+import Animator from '../../../src/components/Animator';
+import * as css from '../Example.scss';
+import AnimationTemplate from '../AnimationTemplate';
 
 
 const ExampleTranslate = ({show}) => {
   return (
     <div>
       <div className={css.basicWrapper}>
-        <Animator show={show} opacity translate>
+        <Animator show={show} translate opacity>
           <div className={css.basicDiv}>translate</div>
         </Animator>
         <Animator show={show} opacity translate="bottom">

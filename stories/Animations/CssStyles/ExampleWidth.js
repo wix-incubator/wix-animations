@@ -1,6 +1,6 @@
 import React from 'react';
-import Animator from '../../src/components/Animator';
-import AnimationTemplate from './AnimationTemplate';
+import Animator from '../../../src/components/Animator';
+import AnimationTemplate from '../AnimationTemplate';
 
 const WidthExample = ({show}) => {
   return (

@@ -1,5 +1,8 @@
 import React from 'react';
+import Button from 'wix-style-react/dist/src/Button'
 import {node} from 'prop-types';
+import {Container, Row, Col} from 'wix-style-react/dist/src/Grid';
+import css from './Example.scss';
 
 class ShowHideControls extends React.Component {
 
@@ -37,12 +40,24 @@ class ShowHideControls extends React.Component {
   }
 
   render() {
-    const {children} = this.props;
+    const {children, height} = this.props;
+    const styles = height ? {height} : {};
+    console.log('styles are', styles);
+    const {show} = this.state;
     return (
-      <div>
-        <button onClick={() => this.onChange()}>{this.state.show ? 'Hide' : 'Show'}</button>
-        {React.createElement(children.type, {...children.props, show: this.state.show}, children)}
-      </div>);
+      <div className={css.showHideWrapper} style={styles}>
+        <Container>
+          <Row>
+            <Col span="2">
+              <Button theme={show ? 'transparentblue' : 'fullblue'} onClick={() => this.onChange()}>{show ? 'Hide' : 'Show'} Animation</Button>
+            </Col>
+            <Col span="10">
+              {React.createElement(children.type, {...children.props, show: this.state.show}, children)}
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
   }
 }
 
