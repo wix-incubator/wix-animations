@@ -19,7 +19,7 @@ class ExampleDebug extends React.Component {
       {id: 'enter', value: 'enter'},
       {id: 'entering', value: 'entering'},
       {id: 'entered', value: 'entered'},
-      {id: 'exit', value: 'exit'},
+      {id: 'idexit', value: 'exit'},
       {id: 'exiting', value: 'exiting'}
     ];
   }

@@ -1,4 +1,4 @@
-### When to use 'show' prop when not to use it ?
+### When to use 'show' prop and when not to use it ?
 
 In these basic scenarios there is no real difference between these 2 ways of doing the same thing.
 

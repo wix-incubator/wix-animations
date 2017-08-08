@@ -7,7 +7,7 @@ import StyledDiv from '../StyledDiv';
 const ExampleInByProp = ({show}) => {
   return (
     <Animator height show={show}>
-      <StyledDiv> Hi There! Click on the 'Hide Animation' to see me disappear. Also click the 'show code' link above to see how simple it is to animate with 'Animator'!</StyledDiv>
+      <StyledDiv> Hi There! Click on the 'Hide Animation' button to see me disappear. Also click the 'show code' link above to see how simple it is to animate with 'Animator'!</StyledDiv>
     </Animator>
   )
 };

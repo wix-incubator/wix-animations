@@ -14,7 +14,7 @@ import Readme from './HowToUse.md';
 const HowToUse = () => {
   return (
     <div>
-      <CodeExample title="Use can use the 'show' prop to show/hide animations"
+      <CodeExample title="Use the 'show' prop to show/hide animations"
                    code={ExampleByInPropRaw}>
         <ExampleByInProp/>
       </CodeExample>

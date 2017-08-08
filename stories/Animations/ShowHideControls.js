@@ -42,7 +42,6 @@ class ShowHideControls extends React.Component {
   render() {
     const {children, height} = this.props;
     const styles = height ? {height} : {};
-    console.log('styles are', styles);
     const {show} = this.state;
     return (
       <div className={css.showHideWrapper} style={styles}>

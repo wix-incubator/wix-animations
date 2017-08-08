@@ -1,38 +1,57 @@
 import React from 'react';
 import Animator from '../../../src/components/Animator';
-import * as css from '../Example.scss';
-import AnimationTemplate from '../AnimationTemplate';
+import ShowHideControls from '../ShowHideControls';
+import StyledDiv from '../StyledDiv';
+import {DirectionDropDown, SizeInput} from './ExampleTranslateHelpers';
 
+const getValue = value => '"' + value + '"';
 
-const ExampleTranslate = ({show}) => {
-  return (
-    <div>
-      <div className={css.basicWrapper}>
-        <Animator show={show} translate opacity>
-          <div className={css.basicDiv}>translate</div>
-        </Animator>
-        <Animator show={show} opacity translate="bottom">
-          <div className={css.basicDiv}>translate="bottom"</div>
-        </Animator>
-        <Animator show={show} opacity translate={{enter: 'left', exit: 'right'}}>
-          <div className={css.basicDiv}>{`translate={{enter: 'left', exit: 'right'}}`}</div>
-        </Animator>
-        <Animator show={show} opacity translate={{enter:{direction: 'right', size: '100%'}}}>
-          <div className={css.basicDiv}>{`translate={{enter:{direction: 'right', size: '100%'}}}`}</div>
-        </Animator>
-        <Animator show={show} opacity translate={{exit:{direction: 'left', size: '10vh'}}}>
-          <div className={css.basicDiv}>{`translate={{exit:{direction: 'left', size: '10vh'}}}`}</div>
-        </Animator>
-        <Animator show={show} opacity translate={{enter:{direction: 'right', size: '100px'}, exit:{direction: 'left', size: '100px'}}}>
-          <div className={css.basicDiv}>{`translate={{enter:{direction: 'right', size: '100px'}, exit:{direction: 'left', size: '100px'}}}`}</div>
+class ExampleTranslate extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      enterDirection: 'top',
+      enterSize: '100%',
+      exitDirection: 'left',
+      exitSize: '150px'
+    }
+  }
+
+  render() {
+
+    const {show} = this.props;
+    const {enterDirection, exitDirection, enterSize, exitSize} = this.state;
+    return (
+      <div>
+        <div style={{display: 'flex', marginBottom: '20px'}}>
+          <DirectionDropDown title="Enter Direction" selectedId={enterDirection} onSelect={enterDirection => this.setState({enterDirection})}/>
+          <SizeInput title="Enter Size" value={enterSize} onChange={(enterSize) => this.setState({enterSize})} />
+          <DirectionDropDown title="Exit Direction" selectedId={exitDirection} onSelect={exitDirection => this.setState({exitDirection})}/>
+          <SizeInput title="Exit Size" value={exitSize} onChange={(exitSize) => this.setState({exitSize})} />
+        </div>
+        <Animator show={show}
+                  opacity
+                  translate={{
+                      enter: {
+                        direction: enterDirection,
+                        size: enterSize
+                      },
+                      exit: {
+                        direction: exitDirection,
+                        size: exitSize
+                      }
+                  }}>
+          <StyledDiv>
+            <pre style={{margin: 0}}>translate={`{`}{`{`}enter:{`{`}direction: {getValue(enterDirection)}, size: {getValue(enterSize)}{`}`}, {`{`}direction: {getValue(exitDirection)}, size: {getValue(exitSize)}{`}`}{`}`}{`}`}</pre>
+          </StyledDiv>
         </Animator>
       </div>
-    </div>
-  )
+    )
+  }
 };
 
 export default () =>
-  <AnimationTemplate>
+  <ShowHideControls height="190px">
     <ExampleTranslate/>
-  </AnimationTemplate>
-
+  </ShowHideControls>

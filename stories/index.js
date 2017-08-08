@@ -31,7 +31,7 @@ import CssStyles from './Animations/CssStyles/CssStyles';
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')}/>);
 
 storiesOf('Animator', module)
-  .add('Basic Usage', () => (
+  .add('Getting Started', () => (
     <HowToUse/>
   ))
   .add('What can be animated', () => (
