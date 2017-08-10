@@ -91,3 +91,15 @@ $red: #f27052;
   padding: 20px 30px;
   line-height: 30px;
 }
+
+.sequence-example-wrapper {
+  display: flex;
+  width: 400px;
+}
+
+.arrow-top {
+  position: absolute;
+  left: 40px;
+  bottom: 30px;
+  font-size: 40px;
+}

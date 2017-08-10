@@ -12,7 +12,7 @@ const getDataOrDefault = (arr, value, name) => {
   return arr.indexOf(value) > -1 ? value : propsDefault[name];
 };
 
-const getScale = (scale, timing) => ['micro', 'large'].indexOf(timing) > -1 ? 0.9 : 0.75;
+const getScale = (scale, timing) => ['small', 'medium'].indexOf(timing) > -1 ? 0.75 : 0.9;
 
 const getDelay = value => {
 

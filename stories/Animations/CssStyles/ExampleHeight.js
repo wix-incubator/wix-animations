@@ -1,37 +1,29 @@
 import React from 'react';
 import Animator from '../../../src/components/Animator';
 import AnimationTemplate from '../AnimationTemplate';
+import {Row, Col} from 'wix-style-react/dist/src/Grid';
+import StyledDiv from '../StyledDiv';
 
 const HeightExample = ({show}) => {
   return (
-    <div>
-      <div style={{height: 'auto', border: '1px solid black', padding: '10px 20px 20px'}}>
+    <Row>
+      <Col span={6}>
         <Animator show={show} height>
-          <div style={{fontSize: '20px', background: 'beige', padding: '20px'}}>I have height={'{'}true{'}'} so animator
-            guess the right height for me. use me *only* if you don't know the height
-          </div>
+          <StyledDiv>
+            I have height={'{'}true{'}'} so animator guess the right height for me. use me <b>only</b> if you don't know the height
+          </StyledDiv>
         </Animator>
-        <div>I am some casual text here</div>
-      </div>
-      <div style={{height: 'auto', border: '1px solid black', padding: '10px 20px 20px'}}>
-        <Animator show={show} height={150}>
-          <div style={{fontSize: '20px', background: 'beige', padding: '20px', height: '150px'}}>I have height={`{150}`}
-            so animator animates to that specific height. This method is much more stable than the other!!
-          </div>
+        <div>This text is here to show that the rest of the page responds nicely to the height change</div>
+      </Col>
+      <Col span={6}>
+        <Animator show={show} height={180}>
+          <StyledDiv style={{height: '180px'}}>
+            I have a fixed height of '180px' in my CSS so I put on Animator the prop height={`{180}`} so animator animates to that specific height. This method is much more stable than the other!!
+          </StyledDiv>
         </Animator>
-        <div>I am some casual text here</div>
-      </div>
-      <div style={{height: 'auto', border: '1px solid black', padding: '10px 20px 20px'}}>
-        <Animator height={110}>
-          {show &&
-          <div style={{fontSize: '20px', background: 'beige', padding: '20px', height: '110px'}}>You can easily combine
-            mount/unmount elements</div>}
-          {!show &&
-          <div style={{fontSize: '20px', background: 'purple', padding: '20px', color: 'white', height: '110px'}}>I AM
-            ANOTHER ELEMENT!!!!</div>}            </Animator>
-        <div>I am some casual text here</div>
-      </div>
-    </div>
+        <div>This text is here to show that the rest of the page responds nicely to the height change</div>
+      </Col>
+    </Row>
   )
 };
 

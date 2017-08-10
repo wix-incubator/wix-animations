@@ -33,18 +33,18 @@ const CssStyles = () => {
                    code={ExampleOpacityAndScaleRaw}>
         <ExampleOpacityAndScale/>
       </CodeExample>
-      <CodeExample title="Translate Examples"
+      <CodeExample title="Height"
+                   code={ExampleHeightRaw}>
+        <ExampleHeight/>
+      <CodeExample title="Width"
+                   code={ExampleWidthRaw}>
+        <ExampleWidth/>
+      </CodeExample>
+      <CodeExample title="Translate"
                    code={ExampleTranslateRaw}>
         <ExampleTranslate/>
       </CodeExample>
       <Markdown source={Readme}/>
-      <CodeExample title="Height"
-                   code={ExampleHeightRaw}>
-        <ExampleHeight/>
-      </CodeExample>
-      <CodeExample title="Width"
-                   code={ExampleWidthRaw}>
-        <ExampleWidth/>
       </CodeExample>
     </div>);
 };
