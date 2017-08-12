@@ -18,11 +18,6 @@ $red: #f27052;
   height: 35px;
 }
 
-.flex-parent {
-  display: flex;
-  width: 100%;
-}
-
 .height-50 {
   height: 50px;
 }
@@ -90,6 +85,13 @@ $red: #f27052;
   font-size: 18px;
   padding: 20px 30px;
   line-height: 30px;
+
+  code {
+    background: transparent;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .sequence-example-wrapper {
@@ -102,4 +104,25 @@ $red: #f27052;
   left: 40px;
   bottom: 30px;
   font-size: 40px;
+}
+
+.markup {
+  font-size: 16px;
+  p {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+}
+
+.flex-parent {
+  display: flex;
+}
+
+.flex-parent > div{
+  flex-grow: 1;
+  width: auto; /* overriding width: 100%; */
+}
+
+.flex-parent .flex-child-grow-2 {
+  flex-grow: 2;
 }

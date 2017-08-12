@@ -37,7 +37,7 @@ const propsMap = {
   delay: value => !!value && getDelay(value),
   childStyle: value => !!value && value,
   childClassName: value => !!value && value,
-  show: value => value
+  show: (value, _, {debug}) => !!debug || value
 };
 
 const getPropData = (name, value, props) => {

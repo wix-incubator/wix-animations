@@ -1,8 +1,9 @@
 import React from 'react';
-import Animator from '../../src/components/Animator';
+import Animator from '../../../src/components/Animator';
 import {Container, Row, Col} from 'wix-style-react/dist/src/Grid';
-import * as css from './Example.scss';
+import * as css from '../Example.scss';
 import Dropdown from 'wix-style-react/dist/src/Dropdown';
+import StyledDiv from '../StyledDiv';
 
 class ExampleDebug extends React.Component {
 
@@ -19,7 +20,7 @@ class ExampleDebug extends React.Component {
       {id: 'enter', value: 'enter'},
       {id: 'entering', value: 'entering'},
       {id: 'entered', value: 'entered'},
-      {id: 'idexit', value: 'exit'},
+      {id: 'exit', value: 'exit'},
       {id: 'exiting', value: 'exiting'}
     ];
   }
@@ -38,12 +39,15 @@ class ExampleDebug extends React.Component {
             />
           </Col>
           <Col span="10">
-            <div className={css.basicWrapper}>
+            <div className={css.basicWrapper} style={{position: 'relative', top: '-16px'}}>
               <Animator translate={{exit: 'bottom', enter: 'top'}} scale opacity debug={this.state.debug}>
-                <div className={css.basicDiv}>{this.state.debug ? ` emulates the ${this.state.debug} phase` : '<--- Waiting for you to choose a debug phase'}</div>
+                <StyledDiv>{this.state.debug ? ` emulates the ${this.state.debug} phase` : '<--- Waiting for you to choose a debug phase'}</StyledDiv>
               </Animator>
-              <Animator opacity scale>
-                {this.state.debug === 'exiting' && <div style={{fontSize: '16px', width: '300px', position: 'absolute', top: '32px'}}>{`<----`} Because it is debug mode the Element is only hiding but did not unmount. you can still see it in the devtools</div>}
+              <Animator opacity scale show={this.state.debug === 'exiting'} delay={{enter: 300}}>
+                <div style={{position: 'absolute'}}>
+                  <div style={{fontSize: '16px', width: '300px', position: 'absolute', top: '32px'}}>{`<----`} Because it is debug mode the Element is only hiding but did not unmount. you can still see it in the devtools</div>
+                  <div style={{height: '63px', width: '247px', position: 'absolute', top: '32px', opacity: '0.5', border: '3px dashed rgb(177, 61, 172)', left: '-262px', pointerEvents: 'none'}}></div>
+                </div>
               </Animator>
             </div>
           </Col>
@@ -51,8 +55,7 @@ class ExampleDebug extends React.Component {
       </Container>
     )
   }
-}
-;
+};
 
 export default () =>
   <ExampleDebug/>

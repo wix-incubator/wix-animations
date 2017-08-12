@@ -3,6 +3,7 @@ import Animator from '../../../src/components/Animator';
 import * as css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
+import OrangeDiv from '../OrangeDiv';
 
 class ExampleChildren extends React.Component {
 
@@ -12,7 +13,7 @@ class ExampleChildren extends React.Component {
       <div className={css.sequenceType} style={{display: 'flex', height: '70px'}}>
         <Animator show={show} opacity scale className={css.sequenceExampleWrapper}>
           <StyledDiv>One</StyledDiv>
-          <StyledDiv>Two</StyledDiv>
+          <OrangeDiv>Two</OrangeDiv>
           <StyledDiv>Three</StyledDiv>
         </Animator>
       </div>

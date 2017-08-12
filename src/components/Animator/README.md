@@ -1,10 +1,3 @@
-# Animator Component
-
-> Basically all the animations you need in one component
-
-## Properties
-
-# Props of Animator Component
 | propName | propType | defaultValue | Valid Values | description |
 |----------|----------|--------------|-------------|-----|
 | timing | string | large | micro, small, medium, large | Sets the duration |
@@ -18,15 +11,12 @@
 | className | string | false | - | The class will be added as a **direct parent class** for all the children it will have|
 | debug | string | false | enter, entering, exit, exiting | Emulates the real animation classes and styles without the need to animate. Just exit your element visible and add to debug different stages. enter: 'enter', entering: 'enter enter-active', exit: 'exit', exiting: 'exit exit-active' |
 | dataHook | string | - | - | will convert to data-hook |
-| childClassName | string | false | - | This class will be on the direct child of this component |
-| childStyle | object | false | - | This style will be on the direct children of this component |
 
 # Props of Children of Animator Component
 
 | propName | propType | defaultValue | Valid Values | description |
 |----------|----------|--------------|-------------|-----|
 | animatorChildClassName | string | false | - | Designed to override childClassName if necessary |
-| animatorChildStyle | object | false | - | Designed to override className if necessary |
 
 
 # Translate Object
@@ -48,7 +38,7 @@
 
 | propName | Which Child Appears First | Which Child disappears first |
 |----------|---------------------------|-------------------|
-| Default | First Child | First Child |
+| default | First Child | First Child |
 | flip | First Child | Last Child |
 | reverse | Last Child | Last Child |
 | reverse-flip | Last Child | First Child |

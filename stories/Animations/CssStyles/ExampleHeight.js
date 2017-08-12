@@ -18,7 +18,7 @@ const HeightExample = ({show}) => {
       <Col span={6}>
         <Animator show={show} height={180}>
           <StyledDiv style={{height: '180px'}}>
-            I have a fixed height of '180px' in my CSS so I put on Animator the prop height={`{180}`} so animator animates to that specific height. This method is much more stable than the other!!
+            I have a fixed height of '180px' in my CSS so I put on Animator the prop <code>height={`{180}`}</code> so animator animates to that specific height. This method is much more stable than the other!!
           </StyledDiv>
         </Animator>
         <div>This text is here to show that the rest of the page responds nicely to the height change</div>

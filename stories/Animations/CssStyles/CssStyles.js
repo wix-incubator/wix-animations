@@ -21,7 +21,6 @@ import Markdown from '../../utils/Components/Markdown';
 import Readme from './Translate.md';
 
 
-
 const CssStyles = () => {
   return (
     <div>
@@ -36,6 +35,7 @@ const CssStyles = () => {
       <CodeExample title="Height"
                    code={ExampleHeightRaw}>
         <ExampleHeight/>
+      </CodeExample>
       <CodeExample title="Width"
                    code={ExampleWidthRaw}>
         <ExampleWidth/>
@@ -45,7 +45,6 @@ const CssStyles = () => {
         <ExampleTranslate/>
       </CodeExample>
       <Markdown source={Readme}/>
-      </CodeExample>
     </div>);
 };
 

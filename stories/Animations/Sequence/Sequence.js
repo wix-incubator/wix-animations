@@ -9,6 +9,8 @@ import ExampleChildrenRaw from '!raw-loader!./ExampleChildren';
 import ExampleMixedChildren from './ExampleMixedChildren';
 import ExampleMixedChildrenRaw from '!raw-loader!./ExampleMixedChildren';
 
+import ExampleArray from './ExampleArray';
+import ExampleArrayRaw from '!raw-loader!./ExampleArray';
 
 const Sequence = () => {
   return (
@@ -24,6 +26,10 @@ const Sequence = () => {
       <CodeExample title="Mount/Unmount of children simultaneously"
                    code={ExampleMixedChildrenRaw}>
         <ExampleMixedChildren/>
+      </CodeExample>
+      <CodeExample title="Array of children with .map() - don't forget the key prop!!! Otherwise it won't work..."
+                   code={ExampleArrayRaw}>
+        <ExampleArray/>
       </CodeExample>
     </div>);
 };

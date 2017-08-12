@@ -3,17 +3,29 @@ import Animator from '../../../src/components/Animator';
 import * as css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
-import OrangeDiv from '../OrangeDiv';
+
+const item1 = {key: 123, text: 'I am the purple div!', color: '#b13dac'};
+const item2 = {key: 456, text: 'I am the orange div!', color: '#f27052'};
 
 class ExampleMixedChildren extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [item1]
+    }
+  }
+
+  componentWillReceiveProps({show}) {
+    this.setState({items: show ? [item1] : [item2]})
+  }
+
   render() {
-    const {show} = this.props;
+    const {items} = this.state;
     return (
       <div className={css.sequenceType}>
         <Animator height>
-          {show && <StyledDiv>I am a DIV</StyledDiv>}
-          {!show && <OrangeDiv>I am another DIV!</OrangeDiv>}
+          {items.map(item => <StyledDiv key={item.key} style={{background: item.color}}>{item.text}</StyledDiv>)}
         </Animator>
       </div>
     )

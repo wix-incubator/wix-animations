@@ -4,6 +4,7 @@ import Animator from '../../../src/components/Animator';
 import * as css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
+import OrangeDiv from '../OrangeDiv';
 import {TextHelper} from './SequenceHelper';
 
 class ExampleSequence extends React.Component {
@@ -38,11 +39,11 @@ class ExampleSequence extends React.Component {
             options={this.sequenceTypes}
           />
         </div>
-        <Animator show={show} opacity translate={{enter: {direction: 'top', size: '50px'}, exit: {direction: 'top', size: '50px'}}} sequence={this.state.sequenceType} className={css.sequenceExampleWrapper}>
+        <Animator show={show} sequence={this.state.sequenceType} height className={css.sequenceExampleWrapper}>
           <StyledDiv>We</StyledDiv>
-          <StyledDiv>will</StyledDiv>
+          <OrangeDiv>will</OrangeDiv>
           <StyledDiv>animate</StyledDiv>
-          <StyledDiv>in</StyledDiv>
+          <OrangeDiv>in</OrangeDiv>
           <StyledDiv>sequence</StyledDiv>
         </Animator>
         <TextHelper type={type} />
