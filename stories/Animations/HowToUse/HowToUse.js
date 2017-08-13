@@ -10,10 +10,12 @@ import ExampleByMountingRaw from '!raw-loader!./ExampleByMounting';
 import Markdown from '../../utils/Components/Markdown';
 
 import Readme from './HowToUse.md';
+import H2 from '../H2';
 
 const HowToUse = () => {
   return (
     <div>
+      <H2>Getting Started</H2>
       <CodeExample title="Use the 'show' prop to show/hide animations"
                    code={ExampleByInPropRaw}>
         <ExampleByInProp/>

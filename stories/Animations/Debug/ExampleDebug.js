@@ -43,7 +43,7 @@ class ExampleDebug extends React.Component {
               <Animator translate={{exit: 'bottom', enter: 'top'}} scale opacity debug={this.state.debug}>
                 <StyledDiv>{this.state.debug ? ` emulates the ${this.state.debug} phase` : '<--- Waiting for you to choose a debug phase'}</StyledDiv>
               </Animator>
-              <Animator opacity scale show={this.state.debug === 'exiting'} delay={{enter: 300}}>
+              <Animator opacity timing="micro" show={this.state.debug === 'exiting'} delay={{enter: 200}}>
                 <div style={{position: 'absolute'}}>
                   <div style={{fontSize: '16px', width: '300px', position: 'absolute', top: '32px'}}>{`<----`} Because it is debug mode the Element is only hiding but did not unmount. you can still see it in the devtools</div>
                   <div style={{height: '63px', width: '247px', position: 'absolute', top: '32px', opacity: '0.5', border: '3px dashed rgb(177, 61, 172)', left: '-262px', pointerEvents: 'none'}}></div>

@@ -19,11 +19,12 @@ import ExampleWidthRaw from '!raw-loader!./ExampleWidth';
 
 import Markdown from '../../utils/Components/Markdown';
 import Readme from './Translate.md';
-
+import H2 from '../H2';
 
 const CssStyles = () => {
   return (
     <div>
+      <H2>What Can Be Animated</H2>
       <CodeExample title="Opacity"
                    code={ExampleOpacityRaw}>
         <ExampleOpacity/>

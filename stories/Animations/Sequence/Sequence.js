@@ -11,10 +11,11 @@ import ExampleMixedChildrenRaw from '!raw-loader!./ExampleMixedChildren';
 
 import ExampleArray from './ExampleArray';
 import ExampleArrayRaw from '!raw-loader!./ExampleArray';
-
+import H2 from '../H2';
 const Sequence = () => {
   return (
     <div>
+      <H2>Multiple Children</H2>
       <CodeExample title="Multiple Children"
                    code={ExampleChildrenRaw}>
         <ExampleChildren/>

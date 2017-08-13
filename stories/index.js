@@ -4,10 +4,8 @@ import {storiesOf} from '@storybook/react';
 import {action} from '@storybook/addon-actions';
 import {linkTo} from '@storybook/addon-links';
 
-import {Button, Welcome} from '@storybook/react/demo';
 import Markdown from './utils/Components/Markdown';
 import CodeExample from './utils/Components/CodeExample';
-// import Readme from '../../src/Animator/README.md';
 
 import ExampleNesting from '../stories/Animations/ExampleNesting';
 import ExampleNestingRaw from '!raw-loader!../stories/Animations/ExampleNesting';
@@ -19,7 +17,7 @@ import DurationAndDelay from './Animations/DurationAndDelay/DurationAndDelay';
 import CustomClasses from './Animations/CustomClasses/CustomClasses';
 import HowToDebug from './Animations/Debug/HowToDebug';
 
-import FullApi from '../src/components/Animator/README.md';
+import FullAPI from '../stories/Animations/FullAPI.md';
 
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')}/>);
 
@@ -37,5 +35,5 @@ storiesOf('Animator', module)
   .add('Custom Classes & Styles', () => (<CustomClasses />))
   .add('Debug', () => (<HowToDebug />))
   .add('Full API', () => (
-    <Markdown source={FullApi}/>
+    <Markdown source={FullAPI}/>
   ))
