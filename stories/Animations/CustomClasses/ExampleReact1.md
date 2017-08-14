@@ -1,4 +1,4 @@
-#### This is how you write the code in React:
+#### JSX:
 
 ```html
 <Animator className="foo">

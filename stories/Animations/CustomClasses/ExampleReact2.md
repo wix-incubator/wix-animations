@@ -1,12 +1,12 @@
-#### This is how you write the code in React:
+#### JSX:
 
 ```html
-const MyComp = ({children}}) => (
-  <div className="my-comp">{children}</div>
+const Bar = ({children}}) => (
+  <div className="bar">{children}</div>
 )
 
 <Animator className="foo">
-  <MyComp>Child 1</MyComp>
-  <MyComp animatorChildClassName="bar">Child 2</MyComp>
+  <Bar>Child 1</Bar>
+  <Bar animatorChildClassName="bar-wrapper">Child 2</Bar>
 </Animator>
 ```

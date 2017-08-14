@@ -1,4 +1,4 @@
-#### This is how it will look on HTML:
+#### HTML - (simplified for demonstration purposes):
 
 ```html
 <div class="foo">

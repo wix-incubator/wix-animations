@@ -13,6 +13,7 @@
 | className | string | false | - | The class will be added as a **direct parent class** for all the children it will have|
 | debug | string | false | enter, entering, exit, exiting | Emulates the real animation classes and styles without the need to animate. Just exit your element visible and add to debug different stages. enter: 'enter', entering: 'enter enter-active', exit: 'exit', exiting: 'exit exit-active' |
 | dataHook | string | - | - | will convert to data-hook |
+| childClassName | string | false | - | It will assign a className to the direct children of the Animator component. It is designed for layout purposes |
 
 # Props of Children of Animator Component
 

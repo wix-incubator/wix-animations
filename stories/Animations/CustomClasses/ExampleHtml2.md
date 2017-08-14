@@ -1,12 +1,12 @@
-#### This is how it will look on HTML:
+#### HTML:
 
 ```html
 <div class="foo">
   <div>
-    <div class="my-comp">Child 1</div>
+    <div class="bar">Child 1</div>
   </div>
-  <div class="bar">
-    <div class="my-comp">Child 2</div>
+  <div class="bar-wrapper">
+    <div class="bar">Child 2</div>
   </div>
 </div>
 ```

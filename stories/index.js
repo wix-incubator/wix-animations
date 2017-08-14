@@ -18,11 +18,14 @@ import CustomClasses from './Animations/CustomClasses/CustomClasses';
 import HowToDebug from './Animations/Debug/HowToDebug';
 
 import FullAPI from '../stories/Animations/FullAPI.md';
-
+import Readme from '../README.md';
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')}/>);
 
+storiesOf('Introduction', module).
+  add('Getting Started', () => (<Markdown source={Readme}/>));
+
 storiesOf('Animator', module)
-  .add('Getting Started', () => (<HowToUse/>))
+  .add('Basic Animation', () => (<HowToUse/>))
   .add('What can be animated', () => (<CssStyles />))
   .add('Multiple children', () => (<Sequence/>))
   .add('Duration & Delay', () => (<DurationAndDelay />))
@@ -36,4 +39,4 @@ storiesOf('Animator', module)
   .add('Debug', () => (<HowToDebug />))
   .add('Full API', () => (
     <Markdown source={FullAPI}/>
-  ))
+  ));

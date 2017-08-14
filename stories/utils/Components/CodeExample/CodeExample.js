@@ -42,7 +42,9 @@ export default class CodeExample extends Component {
           <h2>{this.props.title}</h2>
           <div style={{margin: '22px 24px 0'}}>
             <TextButton onClick={this.toggleCode}>
-              {this.state.isOpened ? 'Hide' : 'Show'} code
+              <span style={{fontSize: '16px',
+                position: 'relative',
+                top: '-4px'}}>({this.state.isOpened ? 'Hide' : 'Show'} code)</span>
             </TextButton>
           </div>
         </div>

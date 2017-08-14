@@ -118,11 +118,11 @@ $red: #f27052;
   display: flex;
 }
 
-.flex-parent > div{
+.flex-child {
   flex-grow: 1;
   width: auto; /* overriding width: 100%; */
 }
 
-.flex-parent .flex-child-grow-2 {
+.flex-child-grow-2 {
   flex-grow: 2;
 }
