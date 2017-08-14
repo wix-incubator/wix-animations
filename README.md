@@ -1,5 +1,7 @@
 # Wix Animations
 
+[![Build Status](https://travis-ci.org/wix/wix-animations.svg?branch=master)](https://travis-ci.org/wix/wix-animations)
+
 Wix Animations contains the `Animator` React Component. 
 
 This component will animate any child it has that will mount or unmount.
