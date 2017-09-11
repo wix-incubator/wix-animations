@@ -1,7 +1,6 @@
 import React from 'react';
 import CodeExample from '../../utils/Components/CodeExample';
 
-
 import ExampleOpacity from './ExampleOpacity';
 import ExampleOpacityRaw from '!raw-loader!./ExampleOpacity';
 

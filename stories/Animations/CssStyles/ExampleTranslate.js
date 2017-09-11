@@ -43,7 +43,7 @@ class ExampleTranslate extends React.Component {
                       }
                   }}>
           <StyledDiv>
-            <pre style={{margin: 0}}>translate={`{`}{`{`}enter:{`{`}direction: {getValue(enterDirection)}, size: {getValue(enterSize)}{`}`}, {`{`}direction: {getValue(exitDirection)}, size: {getValue(exitSize)}{`}`}{`}`}{`}`}</pre>
+            <pre style={{margin: 0}}>translate={`{`}{`{`}enter:{`{`}direction: {getValue(enterDirection)}, size: {getValue(enterSize)}{`}`}, exit: {`{`}direction: {getValue(exitDirection)}, size: {getValue(exitSize)}{`}`}{`}`}{`}`}</pre>
           </StyledDiv>
         </Animator>
       </div>

@@ -1,4 +1,4 @@
-Each one of this private `div`s has by default a class that sets `height` and `width` to `100%`.
+Each one of these private `div`s has by default a class that sets `height` and `width` to `100%`.
 
 ### What if I want to style that div ?
 
