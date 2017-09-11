@@ -22,7 +22,7 @@ import OrangeDiv from '../OrangeDiv';
 
 const ExampleClasses = ({show}) => {
   return (
-    <Animator height className={css.flexParent} childClassName={css.flexChild} show={show}>
+    <Animator height className={css.flexParent} childClassName={css.flexChild} show={show} sequence>
       <StyledDiv>My parent set me flex-grow: 1</StyledDiv>
       <OrangeDiv animatorChildClassName={css.flexChildGrow2}>I have <code>animatorChildClassName={`{`}css.flexChildGrow2{`}`}</code> so I am much bigger</OrangeDiv>
     </Animator>
