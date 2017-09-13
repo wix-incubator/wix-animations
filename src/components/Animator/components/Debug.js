@@ -1,14 +1,13 @@
 import * as React from 'react';
-import Dropdown from 'wix-style-react/dist/src/Dropdown';
 import {func, bool} from 'prop-types';
 
-const options = [
-  {id: 'enter', value: 'enter'},
-  {id: 'entering', value: 'entering'},
-  {id: 'entered', value: 'entered'},
-  {id: 'exit', value: 'exit'},
-  {id: 'exiting', value: 'exiting'}
-];
+// const options = [
+//   {id: 'enter', value: 'enter'},
+//   {id: 'entering', value: 'entering'},
+//   {id: 'entered', value: 'entered'},
+//   {id: 'exit', value: 'exit'},
+//   {id: 'exiting', value: 'exiting'}
+// ];
 
 const styles = {
   position: 'fixed',
@@ -46,12 +45,6 @@ class Debug extends React.Component {
       <div style={{...styles, [vertical]: vertical === 'bottom' ? '120px' : '20px', [horizontal]: '20px'}}>
         <div style={{marginBottom: '20px', fontWeight: 'bold'}}>
           Animator Debugger{hasChildren ? ' - Choose Debug Phase' : ''}</div>
-        {hasChildren && <Dropdown
-          placeholder="Click me to debug!"
-          selectedId={this.state.debug}
-          onSelect={option => this.onSelect(option)}
-          options={options}
-          />}
         {!hasChildren && <div style={{width: '350px', fontSize: '16px', marginTop: '15px', lineHeight: '24px', border: '1px solid white', padding: '15px'}}>There are no existing children inside your Animator Component. Make sure your children are mounted to get this debugger working.</div>}
         <div style={{fontSize: '14px', marginTop: '20px', opacity: 0.8}}>
           Box Position: &nbsp;
