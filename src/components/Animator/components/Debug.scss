@@ -1,0 +1,31 @@
+.buttons {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.button {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 18px 20px;
+  cursor: pointer;
+  &:not(:last-child) {
+    border-right: 1px solid #f27052;
+  }
+
+  &:hover, &.selected {
+    background: rgba(255, 255, 255, 1);
+  }
+}
+
+.positioning {
+  font-size: 14px;
+  margin-top: 20px;
+  a {
+    cursor: pointer;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

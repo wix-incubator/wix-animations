@@ -1,13 +1,21 @@
 import * as React from 'react';
-import {func, bool} from 'prop-types';
+import {func, bool, string} from 'prop-types';
+import css from './Debug.scss';
 
-// const options = [
-//   {id: 'enter', value: 'enter'},
-//   {id: 'entering', value: 'entering'},
-//   {id: 'entered', value: 'entered'},
-//   {id: 'exit', value: 'exit'},
-//   {id: 'exiting', value: 'exiting'}
-// ];
+const options = ['enter', 'entering', 'entered', 'exit', 'exiting'];
+
+const Buttons = ({onSelect, selected}) => (
+  <div className={css.buttons}>
+    {options.map((option, index) => (
+      <div className={`${css.button} ${selected === option && css.selected}`} key={index} onClick={() => onSelect(option)}>{option}</div>
+    ))}
+  </div>
+);
+
+Buttons.propTypes = {
+  onSelect: func,
+  selected: string
+};
 
 const styles = {
   position: 'fixed',
@@ -31,7 +39,7 @@ class Debug extends React.Component {
     };
   }
 
-  onSelect({id}) {
+  onSelect(id) {
     this.setState({debug: id});
     this.props.onSelect(id);
   }
@@ -44,11 +52,23 @@ class Debug extends React.Component {
     return (
       <div style={{...styles, [vertical]: vertical === 'bottom' ? '120px' : '20px', [horizontal]: '20px'}}>
         <div style={{marginBottom: '20px', fontWeight: 'bold'}}>
-          Animator Debugger{hasChildren ? ' - Choose Debug Phase' : ''}</div>
-        {!hasChildren && <div style={{width: '350px', fontSize: '16px', marginTop: '15px', lineHeight: '24px', border: '1px solid white', padding: '15px'}}>There are no existing children inside your Animator Component. Make sure your children are mounted to get this debugger working.</div>}
-        <div style={{fontSize: '14px', marginTop: '20px', opacity: 0.8}}>
+          Animator Debugger{hasChildren ? ' - Choose Debug Phase:' : ''}</div>
+        {hasChildren && <Buttons selected={this.state.debug} onSelect={id => this.onSelect(id)}/>}
+        {!hasChildren && <div
+          style={{
+            width: '350px',
+            fontSize: '16px',
+            marginTop: '15px',
+            lineHeight: '24px',
+            border: '1px solid white',
+            padding: '15px'
+          }}
+          >
+          There are no existing children inside your Animator Component. Make sure your children are mounted to getthis debugger working.</div>
+        }
+        <div className={css.positioning}>
           Box Position: &nbsp;
-          <span style={{cursor: 'pointer'}}>
+          <span>
             {vertical !== 'top' && <span>
               <a onClick={() => this.setState({vertical: 'top'})}>Set Top</a>,&nbsp;
             </span>}
