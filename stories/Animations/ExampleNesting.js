@@ -13,9 +13,7 @@ const DelayAndNestingExample = ({show}) => (
       <StyledDiv style={{background: '#65c888'}}>
         I am the container
         <Animator show={show} scale opacity delay={{enter: 300}}>
-          <StyledDiv>I am an inner child - Delay will only work inside a nested child if the parent/s have/has the
-            'show'
-            prop</StyledDiv>
+          <StyledDiv>I am an inner child - Delay will only work inside a nested child if the parent has the 'show' prop</StyledDiv>
         </Animator>
       </StyledDiv>
     </Animator>

@@ -11,7 +11,7 @@
 | sequence | string | false | default, flip, reverse, reverse-flip | Set a delay between appearance of children. See Sequence table for more details|
 | show | boolean | - | true, false | You can use this prop if you want to put inside the Animator static elements but still want to mount/unmount them with animation using this boolean |
 | className | string | false | - | The class will be added as a **direct parent class** for all the children it will have|
-| debug | string | false | enter, entering, exit, exiting | Emulates the real animation classes and styles without the need to animate. Just exit your element visible and add to debug different stages. enter: 'enter', entering: 'enter enter-active', exit: 'exit', exiting: 'exit exit-active' |
+| debug | boolean | false |true, false | Provides a tool to simulate animation phases |
 | dataHook | string | - | - | will convert to data-hook |
 | childClassName | string | false | - | It will assign a className to the direct children of the Animator component. It is designed for layout purposes |
 

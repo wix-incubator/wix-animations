@@ -1,4 +1,4 @@
-#### HTML:
+#### HTML
 
 ```html
 <div class="foo">

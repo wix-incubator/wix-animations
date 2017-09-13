@@ -14,7 +14,6 @@ const percentages = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 const timings = [micro, small, medium, large];
 const directions = [top, bottom, left, right];
 const sequences = ['default', 'flip', 'reverse', 'reverse-flip'];
-const debugModes = ['enter', 'entering', 'entered', 'exit', 'exiting'];
 
 const timingMap = {
   micro: 120,
@@ -65,6 +64,5 @@ export {
   directions,
   percentages,
   transitionClassNames,
-  timingMap,
-  debugModes
+  timingMap
 };

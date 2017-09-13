@@ -4,7 +4,6 @@ import initTranslateProp from './init-translate-prop';
 import {
   timings,
   sequences,
-  debugModes,
   propsDefault,
 } from '../constants/constants';
 
@@ -33,7 +32,6 @@ const propsMap = {
   height: height => !!height && height,
   width: width => !!width && width,
   translate: translate => translate && initTranslateProp(translate),
-  debug: (value, name) => getDataOrDefault(debugModes, value, name),
   delay: value => !!value && getDelay(value),
   childStyle: value => !!value && value,
   childClassName: value => !!value && value,

@@ -1,4 +1,4 @@
-#### JSX:
+#### JSX - Adding animatorChildClassName prop to your content:
 
 ```html
 const Bar = ({children}}) => (

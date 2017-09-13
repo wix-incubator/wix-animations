@@ -6,17 +6,15 @@ This happens because you have no way to understand what is going on in 100-300ms
 
 This is why you can add the `debug` prop to Animator. Using this prop you can mock the inline styles and classes of your animation for each animation phase.
 
-Valid values for `debug` prop are:
-
-`debug="enter" | debug="entering" | debug="entered" | debug="exit" | debug="exiting"`
-
-For Example, this will mock the 'entering' phase: 
-
 ```html
-<Animator debug="entering">
+<Animator opacity scale debug>
   <div> Your Content </div>
 </Animator>
 ```
+
+Adding `debug` prop will create a big orange dropdown at the top right corner of your screen. 
+
+In the dropdown inside that box you can mimic all 5 available stages of the animation: `enter`, `entering`, `entered`, `exit` & `exiting`.
 
 Please note the following:
 
