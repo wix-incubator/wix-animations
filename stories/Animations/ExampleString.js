@@ -1,9 +1,8 @@
 import React from 'react';
-import {Button} from 'wix-style-react/Backoffice';
 import Animator from '../../src/components/Animator';
 import * as css from './Example.scss';
 import AnimationTemplate from './AnimationTemplate';
-
+import PropTypes from 'prop-types';
 
 const ExampleString = ({show}) => {
   return (
@@ -12,11 +11,15 @@ const ExampleString = ({show}) => {
         I am a simple string
       </Animator>
     </div>
-  )
+  );
+};
+
+ExampleString.propTypes = {
+  show: PropTypes.bool
 };
 
 export default () =>
   <AnimationTemplate>
     <ExampleString/>
-  </AnimationTemplate>
+  </AnimationTemplate>;
 

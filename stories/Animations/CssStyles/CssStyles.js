@@ -24,24 +24,34 @@ const CssStyles = () => {
   return (
     <div>
       <H2>What Can Be Animated</H2>
-      <CodeExample title="Opacity"
-                   code={ExampleOpacityRaw}>
+      <CodeExample
+        title="Opacity"
+        code={ExampleOpacityRaw}
+        >
         <ExampleOpacity/>
       </CodeExample>
-      <CodeExample title="Scale"
-                   code={ExampleOpacityAndScaleRaw}>
+      <CodeExample
+        title="Scale"
+        code={ExampleOpacityAndScaleRaw}
+        >
         <ExampleOpacityAndScale/>
       </CodeExample>
-      <CodeExample title="Height"
-                   code={ExampleHeightRaw}>
+      <CodeExample
+        title="Height"
+        code={ExampleHeightRaw}
+        >
         <ExampleHeight/>
       </CodeExample>
-      <CodeExample title="Width"
-                   code={ExampleWidthRaw}>
+      <CodeExample
+        title="Width"
+        code={ExampleWidthRaw}
+        >
         <ExampleWidth/>
       </CodeExample>
-      <CodeExample title="Translate"
-                   code={ExampleTranslateRaw}>
+      <CodeExample
+        title="Translate"
+        code={ExampleTranslateRaw}
+        >
         <ExampleTranslate/>
       </CodeExample>
       <Markdown source={Readme}/>

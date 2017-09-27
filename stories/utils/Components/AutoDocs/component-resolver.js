@@ -1,4 +1,4 @@
-import { utils } from 'react-docgen';
+import {utils} from 'react-docgen';
 
 const {
   isExportsOrModuleAssignment,
@@ -44,7 +44,7 @@ const resolveHOC = (path, types) => {
   }
 
   return path;
-}
+};
 
 const resolveDefinition = (definition, types) => {
   if (isReactCreateClassCall(definition)) {
@@ -61,7 +61,7 @@ const resolveDefinition = (definition, types) => {
   }
 
   return null;
-}
+};
 
 export default (ast, recast) => {
   const types = recast.types.namedTypes;
@@ -73,7 +73,7 @@ export default (ast, recast) => {
         if (isComponentDefinition(definition, types)) {
           acc.push(definition);
         } else {
-          var resolved = resolveToValue(resolveHOC(definition, types));
+          const resolved = resolveToValue(resolveHOC(definition, types));
           if (isComponentDefinition(resolved, types)) {
             acc.push(resolved);
           }
@@ -93,7 +93,7 @@ export default (ast, recast) => {
 
     definition = resolveDefinition(definitions[0], types);
     return false;
-  }
+  };
 
   const ignore = () => false;
 
@@ -145,4 +145,4 @@ export default (ast, recast) => {
   });
 
   return definition;
-}
+};

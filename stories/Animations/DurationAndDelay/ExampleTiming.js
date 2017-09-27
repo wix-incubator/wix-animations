@@ -3,6 +3,7 @@ import Animator from '../../../src/components/Animator';
 import * as css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
+import PropTypes from 'prop-types';
 
 const OpacityExample = ({show}) => {
   return (
@@ -23,11 +24,15 @@ const OpacityExample = ({show}) => {
         <StyledDiv>micro: 120 ms</StyledDiv>
       </Animator>
     </div>
-  )
+  );
+};
+
+OpacityExample.propTypes = {
+  show: PropTypes.bool
 };
 
 export default () =>
   <AnimationTemplate>
     <OpacityExample/>
-  </AnimationTemplate>
+  </AnimationTemplate>;
 

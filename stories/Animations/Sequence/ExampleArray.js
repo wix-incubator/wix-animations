@@ -13,11 +13,11 @@ class ExampleMixedChildren extends React.Component {
     super(props);
     this.state = {
       items: [item1]
-    }
+    };
   }
 
   componentWillReceiveProps({show}) {
-    this.setState({items: show ? [item1] : [item2]})
+    this.setState({items: show ? [item1] : [item2]});
   }
 
   render() {
@@ -28,7 +28,7 @@ class ExampleMixedChildren extends React.Component {
           {items.map(item => <StyledDiv key={item.key} style={{background: item.color}}>{item.text}</StyledDiv>)}
         </Animator>
       </div>
-    )
+    );
   }
 }
 
@@ -36,5 +36,5 @@ class ExampleMixedChildren extends React.Component {
 export default () =>
   <AnimationTemplate>
     <ExampleMixedChildren/>
-  </AnimationTemplate>
+  </AnimationTemplate>;
 

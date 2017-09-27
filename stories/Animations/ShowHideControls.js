@@ -1,13 +1,13 @@
 import React from 'react';
-import Button from 'wix-style-react/dist/src/Button'
-import {node} from 'prop-types';
+import Button from 'wix-style-react/dist/src/Button';
+import PropTypes from 'prop-types';
 import {Container, Row, Col} from 'wix-style-react/dist/src/Grid';
 import css from './Example.scss';
 
 class ShowHideControls extends React.Component {
 
   toggle() {
-    this.setState({show: !this.state.show})
+    this.setState({show: !this.state.show});
   }
 
   onChange() {
@@ -61,7 +61,9 @@ class ShowHideControls extends React.Component {
 }
 
 ShowHideControls.propTypes = {
-  children: node
+  children: PropTypes.element.isRequired,
+  interval: PropTypes.number,
+  height: PropTypes.number
 };
 
 export default ShowHideControls;

@@ -8,8 +8,10 @@ import Markdown from '../../utils/Components/Markdown';
 const HowToDebug = () => (
   <div>
     <Markdown source={Debug}/>
-    <CodeExample title="Debug"
-                 code={ExampleDebugRaw}>
+    <CodeExample
+      title="Debug"
+      code={ExampleDebugRaw}
+      >
       <ExampleDebug/>
     </CodeExample>
   </div>

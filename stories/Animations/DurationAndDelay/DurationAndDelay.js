@@ -18,20 +18,28 @@ const DurationAndDelay = () => {
   return (
     <div>
       <H2>Duration and Delay</H2>
-      <CodeExample title="Timing"
-                   code={ExampleTimingRaw}>
+      <CodeExample
+        title="Timing"
+        code={ExampleTimingRaw}
+        >
         <ExampleTiming/>
       </CodeExample>
-      <CodeExample title="Enter Delay"
-                   code={ExampleDelayEnterRaw}>
+      <CodeExample
+        title="Enter Delay"
+        code={ExampleDelayEnterRaw}
+        >
         <ExampleDelayEnter/>
       </CodeExample>
-      <CodeExample title="Exit Delay"
-                   code={ExampleDelayExitRaw}>
+      <CodeExample
+        title="Exit Delay"
+        code={ExampleDelayExitRaw}
+        >
         <ExampleDelayExit/>
       </CodeExample>
-      <CodeExample title="Enter and Exit Delay"
-                   code={ExampleDelayRaw}>
+      <CodeExample
+        title="Enter and Exit Delay"
+        code={ExampleDelayRaw}
+        >
         <ExampleDelay/>
       </CodeExample>
     </div>);

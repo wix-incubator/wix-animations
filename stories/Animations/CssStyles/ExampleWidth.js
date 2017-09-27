@@ -2,6 +2,7 @@ import React from 'react';
 import Animator from '../../../src/components/Animator';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
+import PropTypes from 'prop-types';
 
 const WidthExample = ({show}) => {
   return (
@@ -28,11 +29,15 @@ const WidthExample = ({show}) => {
         </div>
       </div>
     </div>
-  )
+  );
+};
+
+WidthExample.propTypes = {
+  show: PropTypes.bool
 };
 
 export default () =>
   <AnimationTemplate>
     <WidthExample/>
-  </AnimationTemplate>
+  </AnimationTemplate>;
 

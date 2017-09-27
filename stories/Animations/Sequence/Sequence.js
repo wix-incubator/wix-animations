@@ -16,20 +16,28 @@ const Sequence = () => {
   return (
     <div>
       <H2>Multiple Children</H2>
-      <CodeExample title="Multiple Children"
-                   code={ExampleChildrenRaw}>
+      <CodeExample
+        title="Multiple Children"
+        code={ExampleChildrenRaw}
+        >
         <ExampleChildren/>
       </CodeExample>
-      <CodeExample title="Using the Sequence Prop"
-                   code={ExampleSequenceRaw}>
+      <CodeExample
+        title="Using the Sequence Prop"
+        code={ExampleSequenceRaw}
+        >
         <ExampleSequence/>
       </CodeExample>
-      <CodeExample title="Mount/Unmount of children simultaneously"
-                   code={ExampleMixedChildrenRaw}>
+      <CodeExample
+        title="Mount/Unmount of children simultaneously"
+        code={ExampleMixedChildrenRaw}
+        >
         <ExampleMixedChildren/>
       </CodeExample>
-      <CodeExample title="Array of children with .map() - don't forget the key prop!!! Otherwise it won't work..."
-                   code={ExampleArrayRaw}>
+      <CodeExample
+        title="Array of children with .map() - don't forget the key prop!!! Otherwise it won't work..."
+        code={ExampleArrayRaw}
+        >
         <ExampleArray/>
       </CodeExample>
     </div>);

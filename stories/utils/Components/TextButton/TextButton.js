@@ -14,17 +14,17 @@ export default class TextButton extends Component {
       isHover: false
     };
 
-    this.toggleHover = this.toggleHover.bind(this);
+    this.handleToggleHover = this.handleToggleHover.bind(this);
   }
 
-  toggleHover() {
+  handleToggleHover() {
     this.setState({
       isHover: !this.state.isHover
     });
   }
 
   render() {
-    const buttonColor = this.state.isHover? '#4EB7F5' : '#3899EC';
+    const buttonColor = this.state.isHover ? '#4EB7F5' : '#3899EC';
 
     const style = {
       color: buttonColor,
@@ -35,7 +35,7 @@ export default class TextButton extends Component {
     };
 
     return (
-      <button style={style} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.props.onClick}>{this.props.children}</button>
+      <button style={style} onMouseEnter={this.handleToggleHover} onMouseLeave={this.handleToggleHover} onClick={this.props.onClick}>{this.props.children}</button>
     );
   }
 }

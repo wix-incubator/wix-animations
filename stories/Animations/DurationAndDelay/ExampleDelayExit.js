@@ -1,8 +1,8 @@
 import React from 'react';
 import Animator from '../../../src/components/Animator';
-import * as css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
+import PropTypes from 'prop-types';
 
 const ExampleDelayExit = ({show}) => {
   return (
@@ -11,11 +11,15 @@ const ExampleDelayExit = ({show}) => {
         <StyledDiv>I will exit in a delay of 1000ms</StyledDiv>
       </Animator>
     </div>
-  )
+  );
+};
+
+ExampleDelayExit.propTypes = {
+  show: PropTypes.bool
 };
 
 export default () =>
   <AnimationTemplate>
     <ExampleDelayExit/>
-  </AnimationTemplate>
+  </AnimationTemplate>;
 

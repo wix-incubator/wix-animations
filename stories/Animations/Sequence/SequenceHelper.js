@@ -1,7 +1,8 @@
 import React from 'react';
 import * as css from '../Example.scss';
+import PropTypes from 'prop-types';
 
-const getFirstText = (type) => {
+const getFirstText = type => {
   let text = '';
   switch (type) {
     case 'default':
@@ -13,11 +14,13 @@ const getFirstText = (type) => {
     case 'reverse-flip':
       text = 'This will HIDE FIRST';
       break;
+    default:
+      break;
   }
   return text;
-}
+};
 
-const getLastText = (type) => {
+const getLastText = type => {
   let text = '';
   switch (type) {
     case 'flip':
@@ -29,11 +32,13 @@ const getLastText = (type) => {
     case 'reverse-flip':
       text = 'This will SHOW FIRST';
       break;
+    default:
+      break;
   }
   return text;
 };
 
-class TextHelper extends React.Component {
+export class TextHelper extends React.Component {
 
   render() {
 
@@ -50,8 +55,10 @@ class TextHelper extends React.Component {
           {getLastText(type)}
         </div>}
       </div>
-    )
+    );
   }
 }
 
-export {TextHelper}
+TextHelper.propTypes = {
+  type: PropTypes.string
+};

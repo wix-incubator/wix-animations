@@ -26,7 +26,7 @@ export default class CodeExample extends Component {
       isOpened: !!props.autoExpand
     };
 
-    this.toggleCode = this.toggleCode.bind(this);
+    this.handleToggleCode = this.handleToggleCode.bind(this);
   }
 
   toggleCode() {
@@ -41,10 +41,12 @@ export default class CodeExample extends Component {
         <div style={{display: 'flex'}}>
           <h2>{this.props.title}</h2>
           <div style={{margin: '22px 24px 0'}}>
-            <TextButton onClick={this.toggleCode}>
-              <span style={{fontSize: '16px',
-                position: 'relative',
-                top: '-4px'}}>({this.state.isOpened ? 'Hide' : 'Show'} code)</span>
+            <TextButton onClick={this.handleToggleCode}>
+              <span
+                style={{fontSize: '16px',
+                  position: 'relative',
+                  top: '-4px'}}
+                >({this.state.isOpened ? 'Hide' : 'Show'} code)</span>
             </TextButton>
           </div>
         </div>

@@ -4,6 +4,7 @@ import * as css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
 import OrangeDiv from '../OrangeDiv';
+import PropTypes from 'prop-types';
 
 class ExampleChildren extends React.Component {
 
@@ -17,13 +18,16 @@ class ExampleChildren extends React.Component {
           <StyledDiv>Three</StyledDiv>
         </Animator>
       </div>
-    )
+    );
   }
 }
 
+ExampleChildren.propTypes = {
+  show: PropTypes.bool
+};
 
 export default () =>
   <AnimationTemplate>
     <ExampleChildren/>
-  </AnimationTemplate>
+  </AnimationTemplate>;
 

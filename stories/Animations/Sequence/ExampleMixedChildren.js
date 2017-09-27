@@ -4,6 +4,7 @@ import * as css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
 import OrangeDiv from '../OrangeDiv';
+import PropTypes from 'prop-types';
 
 class ExampleMixedChildren extends React.Component {
 
@@ -16,13 +17,17 @@ class ExampleMixedChildren extends React.Component {
           {!show && <OrangeDiv>I am another DIV!</OrangeDiv>}
         </Animator>
       </div>
-    )
+    );
   }
 }
+
+ExampleMixedChildren.propTypes = {
+  show: PropTypes.bool
+};
 
 
 export default () =>
   <AnimationTemplate>
     <ExampleMixedChildren/>
-  </AnimationTemplate>
+  </AnimationTemplate>;
 

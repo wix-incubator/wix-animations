@@ -1,18 +1,22 @@
 import React from 'react';
-import {Button} from 'wix-style-react/Backoffice';
 import {Container, Row, Col} from '../../src/Grid';
 import ToggleSwitch from '../../src/ToggleSwitch';
 import Dropdown from '../../src/Dropdown';
 import Animator from '../../src/components/Animator';
 import * as css from './Example.scss';
+import PropTypes from 'prop-types';
 
-const createSizeArray = (size) => {
+const createSizeArray = size => {
   return new Array(size + 1).fill(0).map((element, id) => ({id: id * 10, value: id * 10}));
-}
+};
 
-const MockDiv = ({children, height = '40px', width = '100px'}) => {
+const MockDiv = ({children}) => {
   return (<div className={css.shukiInner} style={{overflow: 'hidden'}}>{children}</div>);
-}
+};
+
+MockDiv.propTypes = {
+  children: PropTypes.element.isRequired
+};
 
 class AnimatedExample extends React.Component {
 
@@ -58,7 +62,7 @@ class AnimatedExample extends React.Component {
       {id: 'flip', value: 'Flip'},
       {id: 'reverse', value: 'Reverse'},
       {id: 'reverse-flip', value: 'Reverse Flip'}
-    ]
+    ];
 
     this.debugOptions = [
       {id: 'none', value: 'None'},
@@ -66,7 +70,7 @@ class AnimatedExample extends React.Component {
       {id: 'entering', value: 'Entering Stage'},
       {id: 'exit', value: 'exit Stage'},
       {id: 'exiting', value: 'exiting Stage'},
-    ]
+    ];
 
   }
 
@@ -76,7 +80,7 @@ class AnimatedExample extends React.Component {
         <ToggleSwitch checked={this.state[option]} onChange={() => this.setState({[option]: !this.state[option]})}/>
         {option}
       </div>
-    )
+    );
   }
 
   getSequenceValue() {
@@ -88,7 +92,7 @@ class AnimatedExample extends React.Component {
 
   buildTranslateString() {
     const {translateSizeIn, translateSizeOut} = this.state;
-    let size = translateSizeIn === translateSizeOut ? `{size: ${translateSizeIn}}` : `{size: {in: ${translateSizeIn}, out: ${translateSizeOut}`;
+    const size = translateSizeIn === translateSizeOut ? `{size: ${translateSizeIn}}` : `{size: {in: ${translateSizeIn}, out: ${translateSizeOut}`;
 
     return ` translate={${size}, to: "${this.state.direction}"}}`;
   }
@@ -100,7 +104,7 @@ class AnimatedExample extends React.Component {
     return {
       to: direction,
       size: translateSizeIn === translateSizeOut ? translateSizeIn : {in: translateSizeIn, out: translateSizeOut}
-    }
+    };
   }
 
   render() {
@@ -139,13 +143,13 @@ class AnimatedExample extends React.Component {
                     selectedId={this.state.translateSizeIn}
                     onSelect={option => this.setState({translateSizeIn: option.id})}
                     options={this.sizeOptions}
-                  />
+                    />
                   Size Out
                   <Dropdown
                     selectedId={this.state.translateSizeOut}
                     onSelect={option => this.setState({translateSizeOut: option.id})}
                     options={this.sizeOptions}
-                  />
+                    />
                 </Col>
                 <Col span="6">
                   Direction To Show
@@ -153,7 +157,7 @@ class AnimatedExample extends React.Component {
                     selectedId={this.state.direction}
                     onSelect={option => this.setState({direction: option.id})}
                     options={this.directionOptions}
-                  />
+                    />
                 </Col>
               </Row>}
               <Row>
@@ -163,7 +167,7 @@ class AnimatedExample extends React.Component {
                   selectedId={this.state.sequenceOption}
                   onSelect={option => this.setState({sequenceOption: option.id})}
                   options={this.sequenceOptions}
-                />}
+                  />}
               </Row>
               <Row>
                 Timing
@@ -171,7 +175,7 @@ class AnimatedExample extends React.Component {
                   selectedId="large"
                   onSelect={option => this.setState({timing: option.id})}
                   options={this.options}
-                />
+                  />
               </Row>
               <Row>
                 Debug
@@ -179,7 +183,7 @@ class AnimatedExample extends React.Component {
                   selectedId="none"
                   onSelect={option => this.setState({debug: option.id})}
                   options={this.debugOptions}
-                />
+                  />
               </Row>
             </Col>
             <Col span="8">
@@ -193,22 +197,24 @@ class AnimatedExample extends React.Component {
                 {this.state.sequence ? ' sequence' : ''}{this.state.sequence && this.state.sequenceOption !== 'default' ? `="${this.state.sequenceOption}"` : ''}
                 {this.state.debug !== 'none' ? ` debug="${this.state.debug}"` : ''}
                 &gt;&lt;/Animator&gt;</pre>
-              <br />
-                <Animator opacity={this.state.opacity}
-                          className={css.shukiWrapper}
-                          scale={this.state.scale}
-                          height={this.state.height}
-                          width={this.state.width}
-                          debug={this.state.debug === 'none' ? false : this.state.debug}
-                          translate={this.state.translate ? this.buildTranslateObject() : false}
-                          sequence={this.getSequenceValue()}
-                          timing={this.state.timing === 'large' ? false : this.state.timing}>
-                  {this.state.show && <MockDiv animatorChildStyle={{flexGrow: 2}} animatorChildClassName={css.shukiChild}><div>Some Content in Here</div><div>Some Content in Here</div><div>Some Content in Here</div></MockDiv>}
-                  {this.state.show && <MockDiv animatorChildStyle={{flexGrow: 2}} animatorChildClassName={css.shukiChild}><div>Some Content in Here</div><div>Some Content in Here</div><div>Some Content in Here</div></MockDiv>}
-                  {this.state.show && <MockDiv animatorChildStyle={{flexGrow: 2}} animatorChildClassName={css.shukiChild}><div>Some Content in Here</div><div>Some Content in Here</div><div>Some Content in Here</div></MockDiv>}
-                  {this.state.show && <MockDiv animatorChildStyle={{flexGrow: 2}} animatorChildClassName={css.shukiChild}><div>Some Content in Here</div><div>Some Content in Here</div><div>Some Content in Here</div></MockDiv>}
-                  {this.state.show && <MockDiv animatorChildStyle={{flexGrow: 2}} animatorChildClassName={css.shukiChild}><div>Some Content in Here</div><div>Some Content in Here</div><div>Some Content in Here</div></MockDiv>}
-                </Animator>
+              <br/>
+              <Animator
+                opacity={this.state.opacity}
+                className={css.shukiWrapper}
+                scale={this.state.scale}
+                height={this.state.height}
+                width={this.state.width}
+                debug={this.state.debug === 'none' ? false : this.state.debug}
+                translate={this.state.translate ? this.buildTranslateObject() : false}
+                sequence={this.getSequenceValue()}
+                timing={this.state.timing === 'large' ? false : this.state.timing}
+                >
+                {this.state.show && <MockDiv animatorChildStyle={{flexGrow: 2}} animatorChildClassName={css.shukiChild}><div>Some Content in Here</div><div>Some Content in Here</div><div>Some Content in Here</div></MockDiv>}
+                {this.state.show && <MockDiv animatorChildStyle={{flexGrow: 2}} animatorChildClassName={css.shukiChild}><div>Some Content in Here</div><div>Some Content in Here</div><div>Some Content in Here</div></MockDiv>}
+                {this.state.show && <MockDiv animatorChildStyle={{flexGrow: 2}} animatorChildClassName={css.shukiChild}><div>Some Content in Here</div><div>Some Content in Here</div><div>Some Content in Here</div></MockDiv>}
+                {this.state.show && <MockDiv animatorChildStyle={{flexGrow: 2}} animatorChildClassName={css.shukiChild}><div>Some Content in Here</div><div>Some Content in Here</div><div>Some Content in Here</div></MockDiv>}
+                {this.state.show && <MockDiv animatorChildStyle={{flexGrow: 2}} animatorChildClassName={css.shukiChild}><div>Some Content in Here</div><div>Some Content in Here</div><div>Some Content in Here</div></MockDiv>}
+              </Animator>
             </Col>
           </Row>
           <Row>
@@ -224,4 +230,4 @@ class AnimatedExample extends React.Component {
 }
 
 export default () =>
-  <AnimatedExample/>
+  <AnimatedExample/>;

@@ -4,6 +4,7 @@ import Animator from '../../../src/components/Animator';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
 import OrangeDiv from '../OrangeDiv';
+import PropTypes from 'prop-types';
 
 //  This is how The CSS looks like
 //
@@ -26,11 +27,15 @@ const ExampleClasses = ({show}) => {
       <StyledDiv>My parent set me flex-grow: 1</StyledDiv>
       <OrangeDiv animatorChildClassName={css.flexChildGrow2}>I have <code>animatorChildClassName={`{`}css.flexChildGrow2{`}`}</code> so I am much bigger</OrangeDiv>
     </Animator>
-  )
+  );
+};
+
+ExampleClasses.propTypes = {
+  show: PropTypes.bool
 };
 
 export default () =>
   <AnimationTemplate>
     <ExampleClasses/>
-  </AnimationTemplate>
+  </AnimationTemplate>;
 

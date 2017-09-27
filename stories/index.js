@@ -1,8 +1,6 @@
 import React from 'react';
 
 import {storiesOf} from '@storybook/react';
-import {action} from '@storybook/addon-actions';
-import {linkTo} from '@storybook/addon-links';
 
 import Markdown from './utils/Components/Markdown';
 import CodeExample from './utils/Components/CodeExample';
@@ -21,22 +19,24 @@ import FullAPI from '../stories/Animations/FullAPI.md';
 import Readme from '../README.md';
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')}/>);
 
-storiesOf('Introduction', module).
-  add('Getting Started', () => (<Markdown source={Readme}/>));
+storiesOf('Introduction', module)
+  .add('Getting Started', () => (<Markdown source={Readme}/>));
 
 storiesOf('Animator', module)
   .add('Basic Animation', () => (<HowToUse/>))
-  .add('What can be animated', () => (<CssStyles />))
+  .add('What can be animated', () => (<CssStyles/>))
   .add('Multiple children', () => (<Sequence/>))
-  .add('Duration & Delay', () => (<DurationAndDelay />))
+  .add('Duration & Delay', () => (<DurationAndDelay/>))
   .add('Nesting', () => (
-    <CodeExample title="Nesting"
-                 code={ExampleNestingRaw}>
+    <CodeExample
+      title="Nesting"
+      code={ExampleNestingRaw}
+      >
       <ExampleNesting/>
     </CodeExample>
   ))
-  .add('Custom Classes & Styles', () => (<CustomClasses />))
-  .add('Debug', () => (<HowToDebug />))
+  .add('Custom Classes & Styles', () => (<CustomClasses/>))
+  .add('Debug', () => (<HowToDebug/>))
   .add('Full API', () => (
     <Markdown source={FullAPI}/>
   ));

@@ -6,6 +6,7 @@ import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
 import OrangeDiv from '../OrangeDiv';
 import {TextHelper} from './SequenceHelper';
+import PropTypes from 'prop-types';
 
 class ExampleSequence extends React.Component {
 
@@ -21,7 +22,7 @@ class ExampleSequence extends React.Component {
       {id: 'flip', value: 'flip'},
       {id: 'reverse', value: 'reverse'},
       {id: 'reverse-flip', value: 'reverse-flip'},
-    ]
+    ];
 
   }
 
@@ -37,7 +38,7 @@ class ExampleSequence extends React.Component {
             selectedId={type}
             onSelect={option => this.setState({sequenceType: option.id})}
             options={this.sequenceTypes}
-          />
+            />
         </div>
         <Animator show={show} sequence={this.state.sequenceType} height className={css.sequenceExampleWrapper}>
           <StyledDiv>We</StyledDiv>
@@ -46,15 +47,18 @@ class ExampleSequence extends React.Component {
           <OrangeDiv>in</OrangeDiv>
           <StyledDiv>sequence</StyledDiv>
         </Animator>
-        <TextHelper type={type} />
+        <TextHelper type={type}/>
       </div>
-    )
+    );
   }
 }
 
+ExampleSequence.propTypes = {
+  show: PropTypes.bool
+};
 
 export default () =>
   <AnimationTemplate>
     <ExampleSequence/>
-  </AnimationTemplate>
+  </AnimationTemplate>;
 

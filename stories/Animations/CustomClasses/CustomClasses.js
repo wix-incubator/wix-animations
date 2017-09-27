@@ -23,8 +23,10 @@ const CustomClasses = () => {
     <div className={css.markup}>
       <Container>
         <Markdown source={Part0}/>
-        <CodeExample title="An example for different flex-grow of Animator Children"
-                     code={ExampleClassesRaw}>
+        <CodeExample
+          title="An example for different flex-grow of Animator Children"
+          code={ExampleClassesRaw}
+          >
           <ExampleClasses/>
         </CodeExample>
         <Markdown source={Part1}/>

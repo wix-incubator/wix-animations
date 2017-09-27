@@ -1,8 +1,8 @@
 import React from 'react';
 import Animator from '../../../src/components/Animator';
-import * as css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
+import PropTypes from 'prop-types';
 
 const ExampleDelayEnter = ({show}) => {
   return (
@@ -11,11 +11,15 @@ const ExampleDelayEnter = ({show}) => {
         <StyledDiv>I will enter in a delay of 1000ms</StyledDiv>
       </Animator>
     </div>
-  )
+  );
+};
+
+ExampleDelayEnter.propTypes = {
+  show: PropTypes.bool
 };
 
 export default () =>
   <AnimationTemplate>
     <ExampleDelayEnter/>
-  </AnimationTemplate>
+  </AnimationTemplate>;
 
