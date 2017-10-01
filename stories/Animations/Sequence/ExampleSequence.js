@@ -40,7 +40,7 @@ class ExampleSequence extends React.Component {
             options={this.sequenceTypes}
             />
         </div>
-        <Animator show={show} sequence={this.state.sequenceType} height className={css.sequenceExampleWrapper}>
+        <Animator show={show} sequence={this.state.sequenceType === 'default' ? true : this.state.sequenceType} height className={css.sequenceExampleWrapper}>
           <StyledDiv>We</StyledDiv>
           <OrangeDiv>will</OrangeDiv>
           <StyledDiv>animate</StyledDiv>
