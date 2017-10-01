@@ -29,7 +29,7 @@ export default class CodeExample extends Component {
     this.handleToggleCode = this.handleToggleCode.bind(this);
   }
 
-  toggleCode() {
+  handleToggleCode() {
     this.setState({
       isOpened: !this.state.isOpened
     });
