@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {Component} from 'react';
 import {func, bool, string} from 'prop-types';
 import css from './Debug.scss';
 
@@ -27,7 +27,7 @@ const styles = {
   boxShadow: '0 0 10px grey'
 };
 
-class Debug extends React.Component {
+class Debug extends Component {
 
   constructor(props) {
     super(props);
