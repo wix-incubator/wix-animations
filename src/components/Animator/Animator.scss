@@ -216,6 +216,10 @@ $timing-translate: $timing-large;
   .translate {
     transform: translate(0, 0);
   }
+
+  .translate-use-same-transition {
+    transition-timing-function: $easeOutCubic;
+  }
 }
 
 // Animation classes
