@@ -95,6 +95,10 @@ class ClassBuilder {
     return this.getValue('translateWrapper', translate);
   }
 
+  withTranslateUseSameTransition(translate) {
+    return this.getValue('translateUseSameTransition', translate);
+  }
+
   build() {
     return flattenArray(this.names)
       .map(name => css[name])
