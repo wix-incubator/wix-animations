@@ -7,7 +7,7 @@ const StyledDiv = ({children, style}) => {
 };
 
 StyledDiv.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.any,
   style: PropTypes.object
 };
 

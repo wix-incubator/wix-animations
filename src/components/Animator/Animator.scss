@@ -217,6 +217,7 @@ $timing-translate: $timing-large;
     transform: translate(0, 0);
   }
 
+  // This overrides layer-3 exit transition-timing-function
   .translate-use-same-transition {
     transition-timing-function: $easeOutCubic;
   }

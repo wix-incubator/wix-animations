@@ -51,7 +51,6 @@ class AnimatorChildClasses {
     return new ClassBuilder()
       .withChildLayer(3)
       .withTranslate(translate)
-      .withTranslateUseSameTransition(translate)
       .build();
   }
 

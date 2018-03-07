@@ -23,7 +23,7 @@ const initTranslateProp = translate => {
   return {
     enter: fillSegment(translate.enter),
     exit: fillSegment(translate.exit),
-    useSameTransition: translate.useSameTransition
+    useSameTransition: !!translate.useSameTransition
   };
 
 };
