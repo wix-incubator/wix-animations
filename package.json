@@ -15,13 +15,13 @@
     "testkit"
   ],
   "scripts": {
-    "start": "yoshi start & npm run storybook",
-    "pretest": "yoshi lint && yoshi build",
-    "build": "yoshi lint && yoshi build && build-storybook",
-    "test": "yoshi test",
+    "start": "haste start & npm run storybook",
+    "pretest": "haste lint && haste build",
+    "build": "haste lint && haste build && build-storybook",
+    "test": "haste test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "release": "yoshi release && gh-pages-auto-release --dist=storybook-static"
+    "release": "haste release && gh-pages-auto-release --dist=storybook-static"
   },
   "peerDependencies": {
     "react": "^15.0.0",
@@ -51,7 +51,7 @@
     "require-reload": "^0.2.2",
     "velocity": "^0.7.2",
     "wix-style-react": "^1.1.2930",
-    "yoshi": "latest"
+    "haste-preset-yoshi": "latest"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -71,5 +71,8 @@
   },
   "eslintConfig": {
     "extends": "wix/react"
+  },
+  "haste": {
+    "preset": "yoshi"
   }
 }

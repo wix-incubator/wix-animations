@@ -11,6 +11,9 @@ import ExampleMixedChildrenRaw from '!raw-loader!./ExampleMixedChildren';
 
 import ExampleArray from './ExampleArray';
 import ExampleArrayRaw from '!raw-loader!./ExampleArray';
+
+import ExampleSameTransition from './ExampleSameTransition';
+import ExampleSameTransitionRaw from '!raw-loader!./ExampleSameTransition';
 import H2 from '../H2';
 const Sequence = () => {
   return (
@@ -39,6 +42,12 @@ const Sequence = () => {
         code={ExampleArrayRaw}
         >
         <ExampleArray/>
+      </CodeExample>
+      <CodeExample
+        title="Making 'translate' animation equal both on enter and on exit (smooth sync between 2 elements)"
+        code={ExampleSameTransitionRaw}
+        >
+        <ExampleSameTransition/>
       </CodeExample>
     </div>);
 };

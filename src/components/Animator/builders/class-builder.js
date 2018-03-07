@@ -11,6 +11,10 @@ const debugMap = {
   exiting: ['exit', 'exit-active']
 };
 
+const getTranslateClasses = translate => {
+  return translate.useSameTransition ? ['translate', 'translate-use-same-transition'] : 'translate';
+};
+
 const classMap = {
   child1: () => 'child-layer-1',
   child2: () => 'child-layer-2',
@@ -21,7 +25,7 @@ const classMap = {
   width: width => width && 'width',
   timing: timing => timing && `timing-${timing}`,
   sequence: sequence => sequence && 'child-sequence',
-  translate: translate => translate && 'translate',
+  translate: translate => translate && getTranslateClasses(translate),
   translateWrapper: translate => translate && 'translate-wrapper',
   className: className => className && className,
   debug: mode => mode && debugMap[mode]
