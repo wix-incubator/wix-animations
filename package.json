@@ -50,7 +50,7 @@
     "react-test-renderer": "^15.5.4",
     "require-reload": "^0.2.2",
     "velocity": "^0.7.2",
-    "wix-style-react": "^1.1.2930",
+    "wix-style-react": "^3.0.0",
     "haste-preset-yoshi": "latest"
   },
   "publishConfig": {
