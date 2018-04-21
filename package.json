@@ -15,17 +15,17 @@
     "testkit"
   ],
   "scripts": {
-    "start": "yoshi start & npm run storybook",
+    "start": "npm run storybook",
     "pretest": "yoshi lint && yoshi build",
     "build": "yoshi lint && yoshi build && build-storybook",
     "test": "yoshi test",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "release": "yoshi release && gh-pages-auto-release --dist=storybook-static"
   },
   "peerDependencies": {
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react": "^15.0.0-0 || ^16.0.0-0",
+    "react-dom": "^15.0.0-0 || ^16.0.0-0",
+    "react-transition-group": "^2.2.0"
   },
   "devDependencies": {
     "@storybook/react": "^3.1.7",
@@ -43,8 +43,10 @@
     "jsdom-global": "^2.1.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
+    "react": "^15.5.4",
     "react-addons-test-utils": "^15.3.2",
     "react-collapse": "^4.0.3",
+    "react-dom": "^15.5.4",
     "react-motion": "^0.5.0",
     "react-remarkable": "^1.1.1",
     "react-test-renderer": "^15.5.4",
@@ -55,12 +57,6 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  },
-  "dependencies": {
-    "babel-polyfill": "^6.9.1",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-transition-group": "^2.2.0"
   },
   "babel": {
     "presets": [
