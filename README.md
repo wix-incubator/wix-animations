@@ -9,7 +9,7 @@ This component will animate any child it has that will mount or unmount.
 The `Animator` component uses [react-transition-group](https://github.com/reactjs/react-transition-group) library. It is compliant with Wix UX style guidelines for animations. 
 
 ## Demo
-Watch the [Storybook Docs & Demos](https://wix.github.io/wix-animations) to see everything you can do with it.
+Watch the [Storybook Docs & Demos](https://wix-wix-animations.surge.sh) to see everything you can do with it.
 
 ## Getting Started
 ### Using in a Project
