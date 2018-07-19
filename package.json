@@ -20,8 +20,9 @@
     "build": "yoshi lint && yoshi build && build-storybook",
     "test": "yoshi test",
     "storybook": "start-storybook -p 6006",
-    "release": "yoshi release && teamcity-surge-autorelease --dist=storybook-static",
-    "pr-release": "teamcity-surge-autorelease --dist=storybook-static"
+    "release": "yoshi release",
+    "pr-postbuild": "npx teamcity-surge-autorelease@^1.0.0 --dist=storybook-static",
+    "postpublish": "npx teamcity-surge-autorelease@^1.0.0 --dist=storybook-static"
   },
   "peerDependencies": {
     "react": "^15.0.0-0 || ^16.0.0-0",
@@ -69,8 +70,5 @@
   },
   "dependencies": {
     "react-transition-group": "^2.3.1"
-  },
-  "optionalDependencies": {
-    "teamcity-surge-autorelease": "^1.0.9"
   }
 }
