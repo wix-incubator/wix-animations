@@ -16,13 +16,27 @@ const isNumber = prop => {
   return typeof prop === 'number';
 };
 
+const isFunction = prop => {
+  return typeof prop === 'function';
+};
+
+const executeFunction = (callback, node) => {
+  const response = callback(node);
+
+  if (!isNumber(response)) {
+    throw new Error('height/width function must return a number!');
+  }
+
+  return response;
+};
+
 const getDimensions = (node, {height, width}) => {
 
   const nodeDimensions = node ? getDimensionsByNode(node) : {height: 0, width: 0};
 
   return {
-    height: isNumber(height) ? height : nodeDimensions.height,
-    width: isNumber(width) ? width : nodeDimensions.width
+    height: isNumber(height) ? height : (isFunction(height) ? executeFunction(height, node) : nodeDimensions.height),
+    width: isNumber(width) ? width : (isFunction(width) ? executeFunction(width, node) : nodeDimensions.width)
   };
 };
 

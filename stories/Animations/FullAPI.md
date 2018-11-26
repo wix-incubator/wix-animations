@@ -6,8 +6,8 @@
 | opacity | boolean | false | - | Sets Opacity |
 | scale | boolean | false | - | Sets Scale |
 | translate | translate Object or boolean or string | false | -| Sets translate. examples: translate / translate="left" / or translate={translateObject} (see below) |
-| height | boolean or number | false | - | Sets the height. if set to 'true' then Animator will calculate the height on the go. if sets to a number Animator will set the height in pixels with this number. It is more recommended to set a fixed number if you know it|
-| width | boolean or number | false | - | Sets the width. if set to 'true' then Animator will calculate the width on the go. if sets to a number Animator will set the width in pixels with this number. It is more recommended to set a fixed number if you know it|
+| height | boolean / number / Function | false | - | Sets the height. if set to 'true' then Animator will calculate the height on the go. if sets to a number Animator will set the height in pixels with this number. if set as function it will provide the element as a param and it will expect a number in the response: `(element) => number`|
+| width | boolean / number / Function | false | - | Sets the width. if set to 'true' then Animator will calculate the width on the go. if sets to a number Animator will set the width in pixels with this number. if set as function it will provide the element as a param and it will expect a number in the response: `(element) => number`|
 | sequence | string | false | default, flip, reverse, reverse-flip | Set a delay between appearance of children. See Sequence table for more details|
 | show | boolean | - | true, false | You can use this prop if you want to put inside the Animator static elements but still want to mount/unmount them with animation using this boolean |
 | className | string | false | - | The class will be added as a **direct parent class** for all the children it will have|

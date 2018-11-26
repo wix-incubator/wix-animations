@@ -13,6 +13,7 @@ import CssStyles from './Animations/CssStyles/CssStyles';
 import Sequence from './Animations/Sequence/Sequence';
 import DurationAndDelay from './Animations/DurationAndDelay/DurationAndDelay';
 import CustomClasses from './Animations/CustomClasses/CustomClasses';
+import CustomHeightWidth from './Animations/CustomHeightWidth/CustomHeightWidth';
 import HowToDebug from './Animations/Debug/HowToDebug';
 
 import FullAPI from '../stories/Animations/FullAPI.md';
@@ -35,6 +36,7 @@ storiesOf('Animator', module)
       <ExampleNesting/>
     </CodeExample>
   ))
+  .add('Custom Height/Width', () => (<CustomHeightWidth/>))
   .add('Custom Classes & Styles', () => (<CustomClasses/>))
   .add('Debug', () => (<HowToDebug/>))
   .add('Full API', () => (

@@ -36,3 +36,5 @@ Storybook will allow you to see all the different components implemented, and th
     npm install
     npm start
 ```
+
+in your browser: `http://localhost:6006`
