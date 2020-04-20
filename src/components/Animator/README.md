@@ -30,7 +30,7 @@
 
 | propName | propType | defaultValue | Valid Values | description |
 |----------|----------|--------------|-------------|-----|
-| position | string | top | top, left, right, bottom | Sets the direction **TO** the translation |
+| direction | string | top | top, left, right, bottom | Sets the direction **TO** the translation |
 | size | string | 100% | - |  any value that translate can take: px, %, em and such. a number param will be converted to %  **DISAPPEAR** |
 
 
