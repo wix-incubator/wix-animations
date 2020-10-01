@@ -1,15 +1,14 @@
 import React from 'react';
 import Animator from '../../../src/components/Animator';
-import * as css from '../Example.scss';
+import css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
 import OrangeDiv from '../OrangeDiv';
 import PropTypes from 'prop-types';
 
 class ExampleMixedChildren extends React.Component {
-
   render() {
-    const {show} = this.props;
+    const { show } = this.props;
     return (
       <div className={css.sequenceType}>
         <Animator height>
@@ -22,12 +21,11 @@ class ExampleMixedChildren extends React.Component {
 }
 
 ExampleMixedChildren.propTypes = {
-  show: PropTypes.bool
+  show: PropTypes.bool,
 };
 
-
-export default () =>
+export default () => (
   <AnimationTemplate>
-    <ExampleMixedChildren/>
-  </AnimationTemplate>;
-
+    <ExampleMixedChildren />
+  </AnimationTemplate>
+);

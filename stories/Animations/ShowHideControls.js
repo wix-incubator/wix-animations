@@ -1,13 +1,12 @@
 import React from 'react';
-import Button from 'wix-style-react/dist/src/Button';
+import Button from '../utils/Components/Button';
 import PropTypes from 'prop-types';
-import {Container, Row, Col} from 'wix-style-react/dist/src/Grid';
+import { Container, Row, Col } from '../utils/Components/Grid';
 import css from './Example.scss';
 
 class ShowHideControls extends React.Component {
-
   toggle() {
-    this.setState({show: !this.state.show});
+    this.setState({ show: !this.state.show });
   }
 
   onChange() {
@@ -18,13 +17,11 @@ class ShowHideControls extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: true
+      show: true,
     };
-
   }
 
   componentDidMount() {
-
     if (!this.props.interval) {
       return;
     }
@@ -32,7 +29,7 @@ class ShowHideControls extends React.Component {
       this.toggle();
     }, 5000);
 
-    this.setState({intervalId});
+    this.setState({ intervalId });
   }
 
   componentWillUnmount() {
@@ -40,18 +37,27 @@ class ShowHideControls extends React.Component {
   }
 
   render() {
-    const {children, height} = this.props;
-    const styles = height ? {height} : {};
-    const {show} = this.state;
+    const { children, height } = this.props;
+    const styles = height ? { height } : {};
+    const { show } = this.state;
     return (
       <div className={css.showHideWrapper} style={styles}>
         <Container>
           <Row>
             <Col span="2">
-              <Button theme={show ? 'transparentblue' : 'fullblue'} onClick={() => this.onChange()}>{show ? 'Hide' : 'Show'} Animation</Button>
+              <Button
+                theme={show ? 'transparentblue' : 'fullblue'}
+                onClick={() => this.onChange()}
+              >
+                {show ? 'Hide' : 'Show'} Animation
+              </Button>
             </Col>
             <Col span="10">
-              {React.createElement(children.type, {...children.props, show: this.state.show}, children)}
+              {React.createElement(
+                children.type,
+                { ...children.props, show: this.state.show },
+                children
+              )}
             </Col>
           </Row>
         </Container>
@@ -63,7 +69,7 @@ class ShowHideControls extends React.Component {
 ShowHideControls.propTypes = {
   children: PropTypes.element.isRequired,
   interval: PropTypes.number,
-  height: PropTypes.number
+  height: PropTypes.number,
 };
 
 export default ShowHideControls;

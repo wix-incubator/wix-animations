@@ -1,35 +1,40 @@
 import React from 'react';
 import Animator from '../../../src/components/Animator';
 import AnimationTemplate from '../AnimationTemplate';
-import {Row, Col} from 'wix-style-react/dist/src/Grid';
+import { Row, Col } from '../../utils/Components/Grid';
 import StyledDiv from '../StyledDiv';
 import PropTypes from 'prop-types';
 
-const calculateHeight = element => {
+const calculateHeight = (element) => {
   return element.offsetHeight;
 };
 
 class HeightExample extends React.Component {
   render() {
-    const {show} = this.props;
+    const { show } = this.props;
     return (
       <Row>
         <Col span={6}>
           <Animator show={show} height={calculateHeight}>
             <StyledDiv> I have a height Function!</StyledDiv>
           </Animator>
-          <div>This text is here to show that the rest of the page responds nicely to the height change</div>
+          <div>
+            This text is here to show that the rest of the page responds nicely
+            to the height change
+          </div>
         </Col>
       </Row>
     );
+    return <div />;
   }
 }
 
 HeightExample.propTypes = {
-  show: PropTypes.bool
+  show: PropTypes.bool,
 };
 
-export default () =>
+export default () => (
   <AnimationTemplate>
-    <HeightExample/>
-  </AnimationTemplate>;
+    <HeightExample />
+  </AnimationTemplate>
+);

@@ -1,8 +1,8 @@
 import React from 'react';
-import * as css from '../Example.scss';
+import css from '../Example.scss';
 import PropTypes from 'prop-types';
 
-const getFirstText = type => {
+const getFirstText = (type) => {
   let text = '';
   switch (type) {
     case 'default':
@@ -20,7 +20,7 @@ const getFirstText = type => {
   return text;
 };
 
-const getLastText = type => {
+const getLastText = (type) => {
   let text = '';
   switch (type) {
     case 'flip':
@@ -39,26 +39,35 @@ const getLastText = type => {
 };
 
 export class TextHelper extends React.Component {
-
   render() {
-
-    const {type} = this.props;
+    const { type } = this.props;
 
     return (
-      <div style={{position: 'relative'}}>
-        {getFirstText(type) && <div style={{position: 'absolute', left: '-410px', top: '150px'}}>
-          <div className={css.arrowTop}>&uarr;</div>
-          {getFirstText(type)}
-        </div>}
-        {getLastText(type) && <div style={{position: 'absolute', left: '0px', top: '150px', width: '250px'}}>
-          <div className={css.arrowTop}>&uarr;</div>
-          {getLastText(type)}
-        </div>}
+      <div style={{ position: 'relative' }}>
+        {getFirstText(type) && (
+          <div style={{ position: 'absolute', left: '-410px', top: '150px' }}>
+            <div className={css.arrowTop}>&uarr;</div>
+            {getFirstText(type)}
+          </div>
+        )}
+        {getLastText(type) && (
+          <div
+            style={{
+              position: 'absolute',
+              left: '0px',
+              top: '150px',
+              width: '250px',
+            }}
+          >
+            <div className={css.arrowTop}>&uarr;</div>
+            {getLastText(type)}
+          </div>
+        )}
       </div>
     );
   }
 }
 
 TextHelper.propTypes = {
-  type: PropTypes.string
+  type: PropTypes.string,
 };

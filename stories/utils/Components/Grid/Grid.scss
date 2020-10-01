@@ -1,0 +1,100 @@
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/mixins/_clearfix.scss';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid-framework.scss';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/mixins/_grid.scss';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/mixins/_responsive-visibility.scss';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_grid.scss';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_responsive-utilities.scss';
+
+@import './GridConstants.scss';
+
+.pageStretchContentVertically {
+  min-height: inherit;
+}
+
+$grid-row-margin-bottom: 30px;
+
+.rawContainer,
+.wixContainer {
+  padding: 0;
+  width: 100%;
+
+  .row:not(:last-child) {
+    margin-bottom: $grid-row-margin-bottom;
+  }
+}
+
+.rawContainer,
+.wixContainer {
+  min-width: $main-container-min-width;
+  max-width: $main-container-max-width;
+}
+
+.rawContainer {
+  .row:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.rawContainer,
+.wixContainer {
+  &.stretchVertically {
+    @extend .pageStretchContentVertically;
+  }
+}
+
+.row,
+.col {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.fluidContainer {
+  min-width: initial;
+  max-width: initial;
+}
+
+.wixContainer {
+  > div > span:last-child .row:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.stretch_vertically_row {
+  display: flex;
+  min-height: inherit;
+}
+
+.stretch_vertically_row > .legalCol {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin rtl-float-grid-columns($class) {
+  $list: '';
+
+  @for $i from (1) through $grid-columns {
+    $list: '#{$list}:global(.rtl) .col-#{$class}-#{$i}, .rtl.col-#{$class}-#{$i}, .rtl .col-#{$class}-#{$i}, ';
+  }
+
+  #{$list} {
+    float: right;
+  }
+}
+
+@include rtl-float-grid-columns(xs);
+
+@media (min-width: $screen-sm-min) {
+  @include rtl-float-grid-columns(sm);
+}
+
+@media (min-width: $screen-md-min) {
+  @include rtl-float-grid-columns(md);
+}
+
+@media (min-width: $screen-lg-min) {
+  @include rtl-float-grid-columns(lg);
+}

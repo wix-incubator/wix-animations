@@ -1,10 +1,10 @@
 import React from 'react';
 import Animator from '../../src/components/Animator';
-import * as css from './Example.scss';
+import css from './Example.scss';
 import AnimationTemplate from './AnimationTemplate';
 import PropTypes from 'prop-types';
 
-const ExampleString = ({show}) => {
+const ExampleString = ({ show }) => {
   return (
     <div className={css.basicWrapper}>
       <Animator show={show} opacity scale>
@@ -15,11 +15,11 @@ const ExampleString = ({show}) => {
 };
 
 ExampleString.propTypes = {
-  show: PropTypes.bool
+  show: PropTypes.bool,
 };
 
-export default () =>
+export default () => (
   <AnimationTemplate>
-    <ExampleString/>
-  </AnimationTemplate>;
-
+    <ExampleString />
+  </AnimationTemplate>
+);

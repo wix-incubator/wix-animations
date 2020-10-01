@@ -1,0 +1,14 @@
+@import '../../../typography-helpers.scss';
+.root {
+  @include TextSizeAndFontFamily($size: medium, $weight: normal);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 12px;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid #c1e4fe;
+  color: #162d3d;
+  height: 36px;
+  line-height: 34px;
+  outline: 0;
+}

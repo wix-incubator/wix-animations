@@ -2,35 +2,36 @@ import React from 'react';
 import CodeExample from '../../utils/Components/CodeExample';
 
 import ExampleByInProp from './ExampleByInProp';
-import ExampleByInPropRaw from '!raw-loader!./ExampleByInProp';
+import ExampleByInPropRaw from '!!raw-loader!./ExampleByInProp';
 
 import ExampleByMounting from './ExampleByMounting';
-import ExampleByMountingRaw from '!raw-loader!./ExampleByMounting';
+import ExampleByMountingRaw from '!!raw-loader!./ExampleByMounting';
 
 import Markdown from '../../utils/Components/Markdown';
 
 import Readme from './HowToUse.md';
 import H2 from '../H2';
 
-const HowToUse = () => {
+export const HowToUse = () => {
+  console.log(`ExampleByInPropRaw: `, ExampleByInPropRaw);
   return (
     <div>
       <H2>Getting Started</H2>
       <CodeExample
         title="Use the 'show' prop to show/hide animations"
         code={ExampleByInPropRaw}
-        >
-        <ExampleByInProp/>
+      >
+        <ExampleByInProp />
       </CodeExample>
       <CodeExample
         title="You can just mount/unmount content inside Animator without using 'show' prop"
         code={ExampleByMountingRaw}
-        >
-        <ExampleByMounting/>
+      >
+        <ExampleByMounting />
       </CodeExample>
-      <Markdown source={Readme}/>
-    </div>);
+      <Markdown source={Readme} />
+    </div>
+  );
 };
 
-export default HowToUse;
-
+HowToUse.storyName = 'Basic Animation';

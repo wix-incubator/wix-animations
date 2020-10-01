@@ -15,42 +15,37 @@ import ExampleArrayRaw from '!raw-loader!./ExampleArray';
 import ExampleSameTransition from './ExampleSameTransition';
 import ExampleSameTransitionRaw from '!raw-loader!./ExampleSameTransition';
 import H2 from '../H2';
-const Sequence = () => {
+
+export const Sequence = () => {
   return (
     <div>
       <H2>Multiple Children</H2>
-      <CodeExample
-        title="Multiple Children"
-        code={ExampleChildrenRaw}
-        >
-        <ExampleChildren/>
+      <CodeExample title="Multiple Children" code={ExampleChildrenRaw}>
+        <ExampleChildren />
       </CodeExample>
-      <CodeExample
-        title="Using the Sequence Prop"
-        code={ExampleSequenceRaw}
-        >
-        <ExampleSequence/>
+      <CodeExample title="Using the Sequence Prop" code={ExampleSequenceRaw}>
+        <ExampleSequence />
       </CodeExample>
       <CodeExample
         title="Mount/Unmount of children simultaneously"
         code={ExampleMixedChildrenRaw}
-        >
-        <ExampleMixedChildren/>
+      >
+        <ExampleMixedChildren />
       </CodeExample>
       <CodeExample
         title="Array of children with .map() - don't forget the key prop!!! Otherwise it won't work..."
         code={ExampleArrayRaw}
-        >
-        <ExampleArray/>
+      >
+        <ExampleArray />
       </CodeExample>
       <CodeExample
         title="Making 'translate' animation equal both on enter and on exit (smooth sync between 2 elements)"
         code={ExampleSameTransitionRaw}
-        >
-        <ExampleSameTransition/>
+      >
+        <ExampleSameTransition />
       </CodeExample>
-    </div>);
+    </div>
+  );
 };
 
-export default Sequence;
-
+Sequence.storyName = 'Multiple children';
