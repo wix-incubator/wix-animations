@@ -57,7 +57,8 @@
     "style-loader": "^1.2.1",
     "ts-jest": "^24.0.2",
     "typescript": "~3.9.0",
-    "yoshi-flow-library": "^4.0.0"
+    "yoshi-flow-library": "^4.0.0",
+    "yoshi-style-dependencies": "^4.174.0"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
