@@ -17,13 +17,14 @@
     "versionBumpStrategy": "minor"
   },
   "scripts": {
-    "build": "yoshi-library build",
+    "build": "yoshi-library build && build-storybook",
     "start": "npm run storybook",
     "test": "yoshi-library test",
     "storybook": "start-storybook -p 6006",
     "lint": "yoshi-library lint",
     "posttest": "npm run lint",
-    "example": "npm start --prefix example"
+    "pr-postbuild": "npx teamcity-surge-autorelease@^1.0.0 --dist=storybook-static",
+    "postpublish": "npx teamcity-surge-autorelease@^1.0.0 --dist=storybook-static"
   },
   "husky": {
     "hooks": {
@@ -34,44 +35,45 @@
     "*.{js,ts}": "npm run lint"
   },
   "devDependencies": {
+    "@storybook/preset-scss": "^1.0.2",
     "@storybook/react": "^6.0.22",
     "@types/jest": "^24.0.0",
     "@types/node": "^8.0.0",
     "@types/react": "16.8.4",
     "@types/react-dom": "^16.9.8",
     "@types/react-transition-group": "^4.4.0",
-    "anysort": "^2.0.0",
     "bootstrap-sass": "^3.4.1",
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
+    "css-loader": "^3.5.3",
     "github-markdown-css": "^4.0.0",
     "highlight.js": "^10.2.0",
     "husky": "^4.2.1",
-    "jest-yoshi-preset": "^4.48.0",
     "lint-staged": "^10.0.7",
+    "node-sass": "^4.14.1",
     "react-collapse": "^5.0.1",
     "react-remarkable": "^1.1.3",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
     "ts-jest": "^24.0.2",
     "typescript": "~3.9.0",
-    "yoshi-flow-library": "^4.0.0",
-    "yoshi-style-dependencies": "^4.174.0"
+    "yoshi-flow-library": "^4.0.0"
   },
   "dependencies": {
-    "@storybook/preset-scss": "^1.0.2",
     "prop-types": "^15.7.2",
     "react": "~16.8.3",
     "react-dom": "~16.8.3",
     "react-transition-group": "^4.4.1"
   },
-  "jest": {
-    "preset": "jest-yoshi-preset"
-  },
   "yoshiFlowLibrary": {
     "bundle": {
-      "library": "counter"
+      "library": "wix-animations"
     }
   },
   "eslintConfig": {
-    "extends": "yoshi"
+    "extends": "yoshi",
+    "rules": {
+      "import/no-unresolved": 0
+    }
   }
 }

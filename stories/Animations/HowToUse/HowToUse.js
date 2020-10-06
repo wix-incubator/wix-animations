@@ -2,10 +2,10 @@ import React from 'react';
 import CodeExample from '../../utils/Components/CodeExample';
 
 import ExampleByInProp from './ExampleByInProp';
-import ExampleByInPropRaw from '!!raw-loader!./ExampleByInProp';
+import ExampleByInPropRaw from '!raw-loader!./ExampleByInProp';
 
 import ExampleByMounting from './ExampleByMounting';
-import ExampleByMountingRaw from '!!raw-loader!./ExampleByMounting';
+import ExampleByMountingRaw from '!raw-loader!./ExampleByMounting';
 
 import Markdown from '../../utils/Components/Markdown';
 
@@ -13,7 +13,6 @@ import Readme from './HowToUse.md';
 import H2 from '../H2';
 
 export const HowToUse = () => {
-  console.log(`ExampleByInPropRaw: `, ExampleByInPropRaw);
   return (
     <div>
       <H2>Getting Started</H2>

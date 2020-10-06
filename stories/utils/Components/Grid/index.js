@@ -116,7 +116,6 @@ class Col extends Component {
   isLegalCol(numStr) {
     if (numStr && !this.isVisibleHidden(numStr)) {
       const num = Number(numStr);
-      console.log('num: ', num);
       return Number.isInteger(num) && num > 0 && num <= 12;
     }
     return false;
@@ -153,8 +152,6 @@ class Col extends Component {
       ...colClesses,
       [styles.legalCol]: Object.values(colClesses).includes(true),
     });
-
-    console.log(span);
 
     return (
       <div className={columnClasses} data-hook={dataHook} children={children} />

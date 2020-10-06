@@ -26,7 +26,6 @@ const Dropdown = ({
   const handleOnChange =
     onSelect &&
     (({ target: { value: id } }) => {
-      console.log(id, idToOptionMap);
       const selectedOption = idToOptionMap[id];
       onSelect(selectedOption);
     });
