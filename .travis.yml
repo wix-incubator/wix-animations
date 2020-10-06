@@ -16,6 +16,7 @@ before_install:
   - sudo dpkg -i google-chrome*.deb
 
 script: >
+  npm run typescript &&
   npm run build &&
   npm run test
 notifications:
