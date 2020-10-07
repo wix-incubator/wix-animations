@@ -29,7 +29,6 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^4.1.18",
-    "@storybook/addon-links": "^6.0.26",
     "@storybook/react": "^4.1.18",
     "chai": "^3.5.0",
     "copy-to-clipboard": "^3.0.8",
