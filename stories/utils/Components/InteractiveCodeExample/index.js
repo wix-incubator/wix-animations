@@ -1,1 +1,1 @@
-export {default} from './InteractiveCodeExample';
+export { default } from './InteractiveCodeExample';

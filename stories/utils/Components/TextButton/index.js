@@ -1,1 +1,1 @@
-export {default} from './TextButton';
+export { default } from './TextButton';

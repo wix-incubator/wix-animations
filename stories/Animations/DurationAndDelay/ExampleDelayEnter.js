@@ -4,10 +4,10 @@ import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
 import PropTypes from 'prop-types';
 
-const ExampleDelayEnter = ({show}) => {
+const ExampleDelayEnter = ({ show }) => {
   return (
     <div>
-      <Animator show={show} delay={{enter: 1000}} height>
+      <Animator show={show} delay={{ enter: 1000 }} height>
         <StyledDiv>I will enter in a delay of 1000ms</StyledDiv>
       </Animator>
     </div>
@@ -15,11 +15,11 @@ const ExampleDelayEnter = ({show}) => {
 };
 
 ExampleDelayEnter.propTypes = {
-  show: PropTypes.bool
+  show: PropTypes.bool,
 };
 
-export default () =>
+export default () => (
   <AnimationTemplate>
-    <ExampleDelayEnter/>
-  </AnimationTemplate>;
-
+    <ExampleDelayEnter />
+  </AnimationTemplate>
+);

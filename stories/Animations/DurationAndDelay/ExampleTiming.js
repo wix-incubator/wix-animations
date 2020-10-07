@@ -5,7 +5,7 @@ import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
 import PropTypes from 'prop-types';
 
-const OpacityExample = ({show}) => {
+const OpacityExample = ({ show }) => {
   return (
     <div className={css.basicWrapper}>
       <Animator show={show} opacity scale>
@@ -28,11 +28,11 @@ const OpacityExample = ({show}) => {
 };
 
 OpacityExample.propTypes = {
-  show: PropTypes.bool
+  show: PropTypes.bool,
 };
 
-export default () =>
+export default () => (
   <AnimationTemplate>
-    <OpacityExample/>
-  </AnimationTemplate>;
-
+    <OpacityExample />
+  </AnimationTemplate>
+);
