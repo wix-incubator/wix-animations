@@ -1,38 +1,48 @@
 import React from 'react';
 import Animator from '../../../src/components/Animator';
 import AnimationTemplate from '../AnimationTemplate';
-import {Row, Col} from 'wix-style-react/dist/src/Grid';
+import { Row, Col } from 'wix-style-react/dist/src/Grid';
 import StyledDiv from '../StyledDiv';
 import PropTypes from 'prop-types';
 
-const HeightExample = ({show}) => {
+const HeightExample = ({ show }) => {
   return (
     <Row>
       <Col span={6}>
         <Animator show={show} height>
           <StyledDiv>
-            I have height={'{'}true{'}'} so animator guess the right height for me. use me <b>only</b> if you {`don't`} know the height
+            I have height={'{'}true{'}'} so animator guess the right height for
+            me. use me <b>only</b> if you {`don't`} know the height
           </StyledDiv>
         </Animator>
-        <div>This text is here to show that the rest of the page responds nicely to the height change</div>
+        <div>
+          This text is here to show that the rest of the page responds nicely to
+          the height change
+        </div>
       </Col>
       <Col span={6}>
         <Animator show={show} height={180}>
-          <StyledDiv style={{height: '180px'}}>
-            I have a fixed height of {`'180px'`} in my CSS so I put on Animator the prop <code>height={`{180}`}</code> so animator animates to that specific height. This method is much more stable than the other!!
+          <StyledDiv style={{ height: '180px' }}>
+            I have a fixed height of {`'180px'`} in my CSS so I put on Animator
+            the prop <code>height={`{180}`}</code> so animator animates to that
+            specific height. This method is much more stable than the other!!
           </StyledDiv>
         </Animator>
-        <div>This text is here to show that the rest of the page responds nicely to the height change</div>
+        <div>
+          This text is here to show that the rest of the page responds nicely to
+          the height change
+        </div>
       </Col>
     </Row>
   );
 };
 
 HeightExample.propTypes = {
-  show: PropTypes.bool
+  show: PropTypes.bool,
 };
 
-export default () =>
+export default () => (
   <AnimationTemplate>
-    <HeightExample/>
-  </AnimationTemplate>;
+    <HeightExample />
+  </AnimationTemplate>
+);

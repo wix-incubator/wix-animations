@@ -19,18 +19,18 @@ const HowToUse = () => {
       <CodeExample
         title="Use the 'show' prop to show/hide animations"
         code={ExampleByInPropRaw}
-        >
-        <ExampleByInProp/>
+      >
+        <ExampleByInProp />
       </CodeExample>
       <CodeExample
         title="You can just mount/unmount content inside Animator without using 'show' prop"
         code={ExampleByMountingRaw}
-        >
-        <ExampleByMounting/>
+      >
+        <ExampleByMounting />
       </CodeExample>
-      <Markdown source={Readme}/>
-    </div>);
+      <Markdown source={Readme} />
+    </div>
+  );
 };
 
 export default HowToUse;
-
