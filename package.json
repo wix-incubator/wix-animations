@@ -18,7 +18,6 @@
     "start": "npm run storybook",
     "pretest": "yoshi lint && yoshi build",
     "build": "yoshi lint && yoshi build && build-storybook",
-    "test": "yoshi test --passWithNoTests",
     "storybook": "start-storybook -p 6006",
     "release": "yoshi release",
     "pr-postbuild": "npx teamcity-surge-autorelease@^1.0.0 --dist=storybook-static",
