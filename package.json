@@ -71,11 +71,5 @@
     "bundle": {
       "library": "wix-animations"
     }
-  },
-  "eslintConfig": {
-    "extends": "yoshi",
-    "rules": {
-      "import/no-unresolved": 0
-    }
   }
 }
