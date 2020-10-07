@@ -1,12 +1,13 @@
-import React, { cloneElement, Component, Children } from 'react';
+import React, {cloneElement, Component, Children} from 'react';
 import PropTypes from 'prop-types';
 
 import CodeExample from '../CodeExample';
 
 export default class InteractiveCodeExample extends Component {
+
   static propTypes = {
     children: PropTypes.node,
-    title: PropTypes.string,
+    title: PropTypes.string
   };
 
   constructor(props) {
@@ -21,13 +22,13 @@ export default class InteractiveCodeExample extends Component {
 
   onCodeChange(code) {
     if (code !== this.state.code) {
-      this.setState({ code });
+      this.setState({code});
     }
   }
 
   render() {
-    const childrenWithOnChange = Children.map(this.props.children, (child) =>
-      cloneElement(child, { onChange: this.onCodeChange }),
+    const childrenWithOnChange = Children.map(this.props.children,
+      child => cloneElement(child, {onChange: this.onCodeChange})
     );
 
     return (
@@ -36,9 +37,10 @@ export default class InteractiveCodeExample extends Component {
         code={this.state.code}
         codeType="django"
         autoExpand
-      >
+        >
         {childrenWithOnChange}
       </CodeExample>
     );
   }
+
 }

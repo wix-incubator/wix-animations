@@ -4,7 +4,7 @@ import ShowHideControls from '../ShowHideControls';
 import StyledDiv from '../StyledDiv';
 import PropTypes from 'prop-types';
 
-const OpacityScale = ({ show }) => {
+const OpacityScale = ({show}) => {
   return (
     <Animator show={show} scale opacity>
       <StyledDiv>I will scale and fade</StyledDiv>
@@ -13,11 +13,12 @@ const OpacityScale = ({ show }) => {
 };
 
 OpacityScale.propTypes = {
-  show: PropTypes.bool,
+  show: PropTypes.bool
 };
 
-export default () => (
+
+export default () =>
   <ShowHideControls height="80px">
-    <OpacityScale />
-  </ShowHideControls>
-);
+    <OpacityScale/>
+  </ShowHideControls>;
+
