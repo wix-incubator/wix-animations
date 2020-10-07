@@ -1,12 +1,13 @@
 import React from 'react';
-import { node, number, object } from 'prop-types';
+import {node, number, object} from 'prop-types';
 import CSSTransition from 'react-transition-group/CSSTransition';
-import { transitionClassNames } from '../constants/constants';
-import { Time } from '../class/time-class';
+import {transitionClassNames} from '../constants/constants';
+import {Time} from '../class/time-class';
 import Child from './AnimatorChild';
 import shouldFlipAnimation from '../helpers/should-flip-animation';
 
 class CSSTransitionWrapper extends React.Component {
+
   transitionDefault;
 
   constructor(props) {
@@ -16,17 +17,17 @@ class CSSTransitionWrapper extends React.Component {
       enter: false,
       entering: false,
       exit: false,
-      exiting: false,
+      exiting: false
     };
 
     this.state = {
       sequenceIndex: 0,
-      transition: this.transitionDefault,
+      transition: this.transitionDefault
     };
   }
 
   componentWillReceiveProps(props) {
-    const { debug } = props.animatorProps;
+    const {debug} = props.animatorProps;
     if (debug) {
       this.setDebug(debug);
     }
@@ -50,16 +51,16 @@ class CSSTransitionWrapper extends React.Component {
     let update;
     switch (phase) {
       case 'enter':
-        update = { enter: true };
+        update = {enter: true};
         break;
       case 'entering':
-        update = { enter: true, entering: true };
+        update = {enter: true, entering: true};
         break;
       case 'exit':
-        update = { exit: true };
+        update = {exit: true};
         break;
       case 'exiting':
-        update = { exit: true, exiting: true };
+        update = {exit: true, exiting: true};
         break;
       default:
         update = {};
@@ -67,7 +68,7 @@ class CSSTransitionWrapper extends React.Component {
     }
 
     this.setState({
-      transition: Object.assign({}, this.transitionDefault, update),
+      transition: Object.assign({}, this.transitionDefault, update)
     });
   }
 
@@ -94,10 +95,8 @@ class CSSTransitionWrapper extends React.Component {
   }
 
   getTransitionProps() {
-    const duration = new Time(
-      this.props.animatorProps,
-      this.state.transition,
-    ).getTotalDuration();
+
+    const duration = new Time(this.props.animatorProps, this.state.transition).getTotalDuration();
 
     const showByProp = {};
     if (this.props.animatorProps.show !== undefined) {
@@ -112,26 +111,24 @@ class CSSTransitionWrapper extends React.Component {
       classNames: transitionClassNames,
       mountOnEnter: true,
       unmountOnExit: true,
-      ...showByProp,
+      ...showByProp
     };
   }
 
   setSequenceIndex() {
-    const { children, sequence } = this.props.animatorProps;
+    const {children, sequence} = this.props.animatorProps;
     if (sequence) {
       const index = this.props.index + 1;
       const reverseIndex = children.length - this.props.index;
       this.setState({
-        sequenceIndex: shouldFlipAnimation(sequence, this.state.transition)
-          ? reverseIndex
-          : index,
+        sequenceIndex: shouldFlipAnimation(sequence, this.state.transition) ? reverseIndex : index
       });
     }
   }
 
   render() {
-    const { children, animatorProps } = this.props;
-    const { sequenceIndex } = this.state;
+    const {children, animatorProps} = this.props;
+    const {sequenceIndex} = this.state;
     return (
       <CSSTransition
         {...this.props}
@@ -141,12 +138,12 @@ class CSSTransitionWrapper extends React.Component {
         onEntered={() => this.onEntered()}
         onExit={() => this.onExit()}
         onExiting={() => this.onExiting()}
-      >
+        >
         <Child
           transition={this.state.transition}
           sequenceIndex={sequenceIndex}
           animatorProps={animatorProps}
-        >
+          >
           {children}
         </Child>
       </CSSTransition>
@@ -157,7 +154,7 @@ class CSSTransitionWrapper extends React.Component {
 CSSTransitionWrapper.propTypes = {
   index: number,
   children: node,
-  animatorProps: object,
+  animatorProps: object
 };
 
 export default CSSTransitionWrapper;

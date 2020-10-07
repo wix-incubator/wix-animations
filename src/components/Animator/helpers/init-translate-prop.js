@@ -1,19 +1,21 @@
 const fillSegment = (segment = {}) => {
+
   if (typeof segment === 'string') {
-    segment = { direction: segment, size: '100%' };
+    segment = {direction: segment, size: '100%'};
   }
 
   return {
     direction: segment.direction ? segment.direction : 'top',
-    size: segment.size ? segment.size : '100%',
+    size: segment.size ? segment.size : '100%'
   };
 };
 
-const initTranslateProp = (translate) => {
+const initTranslateProp = translate => {
+
   if (typeof translate === 'boolean') {
-    translate = { enter: 'top', exit: 'top' };
+    translate = {enter: 'top', exit: 'top'};
   } else if (typeof translate === 'string') {
-    translate = { enter: translate, exit: translate };
+    translate = {enter: translate, exit: translate};
   } else if (typeof translate !== 'object') {
     translate = {};
   }
@@ -21,8 +23,9 @@ const initTranslateProp = (translate) => {
   return {
     enter: fillSegment(translate.enter),
     exit: fillSegment(translate.exit),
-    useSameTransition: !!translate.useSameTransition,
+    useSameTransition: !!translate.useSameTransition
   };
+
 };
 
 export default initTranslateProp;

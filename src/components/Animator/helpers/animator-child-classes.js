@@ -1,6 +1,7 @@
 import ClassBuilder from '../builders/class-builder';
 
 class AnimatorChildClasses {
+
   props;
   classes;
 
@@ -15,8 +16,9 @@ class AnimatorChildClasses {
   }
 
   getFirstLayer() {
-    const { debug, sequence, delay, childClassName } = this.props.animatorProps;
-    const { animatorChildClassName } = this.props;
+
+    const {debug, sequence, delay, childClassName} = this.props.animatorProps;
+    const {animatorChildClassName} = this.props;
 
     return new ClassBuilder()
       .withChildLayer(1)
@@ -28,14 +30,8 @@ class AnimatorChildClasses {
   }
 
   getSecondLayer() {
-    const {
-      translate,
-      opacity,
-      scale,
-      timing,
-      height,
-      width,
-    } = this.props.animatorProps;
+
+    const {translate, opacity, scale, timing, height, width} = this.props.animatorProps;
 
     return new ClassBuilder()
       .withChildLayer(2)
@@ -49,7 +45,8 @@ class AnimatorChildClasses {
   }
 
   getThirdLayer() {
-    const { translate } = this.props.animatorProps;
+
+    const {translate} = this.props.animatorProps;
 
     return new ClassBuilder()
       .withChildLayer(3)

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { node, object, any, number } from 'prop-types';
+import React, {Component} from 'react';
+import {node, object, any, number} from 'prop-types';
 import AnimatorContent from './AnimatorContent';
 import AnimatorChildStyle from '../helpers/animator-child-styles';
 import AnimatorChildClasses from '../helpers/animator-child-classes';

@@ -1,39 +1,38 @@
 import css from '../Animator.scss';
 
-const flattenArray = (arr) => [].concat.apply([], arr);
+const flattenArray = arr => [].concat.apply([], arr);
 
-const convertToArray = (value) => (Array.isArray(value) ? value : [value]);
+const convertToArray = value => Array.isArray(value) ? value : [value];
 
 const debugMap = {
   enter: 'enter',
   entering: ['enter', 'enter-active'],
   exit: 'exit',
-  exiting: ['exit', 'exit-active'],
+  exiting: ['exit', 'exit-active']
 };
 
-const getTranslateClasses = (translate) => {
-  return translate.useSameTransition
-    ? ['translate', 'translate-use-same-transition']
-    : 'translate';
+const getTranslateClasses = translate => {
+  return translate.useSameTransition ? ['translate', 'translate-use-same-transition'] : 'translate';
 };
 
 const classMap = {
   child1: () => 'child-layer-1',
   child2: () => 'child-layer-2',
   child3: () => 'child-layer-3',
-  opacity: (opacity) => opacity && 'opacity',
-  scale: (scale) => scale && 'scale',
-  height: (height) => height && 'height',
-  width: (width) => width && 'width',
-  timing: (timing) => timing && `timing-${timing}`,
-  sequence: (sequence) => sequence && 'child-sequence',
-  translate: (translate) => translate && getTranslateClasses(translate),
-  translateWrapper: (translate) => translate && 'translate-wrapper',
-  className: (className) => className && className,
-  debug: (mode) => mode && debugMap[mode],
+  opacity: opacity => opacity && 'opacity',
+  scale: scale => scale && 'scale',
+  height: height => height && 'height',
+  width: width => width && 'width',
+  timing: timing => timing && `timing-${timing}`,
+  sequence: sequence => sequence && 'child-sequence',
+  translate: translate => translate && getTranslateClasses(translate),
+  translateWrapper: translate => translate && 'translate-wrapper',
+  className: className => className && className,
+  debug: mode => mode && debugMap[mode]
 };
 
 class ClassBuilder {
+
   names;
   classNames;
   data;
@@ -44,8 +43,8 @@ class ClassBuilder {
   }
 
   withName(nameOrNames) {
-    nameOrNames &&
-      convertToArray(nameOrNames).forEach((name) => this.names.push(name));
+    nameOrNames && convertToArray(nameOrNames)
+      .forEach(name => this.names.push(name));
     return this;
   }
   getValue(name, value) {
@@ -101,10 +100,11 @@ class ClassBuilder {
 
   build() {
     return flattenArray(this.names)
-      .map((name) => css[name])
+      .map(name => css[name])
       .concat(this.classNames)
       .join(' ');
   }
+
 }
 
 export default ClassBuilder;
