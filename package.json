@@ -52,8 +52,8 @@
     "require-reload": "^0.2.2",
     "velocity": "^0.7.2",
     "wix-style-react": "^7.0.1",
-    "yoshi": "^4.212.0",
-    "yoshi-style-dependencies": "^4.174.0"
+    "yoshi": "^4.87.0",
+    "yoshi-style-dependencies": "^4.71.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
