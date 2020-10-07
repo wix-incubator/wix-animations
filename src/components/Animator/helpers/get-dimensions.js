@@ -1,22 +1,25 @@
-const getPaddingSize = padding => {
+const getPaddingSize = (padding) => {
   const data = new RegExp(/(\d+)px/g).exec(padding);
   return data && data[1] ? parseInt(data[1]) : 0;
 };
 
-
-const getDimensionsByNode = node => {
-  const {scrollHeight, scrollWidth, style: {paddingRight}} = node;
+const getDimensionsByNode = (node) => {
+  const {
+    scrollHeight,
+    scrollWidth,
+    style: { paddingRight },
+  } = node;
   return {
     height: scrollHeight,
-    width: scrollWidth + getPaddingSize(paddingRight)
+    width: scrollWidth + getPaddingSize(paddingRight),
   };
 };
 
-const isNumber = prop => {
+const isNumber = (prop) => {
   return typeof prop === 'number';
 };
 
-const isFunction = prop => {
+const isFunction = (prop) => {
   return typeof prop === 'function';
 };
 
@@ -30,13 +33,22 @@ const executeFunction = (callback, node) => {
   return response;
 };
 
-const getDimensions = (node, {height, width}) => {
-
-  const nodeDimensions = node ? getDimensionsByNode(node) : {height: 0, width: 0};
+const getDimensions = (node, { height, width }) => {
+  const nodeDimensions = node
+    ? getDimensionsByNode(node)
+    : { height: 0, width: 0 };
 
   return {
-    height: isNumber(height) ? height : (isFunction(height) ? executeFunction(height, node) : nodeDimensions.height),
-    width: isNumber(width) ? width : (isFunction(width) ? executeFunction(width, node) : nodeDimensions.width)
+    height: isNumber(height)
+      ? height
+      : isFunction(height)
+      ? executeFunction(height, node)
+      : nodeDimensions.height,
+    width: isNumber(width)
+      ? width
+      : isFunction(width)
+      ? executeFunction(width, node)
+      : nodeDimensions.width,
   };
 };
 

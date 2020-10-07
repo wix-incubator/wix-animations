@@ -1,20 +1,20 @@
 const css = {
-  convertTime: time => time ? `${time / 1000}s` : '',
-  convertSize: size => size ? `${size}px` : '0'
+  convertTime: (time) => (time ? `${time / 1000}s` : ''),
+  convertSize: (size) => (size ? `${size}px` : '0'),
 };
 
 const translateTemplates = {
-  top: size => `translate(0, ${size})`,
-  bottom: size => `translate(0, -${size})`,
-  left: size => `translate(${size}, 0)`,
-  right: size => `translate(-${size}, 0)`
+  top: (size) => `translate(0, ${size})`,
+  bottom: (size) => `translate(0, -${size})`,
+  left: (size) => `translate(${size}, 0)`,
+  right: (size) => `translate(-${size}, 0)`,
 };
 
 const switchDirection = {
   top: 'bottom',
   bottom: 'top',
   right: 'left',
-  left: 'right'
+  left: 'right',
 };
 
 const getTranslate = (translate, inOrOut) => {
@@ -27,7 +27,6 @@ const getTranslate = (translate, inOrOut) => {
 };
 
 class StyleBuilder {
-
   styles;
 
   constructor() {
@@ -40,39 +39,51 @@ class StyleBuilder {
   }
 
   withTransitionDelay(duration) {
-    return this.with(duration && {
-      transitionDelay: css.convertTime(duration)
-    });
+    return this.with(
+      duration && {
+        transitionDelay: css.convertTime(duration),
+      },
+    );
   }
 
   withAnimationDelay(duration) {
-    return this.with(duration && {
-      animationDuration: css.convertTime(duration)
-    });
+    return this.with(
+      duration && {
+        animationDuration: css.convertTime(duration),
+      },
+    );
   }
 
   withTranslate(translate, inOrOut) {
-    return this.with(translate && {
-      transform: getTranslate(translate, inOrOut)
-    });
+    return this.with(
+      translate && {
+        transform: getTranslate(translate, inOrOut),
+      },
+    );
   }
 
   withScale(scale) {
-    return this.with(scale && {
-      transform: `scale(${scale})`
-    });
+    return this.with(
+      scale && {
+        transform: `scale(${scale})`,
+      },
+    );
   }
 
   withHeight(height, size) {
-    return this.with(height && {
-      maxHeight: css.convertSize(size)
-    });
+    return this.with(
+      height && {
+        maxHeight: css.convertSize(size),
+      },
+    );
   }
 
   withWidth(width, size) {
-    return this.with(width && {
-      maxWidth: css.convertSize(size)
-    });
+    return this.with(
+      width && {
+        maxWidth: css.convertSize(size),
+      },
+    );
   }
 
   build() {
