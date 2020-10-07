@@ -60,7 +60,10 @@
     "registry": "https://registry.npmjs.org/"
   },
   "eslintConfig": {
-    "extends": "wix/react"
+    "extends": "wix/react",
+    "rules": {
+      "indent": "warn"
+    }
   },
   "dependencies": {
     "react-transition-group": "^2.3.1"
