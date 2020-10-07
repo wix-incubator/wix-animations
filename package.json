@@ -52,7 +52,7 @@
     "react-test-renderer": "^15.5.4",
     "require-reload": "^0.2.2",
     "velocity": "^0.7.2",
-    "wix-style-react": "^6.4.0",
+    "wix-style-react": "^7.0.1",
     "yoshi": "^1.2.0"
   },
   "publishConfig": {
