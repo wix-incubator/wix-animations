@@ -1,6 +1,6 @@
 import React from 'react';
-import Dropdown from 'wix-style-react/dist/src/Dropdown';
-import Input from 'wix-style-react/dist/src/Input';
+import Dropdown from 'wix-storybook-utils/dist/es/src/ui/dropdown';
+import Input from '../../utils/Components/Input';
 import PropTypes from 'prop-types';
 
 const directions = [
@@ -15,7 +15,7 @@ const DirectionDropDown = ({ title, selectedId, onSelect }) => (
     <div style={{ marginBottom: '3px' }}>{title}</div>
     <Dropdown
       width="80px"
-      selectedId={selectedId}
+      selectedOption={selectedId}
       onSelect={(option) => onSelect(option.id)}
       options={directions}
     />

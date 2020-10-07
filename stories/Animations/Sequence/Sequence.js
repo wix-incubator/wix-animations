@@ -16,7 +16,7 @@ import ExampleSameTransition from './ExampleSameTransition';
 import ExampleSameTransitionRaw from '!raw-loader!./ExampleSameTransition';
 import H2 from '../H2';
 
-const Sequence = () => {
+export const Sequence = () => {
   return (
     <div>
       <H2>Multiple Children</H2>
@@ -48,4 +48,4 @@ const Sequence = () => {
   );
 };
 
-export default Sequence;
+Sequence.storyName = 'Multiple children';

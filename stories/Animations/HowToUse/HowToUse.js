@@ -12,7 +12,7 @@ import Markdown from '../../utils/Components/Markdown';
 import Readme from './HowToUse.md';
 import H2 from '../H2';
 
-const HowToUse = () => {
+export const HowToUse = () => {
   return (
     <div>
       <H2>Getting Started</H2>
@@ -33,4 +33,4 @@ const HowToUse = () => {
   );
 };
 
-export default HowToUse;
+HowToUse.storyName = 'Basic Animation';

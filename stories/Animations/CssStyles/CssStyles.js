@@ -20,7 +20,7 @@ import Markdown from '../../utils/Components/Markdown';
 import Readme from './Translate.md';
 import H2 from '../H2';
 
-const CssStyles = () => {
+export const CssStyles = () => {
   return (
     <div>
       <H2>What Can Be Animated</H2>
@@ -44,4 +44,4 @@ const CssStyles = () => {
   );
 };
 
-export default CssStyles;
+CssStyles.storyName = 'What can be animated';

@@ -1,14 +1,14 @@
 import React from 'react';
 import Animator from '../../../src/components/Animator';
 import AnimationTemplate from '../AnimationTemplate';
-import { Row, Col } from 'wix-style-react/dist/src/Grid';
 import StyledDiv from '../StyledDiv';
 import PropTypes from 'prop-types';
+import styles from './ExampleHeight.scss';
 
 const HeightExample = ({ show }) => {
   return (
-    <Row>
-      <Col span={6}>
+    <div className={styles.heightExample}>
+      <div>
         <Animator show={show} height>
           <StyledDiv>
             I have height={'{'}true{'}'} so animator guess the right height for
@@ -19,8 +19,8 @@ const HeightExample = ({ show }) => {
           This text is here to show that the rest of the page responds nicely to
           the height change
         </div>
-      </Col>
-      <Col span={6}>
+      </div>
+      <div>
         <Animator show={show} height={180}>
           <StyledDiv style={{ height: '180px' }}>
             I have a fixed height of {`'180px'`} in my CSS so I put on Animator
@@ -32,8 +32,8 @@ const HeightExample = ({ show }) => {
           This text is here to show that the rest of the page responds nicely to
           the height change
         </div>
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 };
 

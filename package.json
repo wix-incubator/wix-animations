@@ -1,74 +1,75 @@
 {
   "name": "wix-animations",
   "version": "1.0.0",
-  "homepage": "",
   "author": {
     "name": "Alon Bartur",
     "email": "alonbt@wix.com",
     "url": ""
   },
-  "main": "./dist/src/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
   "files": [
-    "dist",
-    "src",
-    ".babelrc",
-    "testkit"
+    "dist"
   ],
+  "publishConfig": {
+    "registry": "http://npm.dev.wixpress.com/",
+    "versionBumpStrategy": "minor"
+  },
   "scripts": {
+    "build": "yoshi-library build && build-storybook",
     "start": "npm run storybook",
-    "pretest": "yoshi lint && yoshi build",
-    "build": "yoshi lint && yoshi build && build-storybook",
-    "test": "yoshi test",
+    "test": "yoshi-library test --passWithNoTests",
     "storybook": "start-storybook -p 6006",
-    "release": "yoshi release",
+    "lint": "yoshi-library lint",
+    "typescript": "tsc",
+    "posttest": "npm run lint",
     "pr-postbuild": "npx teamcity-surge-autorelease@^1.0.0 --dist=storybook-static",
     "postpublish": "npx teamcity-surge-autorelease@^1.0.0 --dist=storybook-static"
   },
-  "peerDependencies": {
-    "react": "^15.0.0-0 || ^16.0.0-0",
-    "react-dom": "^15.0.0-0 || ^16.0.0-0"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": "npm run lint"
   },
   "devDependencies": {
-    "@storybook/react": "^3.1.7",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "chai": "^3.5.0",
-    "copy-to-clipboard": "^3.0.8",
-    "enzyme": "^2.3.0",
-    "express": "^4.13.4",
-    "express-session": "^1.14.2",
-    "github-markdown-css": "^2.8.0",
-    "highlight.js": "9.14.2",
-    "jsdom-global": "^2.1.0",
-    "lodash": "^4.17.4",
-    "prop-types": "^15.6.0",
-    "react": "^15.5.4",
-    "react-addons-test-utils": "^15.3.2",
-    "react-collapse": "^4.0.3",
-    "react-dom": "^15.5.4",
-    "react-motion": "^0.5.0",
-    "react-remarkable": "^1.1.1",
-    "react-test-renderer": "^15.5.4",
-    "require-reload": "^0.2.2",
-    "velocity": "^0.7.2",
-    "wix-style-react": "^6.4.0",
-    "yoshi": "^1.2.0"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "babel": {
-    "presets": [
-      "react",
-      "es2015",
-      "stage-0"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "wix/react"
+    "@storybook/preset-scss": "^1.0.2",
+    "@storybook/react": "^6.0.22",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^8.0.0",
+    "@types/react": "16.8.4",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-transition-group": "^4.4.0",
+    "classnames": "^2.2.6",
+    "core-js": "^3.6.5",
+    "css-loader": "^3.5.3",
+    "github-markdown-css": "^4.0.0",
+    "highlight.js": "^10.2.0",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "node-sass": "^4.14.1",
+    "react-collapse": "^5.0.1",
+    "react-remarkable": "^1.1.3",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "~3.9.0",
+    "wix-storybook-utils": "^3.0.135",
+    "yoshi-flow-library": "^4.0.0",
+    "yoshi-style-dependencies": "^4.71.0"
   },
   "dependencies": {
-    "react-transition-group": "^2.3.1"
+    "prop-types": "^15.7.2",
+    "react": "~16.8.3",
+    "react-dom": "~16.8.3",
+    "react-transition-group": "^4.4.1"
+  },
+  "yoshiFlowLibrary": {
+    "bundle": {
+      "library": "wix-animations"
+    }
   }
 }

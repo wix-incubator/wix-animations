@@ -1,8 +1,8 @@
 import React from 'react';
-import Animator from '../../src/components/Animator';
-import AnimationTemplate from './AnimationTemplate';
-import StyledDiv from './StyledDiv';
-import H2 from './H2';
+import Animator from '../../../src/components/Animator';
+import AnimationTemplate from '../AnimationTemplate';
+import StyledDiv from '../StyledDiv';
+import H2 from '../H2';
 import PropTypes from 'prop-types';
 
 const DelayAndNestingExample = ({ show }) => (

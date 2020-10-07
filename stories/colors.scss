@@ -1,7 +1,84 @@
-$purple: #733ca6;
-$pinkish: #b13dac;
-$blue: #459fed;
-$turquise: #3cc7c5;
-$green: #65c888;
-$orange: #faad4d;
-$red: #f27052;
+$D10: #162d3d; // Main input text, titles
+$D20: #32536a; // Titles, texts
+$D30: #577083; // Texts
+$D40: #7a92a5; // Dividers, texts, Placeholder
+$D50: #b6c1cd; // Dividers, texts
+$D55: #cbd3dc; // Disabled button - new version - naming not final
+$D60: #dfe5eb; // Dividers
+$D70: #f0f4f7; // Page background, dividers
+$D80: #ffffff; // Content box background
+
+$D10-03: rgba($D10, 0.03);
+$D10-05: rgba($D10, 0.05);
+$D10-10: rgba($D10, 0.1);
+$D10-20: rgba($D10, 0.2);
+$D10-30: rgba($D10, 0.3);
+$D10-42: rgba($D10, 0.42);
+$D10-66: rgba($D10, 0.66);
+
+$D20-48: rgba($D20, 0.48); /*  new transparent color */
+$D20-54: rgba($D20, 0.54); /* hovered */
+$D20-60: rgba($D20, 0.6); /*  clicked */
+
+$D80-30: rgba($D80, 0.3);
+$D80-42: rgba($D80, 0.42);
+$D80-66: rgba($D80, 0.66);
+$D80-70: rgba($D80, 0.7);
+
+$B00: #2b81cb; // Buttons
+$B05: #308ddd; // CTA
+$B10: #3899ec; // Main action color, active, buttons
+$B20: #4eb7f5; // Hover for elements with B10, buttons
+$B25: #a1d7fb;
+$B27: #b3e0fb;
+$B30: #c1e4fe; // Notifications
+$B40: #daeffe; // Dividers, table selected, table headers
+$B50: #eaf7ff; // Dividers
+$B60: #f4fafe; // Table hover
+
+$B00-24: rgba($B00, 0.24);
+$B00-42: rgba($B00, 0.42);
+
+$F00: #aadbfc; // Focus Outline
+
+$P00: #8e21b1;
+$P10: #aa4dc8; // Wix premium
+$P20: #cd68ed;
+$P30: #e5c9ee;
+$P40: #eedbf4;
+$P50: #faeeff; // Section Helper
+$P60: #faf7fc;
+
+$R00: #d6453d;
+$R05: #d8504c; // CTA
+$R10: #ee5951; // Errors, CTA hover
+$R20: #ff6666; // Notifications
+$R30: #ffd7d7; // Notifications, Focus Errors
+$R40: #ffe1e1;
+$R50: #ffebeb; // Section Helper
+$R60: #fff5f5;
+$R70: #fdb10c;
+
+$G00: #44823f;
+$G05: #61ad5a; // CTA
+$G10: #60bc57; // CTA hover
+$G20: #80c979; // Notifications
+$G30: #c9eebc; // Notifications
+$G40: #def4d4;
+$G50: #edf9e5; // Section Helper
+$G60: #f2fbef;
+
+/* Theme */
+$THEME-COLOR-00: $B00;
+$THEME-COLOR-05: $B05;
+$THEME-COLOR-10: $B10;
+$THEME-COLOR-20: $B20;
+$THEME-COLOR-30: $B30;
+$THEME-COLOR-40: $B40;
+$THEME-COLOR-50: $B50;
+$THEME-COLOR-60: $B60;
+$THEME-TEXT-COLOR-PRIMARY: $D10;
+$THEME-TEXT-COLOR-PRIMARY-LIGHT: $D80;
+$THEME-TEXT-COLOR-SECONDARY: $D20;
+$THEME-TEXT-COLOR-SECONDARY-LIGHT: $D40;
+$THEME-DIVIDER-COLOR: $D60;

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as css from '../Example.scss';
+import css from '../Example.scss';
 import Animator from '../../../src/components/Animator';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';

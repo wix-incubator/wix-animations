@@ -14,7 +14,7 @@ import ExampleDelayExit from './ExampleDelayExit';
 import ExampleDelayExitRaw from '!raw-loader!./ExampleDelayExit';
 import H2 from '../H2';
 
-const DurationAndDelay = () => {
+export const DurationAndDelay = () => {
   return (
     <div>
       <H2>Duration and Delay</H2>
@@ -34,4 +34,4 @@ const DurationAndDelay = () => {
   );
 };
 
-export default DurationAndDelay;
+DurationAndDelay.storyName = 'Duration & Delay';

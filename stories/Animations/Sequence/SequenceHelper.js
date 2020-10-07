@@ -1,5 +1,5 @@
 import React from 'react';
-import * as css from '../Example.scss';
+import css from '../Example.scss';
 import PropTypes from 'prop-types';
 
 const getFirstText = (type) => {
