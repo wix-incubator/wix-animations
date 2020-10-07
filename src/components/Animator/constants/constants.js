@@ -19,7 +19,7 @@ const timingMap = {
   micro: 120,
   small: 150,
   medium: 200,
-  large: 300
+  large: 300,
 };
 
 const translateMap = {
@@ -27,9 +27,9 @@ const translateMap = {
     top: 'top',
     bottom: 'bottom',
     left: 'left',
-    right: 'right'
+    right: 'right',
   },
-  size: percentages
+  size: percentages,
 };
 
 const propsDefault = {
@@ -39,8 +39,8 @@ const propsDefault = {
   sequenceDelay: 80,
   translate: {
     to: translateMap.to.top,
-    size: percentages[5]
-  }
+    size: percentages[5],
+  },
 };
 
 const animationProps = ['opacity', 'scale', 'height', 'translate', 'width'];
@@ -51,7 +51,7 @@ const transitionClassNames = {
   enterActive: css.enterActive,
   appearActive: css.enterActive,
   exit: css.exit,
-  exitActive: css.exitActive
+  exitActive: css.exitActive,
 };
 
 export {
@@ -64,5 +64,5 @@ export {
   directions,
   percentages,
   transitionClassNames,
-  timingMap
+  timingMap,
 };

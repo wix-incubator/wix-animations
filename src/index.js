@@ -1,3 +1,3 @@
 import Animator from './components/Animator';
 
-export {Animator};
+export { Animator };

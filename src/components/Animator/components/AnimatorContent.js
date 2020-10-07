@@ -1,8 +1,7 @@
 import React from 'react';
-import {node} from 'prop-types';
+import { node } from 'prop-types';
 
 class AnimatorContent extends React.Component {
-
   cleanProps(props) {
     const newProps = Object.assign({}, props);
     delete newProps.animatorChildClassName;
@@ -11,17 +10,17 @@ class AnimatorContent extends React.Component {
   }
 
   render() {
-    const {children} = this.props;
+    const { children } = this.props;
     return React.createElement(
       children.type || 'div',
       this.cleanProps(children.props),
-      children.props ? children.props.children : children
+      children.props ? children.props.children : children,
     );
   }
 }
 
 AnimatorContent.propTypes = {
-  children: node
+  children: node,
 };
 
 export default AnimatorContent;
