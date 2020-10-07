@@ -4,7 +4,7 @@ import css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
 import OrangeDiv from '../OrangeDiv';
-import Dropdown from '../../utils/Components/Dropdown';
+import Dropdown from 'wix-storybook-utils/dist/es/src/ui/dropdown';
 import PropTypes from 'prop-types';
 
 class ExampleMixedChildren extends React.Component {

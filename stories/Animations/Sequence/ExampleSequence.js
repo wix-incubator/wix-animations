@@ -1,5 +1,5 @@
 import React from 'react';
-import Dropdown from '../../utils/Components/Dropdown';
+import Dropdown from 'wix-storybook-utils/dist/es/src/ui/dropdown';
 import Animator from '../../../src/components/Animator';
 import css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';

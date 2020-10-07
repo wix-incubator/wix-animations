@@ -57,6 +57,7 @@
     "style-loader": "^1.2.1",
     "ts-jest": "^24.0.2",
     "typescript": "~3.9.0",
+    "wix-storybook-utils": "^3.0.135",
     "yoshi-flow-library": "^4.0.0",
     "yoshi-style-dependencies": "^4.71.0"
   },
