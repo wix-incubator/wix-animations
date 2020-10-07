@@ -19,7 +19,7 @@
   "scripts": {
     "build": "yoshi-library build && build-storybook",
     "start": "npm run storybook",
-    "test": "yoshi-library test",
+    "test": "yoshi-library test --passWithNoTests",
     "storybook": "start-storybook -p 6006",
     "lint": "yoshi-library lint",
     "typescript": "tsc",
