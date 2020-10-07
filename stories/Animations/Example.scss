@@ -15,7 +15,6 @@ $red: #f27052;
 
 .basic-wrapper {
   display: flex;
-  height: 35px;
 }
 
 .height-50 {
@@ -31,7 +30,7 @@ $red: #f27052;
 }
 
 .shuki-child {
-  flex-grow:1;
+  flex-grow: 1;
 }
 
 .shuki-wrapper {
@@ -50,13 +49,13 @@ $red: #f27052;
 
 .enter-active {
   transform: translate(0, 0);
-  opacity: 1
+  opacity: 1;
 }
 
 .exit {
   transform: translate(0, 0);
   transition: all 1s linear;
-  opacity: 1
+  opacity: 1;
 }
 
 .exit-active {
@@ -76,6 +75,9 @@ $red: #f27052;
 ///////////
 
 .show-hide-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  column-gap: 15px;
   margin-top: 20px;
 }
 
@@ -111,6 +113,11 @@ $red: #f27052;
   p {
     margin-top: 0;
     margin-bottom: 16px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 }
 
