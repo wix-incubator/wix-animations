@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 export default class TextButton extends Component {
+
   static propTypes = {
     onClick: PropTypes.func,
-    children: PropTypes.node,
+    children: PropTypes.node
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      isHover: false,
+      isHover: false
     };
 
     this.handleToggleHover = this.handleToggleHover.bind(this);
@@ -18,7 +19,7 @@ export default class TextButton extends Component {
 
   handleToggleHover() {
     this.setState({
-      isHover: !this.state.isHover,
+      isHover: !this.state.isHover
     });
   }
 
@@ -30,18 +31,11 @@ export default class TextButton extends Component {
       outline: 'none',
       border: 'none',
       background: 'none',
-      cursor: 'pointer',
+      cursor: 'pointer'
     };
 
     return (
-      <button
-        style={style}
-        onMouseEnter={this.handleToggleHover}
-        onMouseLeave={this.handleToggleHover}
-        onClick={this.props.onClick}
-      >
-        {this.props.children}
-      </button>
+      <button style={style} onMouseEnter={this.handleToggleHover} onMouseLeave={this.handleToggleHover} onClick={this.props.onClick}>{this.props.children}</button>
     );
   }
 }

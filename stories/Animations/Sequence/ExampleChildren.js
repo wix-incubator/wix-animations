@@ -7,19 +7,12 @@ import OrangeDiv from '../OrangeDiv';
 import PropTypes from 'prop-types';
 
 class ExampleChildren extends React.Component {
+
   render() {
-    const { show } = this.props;
+    const {show} = this.props;
     return (
-      <div
-        className={css.sequenceType}
-        style={{ display: 'flex', height: '70px' }}
-      >
-        <Animator
-          show={show}
-          opacity
-          scale
-          className={css.sequenceExampleWrapper}
-        >
+      <div className={css.sequenceType} style={{display: 'flex', height: '70px'}}>
+        <Animator show={show} opacity scale className={css.sequenceExampleWrapper}>
           <StyledDiv>One</StyledDiv>
           <OrangeDiv>Two</OrangeDiv>
           <StyledDiv>Three</StyledDiv>
@@ -30,11 +23,11 @@ class ExampleChildren extends React.Component {
 }
 
 ExampleChildren.propTypes = {
-  show: PropTypes.bool,
+  show: PropTypes.bool
 };
 
-export default () => (
+export default () =>
   <AnimationTemplate>
-    <ExampleChildren />
-  </AnimationTemplate>
-);
+    <ExampleChildren/>
+  </AnimationTemplate>;
+
