@@ -1,4 +1,4 @@
-import {utils} from 'react-docgen';
+import { utils } from 'react-docgen';
 
 const {
   isExportsOrModuleAssignment,
@@ -7,7 +7,7 @@ const {
   isStatelessComponent,
   normalizeClassDefinition,
   resolveExportDeclaration,
-  resolveToValue
+  resolveToValue,
 } = utils;
 
 const ERROR_MULTIPLE_DEFINITIONS =
@@ -16,7 +16,10 @@ const ERROR_MULTIPLE_DEFINITIONS =
 const isReactComponentExtendedClass = (path, types) => {
   const node = path.node;
 
-  if (!types.ClassDeclaration.check(node) && !types.ClassExpression.check(node)) {
+  if (
+    !types.ClassDeclaration.check(node) &&
+    !types.ClassExpression.check(node)
+  ) {
     return false;
   }
 
@@ -24,7 +27,9 @@ const isReactComponentExtendedClass = (path, types) => {
     return false;
   }
 
-  console.warn(`<AutoDocs/> Warning: ${node.id.name} extends ${node.superClass.name} instead of React.Component. Auto generated documentation may be incomplete!`);
+  console.warn(
+    `<AutoDocs/> Warning: ${node.id.name} extends ${node.superClass.name} instead of React.Component. Auto generated documentation may be incomplete!`,
+  );
   return true;
 };
 
@@ -53,7 +58,10 @@ const resolveDefinition = (definition, types) => {
     if (types.ObjectExpression.check(resolvedPath.node)) {
       return resolvedPath;
     }
-  } else if (isReactComponentClass(definition) || isReactComponentExtendedClass(definition, types)) {
+  } else if (
+    isReactComponentClass(definition) ||
+    isReactComponentExtendedClass(definition, types)
+  ) {
     normalizeClassDefinition(definition);
     return definition;
   } else if (isStatelessComponent(definition)) {
@@ -67,9 +75,9 @@ export default (ast, recast) => {
   const types = recast.types.namedTypes;
   let definition;
 
-  const exportDeclaration = path => {
-    const definitions = resolveExportDeclaration(path, types)
-      .reduce((acc, definition) => {
+  const exportDeclaration = (path) => {
+    const definitions = resolveExportDeclaration(path, types).reduce(
+      (acc, definition) => {
         if (isComponentDefinition(definition, types)) {
           acc.push(definition);
         } else {
@@ -80,7 +88,9 @@ export default (ast, recast) => {
         }
 
         return acc;
-      }, []);
+      },
+      [],
+    );
 
     if (definitions.length === 0) {
       return false;
@@ -115,7 +125,7 @@ export default (ast, recast) => {
     visitExportNamedDeclaration: exportDeclaration,
     visitExportDefaultDeclaration: exportDeclaration,
 
-    visitAssignmentExpression: path => {
+    visitAssignmentExpression: (path) => {
       // Ignore anything that is not `exports.X = ...;` or
       // `module.exports = ...;`
       if (!isExportsOrModuleAssignment(path)) {
@@ -141,7 +151,7 @@ export default (ast, recast) => {
       definition = resolveDefinition(path, types);
 
       return false;
-    }
+    },
   });
 
   return definition;
