@@ -3,7 +3,7 @@ import ExampleDebug from './ExampleDebug';
 import ExampleDebugRaw from '!raw-loader!./ExampleDebug';
 import CodeExample from '../../utils/Components/CodeExample';
 import DebugMarkdown from './Debug.md';
-import Markdown from '../../utils/Components/Markdown';
+import Markdown from 'wix-storybook-utils/Markdown';
 
 export const Debug = () => (
   <div>

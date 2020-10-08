@@ -4,7 +4,7 @@ import CodeExample from '../../utils/Components/CodeExample';
 import ExampleClasses from './ExampleClasses';
 import ExampleClassesRaw from '!raw-loader!./ExampleClasses';
 
-import Markdown from '../../utils/Components/Markdown';
+import Markdown from 'wix-storybook-utils/Markdown';
 import Part0 from './Part0.md';
 import Part1 from './Part1.md';
 import Part2 from './Part2.md';

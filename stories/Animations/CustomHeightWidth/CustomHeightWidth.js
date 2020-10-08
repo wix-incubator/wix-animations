@@ -4,7 +4,7 @@ import CodeExample from '../../utils/Components/CodeExample';
 import CustomHeightExample from './CustomHeightExample';
 import CustomHeightExampleRaw from '!raw-loader!./CustomHeightExample';
 
-import Markdown from '../../utils/Components/Markdown';
+import Markdown from 'wix-storybook-utils/Markdown';
 import Readme from './README.md';
 import H2 from '../H2';
 

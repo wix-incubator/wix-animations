@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import TextButton from '../TextButton';
 import copy from 'copy-to-clipboard';
-import Markdown from '../Markdown';
+import Markdown from 'wix-storybook-utils/Markdown';
 
 const toCodeBlock = (code, type = 'js') =>
   ['```' + type, code.trim(), '```'].join('\n');

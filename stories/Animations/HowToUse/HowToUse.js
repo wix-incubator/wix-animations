@@ -7,7 +7,7 @@ import ExampleByInPropRaw from '!raw-loader!./ExampleByInProp';
 import ExampleByMounting from './ExampleByMounting';
 import ExampleByMountingRaw from '!raw-loader!./ExampleByMounting';
 
-import Markdown from '../../utils/Components/Markdown';
+import Markdown from 'wix-storybook-utils/Markdown';
 
 import Readme from './HowToUse.md';
 import H2 from '../H2';

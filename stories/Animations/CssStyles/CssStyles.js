@@ -16,7 +16,7 @@ import ExampleHeightRaw from '!raw-loader!./ExampleHeight';
 import ExampleWidth from './ExampleWidth';
 import ExampleWidthRaw from '!raw-loader!./ExampleWidth';
 
-import Markdown from '../../utils/Components/Markdown';
+import Markdown from 'wix-storybook-utils/Markdown';
 import Readme from './Translate.md';
 import H2 from '../H2';
 
