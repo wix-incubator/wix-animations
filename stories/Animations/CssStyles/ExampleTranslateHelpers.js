@@ -1,6 +1,6 @@
 import React from 'react';
 import Dropdown from 'wix-storybook-utils/dist/es/src/ui/dropdown';
-import Input from '../../utils/Components/Input';
+import Input from 'wix-storybook-utils/dist/es/src/ui/input';
 import PropTypes from 'prop-types';
 
 const directions = [
