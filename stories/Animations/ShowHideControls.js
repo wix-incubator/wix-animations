@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../utils/Components/Button';
+import Button from 'wix-storybook-utils/dist/es/src/ui/button';
 import PropTypes from 'prop-types';
 import css from './Example.scss';
 
@@ -45,10 +45,7 @@ class ShowHideControls extends React.Component {
           height,
         }}
       >
-        <Button
-          theme={show ? 'transparentblue' : 'fullblue'}
-          onClick={() => this.onChange()}
-        >
+        <Button onClick={() => this.onChange()}>
           {show ? 'Hide' : 'Show'} Animation
         </Button>
         {React.createElement(
