@@ -1,7 +1,7 @@
 import React from 'react';
 import ExampleDebug from './ExampleDebug';
 import ExampleDebugRaw from '!raw-loader!./ExampleDebug';
-import CodeExample from '../../utils/Components/CodeExample';
+import CodeExample from 'wix-storybook-utils/CodeExample';
 import DebugMarkdown from './Debug.md';
 import Markdown from 'wix-storybook-utils/Markdown';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeExample from '../../utils/Components/CodeExample';
+import CodeExample from 'wix-storybook-utils/CodeExample';
 import ExampleSequence from './ExampleSequence';
 import ExampleSequenceRaw from '!raw-loader!./ExampleSequence';
 

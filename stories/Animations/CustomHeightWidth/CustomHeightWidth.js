@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeExample from '../../utils/Components/CodeExample';
+import CodeExample from 'wix-storybook-utils/CodeExample';
 
 import CustomHeightExample from './CustomHeightExample';
 import CustomHeightExampleRaw from '!raw-loader!./CustomHeightExample';
