@@ -18,7 +18,6 @@
     "start": "npm run storybook",
     "pretest": "yoshi lint && yoshi build",
     "build": "yoshi lint && yoshi build && build-storybook",
-    "test": "yoshi test",
     "storybook": "start-storybook -p 6006",
     "release": "yoshi release",
     "pr-postbuild": "npx teamcity-surge-autorelease@^1.0.0 --dist=storybook-static",
@@ -29,13 +28,12 @@
     "react-dom": "^15.0.0-0 || ^16.0.0-0"
   },
   "devDependencies": {
-    "@storybook/react": "^3.1.7",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-0": "^6.5.0",
+    "@storybook/react": "^4.1.18",
     "chai": "^3.5.0",
     "copy-to-clipboard": "^3.0.8",
+    "core-js": "^2.5.7",
     "enzyme": "^2.3.0",
+    "eslint-config-wix": "~1.1.14",
     "express": "^4.13.4",
     "express-session": "^1.14.2",
     "github-markdown-css": "^2.8.0",
@@ -43,30 +41,26 @@
     "jsdom-global": "^2.1.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
-    "react": "^15.5.4",
-    "react-addons-test-utils": "^15.3.2",
+    "react": "^16.0.0",
     "react-collapse": "^4.0.3",
-    "react-dom": "^15.5.4",
+    "react-dom": "^16.0.0",
     "react-motion": "^0.5.0",
     "react-remarkable": "^1.1.1",
-    "react-test-renderer": "^15.5.4",
+    "react-test-renderer": "^16.0.0",
     "require-reload": "^0.2.2",
     "velocity": "^0.7.2",
-    "wix-style-react": "^6.4.0",
-    "yoshi": "^1.2.0"
+    "wix-style-react": "^7.0.1",
+    "yoshi": "^4.87.0",
+    "yoshi-style-dependencies": "^4.71.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "babel": {
-    "presets": [
-      "react",
-      "es2015",
-      "stage-0"
-    ]
-  },
   "eslintConfig": {
-    "extends": "wix/react"
+    "extends": "wix/react",
+    "rules": {
+      "indent": "warn"
+    }
   },
   "dependencies": {
     "react-transition-group": "^2.3.1"
