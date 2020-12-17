@@ -30,10 +30,10 @@ class CSSTransitionWrapper extends React.Component {
   }
 
   componentDidMount() {
-    const { skipEnterTransition } = this.state;
+    const {skipEnterTransition} = this.state;
     // Don't skip transitions after mounting
     if (skipEnterTransition) {
-      this.setState({ skipEnterTransition: false });
+      this.setState({skipEnterTransition: false});
     }
   }
 
@@ -106,7 +106,7 @@ class CSSTransitionWrapper extends React.Component {
   }
 
   getTransitionProps() {
-    const { skipEnterTransition } = this.state;
+    const {skipEnterTransition} = this.state;
     const duration = new Time(this.props.animatorProps, this.state.transition).getTotalDuration();
 
     const showByProp = {};
