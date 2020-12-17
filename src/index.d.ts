@@ -35,6 +35,7 @@ declare namespace WixAnimations {
     dataHook?: string;
     childClassName?: string;
     children: React.ReactNode;
+    skipMountTransition?: boolean;
   }
 
   export class Animator extends React.Component<AnimatorProps> {}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, number, object} from 'prop-types';
+import {node, number, object, bool} from 'prop-types';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import {transitionClassNames} from '../constants/constants';
 import {Time} from '../class/time-class';
@@ -13,8 +13,10 @@ class CSSTransitionWrapper extends React.Component {
   constructor(props) {
     super(props);
 
+    const isEntered = Boolean(props.skipMountTransition && props.animatorProps.show);
+
     this.transitionDefault = {
-      enter: false,
+      enter: isEntered,
       entering: false,
       exit: false,
       exiting: false
@@ -22,8 +24,17 @@ class CSSTransitionWrapper extends React.Component {
 
     this.state = {
       sequenceIndex: 0,
-      transition: this.transitionDefault
+      transition: this.transitionDefault,
+      skipEnterTransition: isEntered,
     };
+  }
+
+  componentDidMount() {
+    const { skipEnterTransition } = this.state;
+    // Don't skip transitions after mounting
+    if (skipEnterTransition) {
+      this.setState({ skipEnterTransition: false });
+    }
   }
 
   componentWillReceiveProps(props) {
@@ -95,7 +106,7 @@ class CSSTransitionWrapper extends React.Component {
   }
 
   getTransitionProps() {
-
+    const { skipEnterTransition } = this.state;
     const duration = new Time(this.props.animatorProps, this.state.transition).getTotalDuration();
 
     const showByProp = {};
@@ -104,7 +115,7 @@ class CSSTransitionWrapper extends React.Component {
     }
 
     return {
-      enter: !!duration,
+      enter: !skipEnterTransition && !!duration,
       exit: !!duration,
       appear: !!duration,
       timeout: duration,
@@ -154,7 +165,8 @@ class CSSTransitionWrapper extends React.Component {
 CSSTransitionWrapper.propTypes = {
   index: number,
   children: node,
-  animatorProps: object
+  animatorProps: object,
+  skipMountTransition: bool
 };
 
 export default CSSTransitionWrapper;
