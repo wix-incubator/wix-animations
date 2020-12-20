@@ -95,17 +95,19 @@ class CSSTransitionWrapper extends React.Component {
   }
 
   getTransitionProps() {
-    const duration = new Time(this.props.animatorProps, this.state.transition).getTotalDuration();
+    const {animatorProps, skipMountTransition} = this.props;
+    const {transition} = this.state;
+    const duration = new Time(animatorProps, transition).getTotalDuration();
 
     const showByProp = {};
-    if (this.props.animatorProps.show !== undefined) {
-      showByProp.in = this.props.animatorProps.show;
+    if (animatorProps.show !== undefined) {
+      showByProp.in = animatorProps.show;
     }
 
     return {
       enter: !!duration,
       exit: !!duration,
-      appear: !this.props.skipMountTransition && !!duration,
+      appear: !skipMountTransition && !!duration,
       timeout: duration,
       classNames: transitionClassNames,
       mountOnEnter: true,
