@@ -33,7 +33,8 @@ class AnimatorChild extends Component {
     return height || width;
   }
 
-  componentWillReceiveProps({transition: {entering, exiting}}) {
+  componentDidUpdate() {
+    const {transition: {entering, exiting}} = this.props;
     if (this.isDimensionAnimation() && (entering || exiting)) {
       this.setDimensions();
     }
