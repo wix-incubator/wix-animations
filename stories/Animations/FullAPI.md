@@ -14,6 +14,7 @@
 | debug | boolean | false |true, false | Provides a tool to simulate animation phases |
 | dataHook | string | - | - | will convert to data-hook |
 | childClassName | string | false | - | It will assign a className to the direct children of the Animator component. It is designed for layout purposes |
+| skipMountTransition | boolean | false | - | If set to `true`, doesn't perform transition on Animator mount |
 
 # Props of Children of Animator Component
 

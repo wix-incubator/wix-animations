@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, number, object} from 'prop-types';
+import {node, number, object, bool} from 'prop-types';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import {transitionClassNames} from '../constants/constants';
 import {Time} from '../class/time-class';
@@ -22,7 +22,7 @@ class CSSTransitionWrapper extends React.Component {
 
     this.state = {
       sequenceIndex: 0,
-      transition: this.transitionDefault
+      transition: this.transitionDefault,
     };
   }
 
@@ -95,18 +95,19 @@ class CSSTransitionWrapper extends React.Component {
   }
 
   getTransitionProps() {
-
-    const duration = new Time(this.props.animatorProps, this.state.transition).getTotalDuration();
+    const {animatorProps, skipMountTransition} = this.props;
+    const {transition} = this.state;
+    const duration = new Time(animatorProps, transition).getTotalDuration();
 
     const showByProp = {};
-    if (this.props.animatorProps.show !== undefined) {
-      showByProp.in = this.props.animatorProps.show;
+    if (animatorProps.show !== undefined) {
+      showByProp.in = animatorProps.show;
     }
 
     return {
       enter: !!duration,
       exit: !!duration,
-      appear: !!duration,
+      appear: !skipMountTransition && !!duration,
       timeout: duration,
       classNames: transitionClassNames,
       mountOnEnter: true,
@@ -154,7 +155,8 @@ class CSSTransitionWrapper extends React.Component {
 CSSTransitionWrapper.propTypes = {
   index: number,
   children: node,
-  animatorProps: object
+  animatorProps: object,
+  skipMountTransition: bool
 };
 
 export default CSSTransitionWrapper;

@@ -15,13 +15,13 @@ class AnimatorParent extends React.Component {
   }
 
   render() {
-    const {className, dataHook} = this.props;
+    const {className, dataHook, skipMountTransition} = this.props;
     const animatorProps = formatProps(this.props);
     animatorProps.debug = this.state.debug;
     return (
       <TransitionGroup data-hook={dataHook} className={className}>
         {animatorProps.children.map((item, index) =>
-          <CSSTransitionWrapper key={item.key || index} index={index} {...item.props} animatorProps={animatorProps}>
+          <CSSTransitionWrapper skipMountTransition={skipMountTransition} key={item.key || index} index={index} {...item.props} animatorProps={animatorProps}>
             {item}
           </CSSTransitionWrapper>
         )}
@@ -38,7 +38,12 @@ AnimatorParent.propTypes = {
   className: any,
   show: any,
   dataHook: any,
-  debug: bool
+  debug: bool,
+  skipMountTransition: bool,
+};
+
+AnimatorParent.defaultProps = {
+  skipMountTransition: false,
 };
 
 export default AnimatorParent;
