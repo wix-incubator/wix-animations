@@ -106,8 +106,8 @@ class CSSTransitionWrapper extends React.Component {
     const duration = new Time(animatorProps, transition).getTotalDuration();
 
     const showByProp = {
-      // Set in to false if element is exiting
-      in: inProp === false ? false : animatorProps.show,
+      // False if `show` is manually set to false, otherwise determined by TransitionGroup transition state
+      in: animatorProps.show === false ? false : inProp,
     };
 
     return {
