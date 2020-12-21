@@ -95,14 +95,20 @@ class CSSTransitionWrapper extends React.Component {
   }
 
   getTransitionProps() {
-    const {animatorProps, skipMountTransition} = this.props;
+    const {
+      animatorProps,
+      skipMountTransition,
+      // Injected by `TransitionGroup`, false if element is being removed from DOM
+      // eslint-disable-next-line react/prop-types
+      in: inProp
+    } = this.props;
     const {transition} = this.state;
     const duration = new Time(animatorProps, transition).getTotalDuration();
 
-    const showByProp = {};
-    if (animatorProps.show !== undefined) {
-      showByProp.in = animatorProps.show;
-    }
+    const showByProp = {
+      // False if `show` is manually set to false, otherwise determined by TransitionGroup transition state
+      in: animatorProps.show === false ? false : inProp,
+    };
 
     return {
       enter: !!duration,
