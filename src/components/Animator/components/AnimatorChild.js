@@ -16,6 +16,7 @@ class AnimatorChild extends Component {
     },
   };
 
+  // Measure content dimensions before componentDidUpdate
   getSnapshotBeforeUpdate({animatorProps: {height, width}}) {
     const isDimensionAnimation = height || width;
     if (isDimensionAnimation) {
@@ -28,6 +29,7 @@ class AnimatorChild extends Component {
     return null;
   }
 
+  // Update state dimensions when entering/existing transition begins
   componentDidUpdate(prevProps, prevState, snapshot) {
     const {
       transition: {entering, exiting},
