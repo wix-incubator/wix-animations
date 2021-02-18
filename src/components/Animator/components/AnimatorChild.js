@@ -23,28 +23,24 @@ class AnimatorChild extends Component {
   }
 
   componentDidMount() {
-    if (this.isDimensionAnimation(this.props)) {
+    if (this.isDimensionAnimation()) {
       this.node = ReactDOM.findDOMNode(this.refs.content);
     }
   }
 
-  isDimensionAnimation(props) {
-    const {height, width} = props.animatorProps;
+  isDimensionAnimation() {
+    const {height, width} = this.props.animatorProps;
     return height || width;
   }
 
-  componentDidUpdate(prevProps) {
-    const {transition: {prevEntering, prevExiting}} = prevProps;
-    const {transition: {entering, exiting}} = this.props;
-    if (prevEntering !== entering || prevExiting !== exiting) {
-      if (this.isDimensionAnimation(prevProps) && (entering || exiting)) {
-        this.setDimensions(prevProps);
-      }
+  componentWillReceiveProps({transition: {entering, exiting}}) {
+    if (this.isDimensionAnimation() && (entering || exiting)) {
+      this.setDimensions();
     }
   }
 
-  setDimensions(props) {
-    const {height, width} = props.animatorProps;
+  setDimensions() {
+    const {height, width} = this.props.animatorProps;
     this.dimensions = getDimensions(this.node, {height, width});
   }
 
