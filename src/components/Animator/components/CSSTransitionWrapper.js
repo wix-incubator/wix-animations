@@ -26,15 +26,12 @@ class CSSTransitionWrapper extends React.Component {
     };
   }
 
-  componentDidUpdate(prevProps) {
-    const {debug: prevDebugValue} = prevProps.animatorProps;
-    const {debug} = this.props.animatorProps;
-
-    if (debug && prevDebugValue !== debug) {
+  componentWillReceiveProps(props) {
+    const {debug} = props.animatorProps;
+    if (debug) {
       this.setDebug(debug);
     }
   }
-
 
   setDebug(debug) {
     if (debug === 'enter') {
