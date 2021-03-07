@@ -6,69 +6,76 @@ import {Time} from '../class/time-class';
 import Child from './AnimatorChild';
 import shouldFlipAnimation from '../helpers/should-flip-animation';
 
+const DEFAULT_TRANSITION_STATE = {
+  enter: false,
+  entering: false,
+  exit: false,
+  exiting: false,
+};
+
+const getTransitionState = phase => {
+  let update;
+  switch (phase) {
+    case 'enter':
+      update = {enter: true};
+      break;
+    case 'entering':
+      update = {enter: true, entering: true};
+      break;
+    case 'exit':
+      update = {exit: true};
+      break;
+    case 'exiting':
+      update = {exit: true, exiting: true};
+      break;
+    default:
+      update = {};
+      break;
+  }
+
+  return {...DEFAULT_TRANSITION_STATE, ...update};
+};
+
+const getSequenceIndex = (sequence, childrenAmount, index, transition) => {
+  if (sequence) {
+    if (shouldFlipAnimation(sequence, transition)) {
+      return childrenAmount - index;
+    }
+    return index + 1;
+  }
+  return 0;
+};
+
 class CSSTransitionWrapper extends React.Component {
+  state = {
+    sequenceIndex: 0,
+    transition: DEFAULT_TRANSITION_STATE,
+  };
 
-  transitionDefault;
-
-  constructor(props) {
-    super(props);
-
-    this.transitionDefault = {
-      enter: false,
-      entering: false,
-      exit: false,
-      exiting: false
-    };
-
-    this.state = {
-      sequenceIndex: 0,
-      transition: this.transitionDefault,
-    };
-  }
-
-  componentWillReceiveProps(props) {
-    const {debug} = props.animatorProps;
+  static getDerivedStateFromProps(props, state) {
+    const {animatorProps, index} = props;
+    const {debug, children, sequence} = animatorProps;
+    const {transition} = state;
     if (debug) {
-      this.setDebug(debug);
+      const phase = debug;
+      const derivedState = {transition: getTransitionState(phase)};
+      const shouldUpdateSequenceIndex = phase === 'enter' || phase === 'exit';
+      if (shouldUpdateSequenceIndex) {
+        derivedState.sequenceIndex = getSequenceIndex(
+          sequence,
+          children.length,
+          index,
+          transition
+        );
+      }
+      return derivedState;
     }
-  }
-
-  setDebug(debug) {
-    if (debug === 'enter') {
-      this.onEnter();
-    } else if (debug === 'entering') {
-      this.onEntering();
-    } else if (debug === 'entered') {
-      this.onEntered();
-    } else if (debug === 'exit') {
-      this.onExit();
-    } else if (debug === 'exiting') {
-      this.onExiting();
-    }
+    return null;
   }
 
   updateTransitionState(phase) {
-    let update;
-    switch (phase) {
-      case 'enter':
-        update = {enter: true};
-        break;
-      case 'entering':
-        update = {enter: true, entering: true};
-        break;
-      case 'exit':
-        update = {exit: true};
-        break;
-      case 'exiting':
-        update = {exit: true, exiting: true};
-        break;
-      default:
-        update = {};
-        break;
-    }
-
     this.setState({
-      transition: Object.assign({}, this.transitionDefault, update)
+      transition: getTransitionState(phase),
     });
   }
 
@@ -100,7 +107,7 @@ class CSSTransitionWrapper extends React.Component {
       skipMountTransition,
       // Injected by `TransitionGroup`, false if element is being removed from DOM
       // eslint-disable-next-line react/prop-types
-      in: inProp
+      in: inProp,
     } = this.props;
     const {transition} = this.state;
     const duration = new Time(animatorProps, transition).getTotalDuration();
@@ -118,17 +125,23 @@ class CSSTransitionWrapper extends React.Component {
       classNames: transitionClassNames,
       mountOnEnter: true,
       unmountOnExit: true,
-      ...showByProp
+      ...showByProp,
     };
   }
 
   setSequenceIndex() {
-    const {children, sequence} = this.props.animatorProps;
-    if (sequence) {
-      const index = this.props.index + 1;
-      const reverseIndex = children.length - this.props.index;
+    const {animatorProps, index} = this.props;
+    const {children, sequence} = animatorProps;
+    const {transition, sequenceIndex: currentSequenceIndex} = this.state;
+    const nextSequenceIndex = getSequenceIndex(
+      sequence,
+      children.length,
+      index,
+      transition
+    );
+    if (nextSequenceIndex !== currentSequenceIndex) {
       this.setState({
-        sequenceIndex: shouldFlipAnimation(sequence, this.state.transition) ? reverseIndex : index
+        sequenceIndex: nextSequenceIndex,
       });
     }
   }
@@ -162,7 +175,7 @@ CSSTransitionWrapper.propTypes = {
   index: number,
   children: node,
   animatorProps: object,
-  skipMountTransition: bool
+  skipMountTransition: bool,
 };
 
 export default CSSTransitionWrapper;
