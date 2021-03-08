@@ -18,7 +18,8 @@ class ExampleMockServer extends React.Component {
     this.to = {in: 'top', out: 'bottom'};
   }
 
-  componentWillReceiveProps({show}) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps({show}) {
     if (show) {
       this.setState({
         items: new Array(5).fill(1).map((_, index) => <Item key={index}/>)

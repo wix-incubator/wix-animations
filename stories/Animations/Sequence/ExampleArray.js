@@ -16,7 +16,8 @@ class ExampleMixedChildren extends React.Component {
     };
   }
 
-  componentWillReceiveProps({show}) {
+  // eslint-disable-next-line camelcase,react/prop-types
+  UNSAFE_componentWillReceiveProps({show}) {
     this.setState({items: show ? [item1] : [item2]});
   }
 

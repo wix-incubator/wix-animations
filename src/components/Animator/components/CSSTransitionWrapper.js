@@ -26,7 +26,8 @@ class CSSTransitionWrapper extends React.Component {
     };
   }
 
-  componentWillReceiveProps(props) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(props) {
     const {debug} = props.animatorProps;
     if (debug) {
       this.setDebug(debug);
