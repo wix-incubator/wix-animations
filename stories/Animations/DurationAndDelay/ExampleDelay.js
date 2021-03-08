@@ -19,7 +19,7 @@ ExampleDelay.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <ExampleDelay/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 

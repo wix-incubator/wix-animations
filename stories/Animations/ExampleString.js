@@ -19,7 +19,7 @@ ExampleString.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <ExampleString/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 

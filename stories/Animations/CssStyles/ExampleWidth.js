@@ -10,7 +10,7 @@ const WidthExample = ({show}) => {
       <div style={{height: '70px', display: 'flex', marginBottom: '20px'}}>
         <Animator width show={show}>
           <StyledDiv style={{whiteSpace: 'nowrap', padding: '20px 30px'}}>
-              width={'{'}true{'}'}
+            width={'{'}true{'}'}
           </StyledDiv>
         </Animator>
         <div style={{marginLeft: '10px', fontSize: '16px', lineHeight: '24px'}}>Setting height or width prop
@@ -37,7 +37,7 @@ WidthExample.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <WidthExample/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 

@@ -27,7 +27,7 @@ ExampleChildren.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <ExampleChildren/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 

@@ -17,7 +17,7 @@ OpacityExample.propTypes = {
 };
 
 export default () =>
-  <ShowHideControls height="80px">
+  (<ShowHideControls height="80px">
     <OpacityExample/>
-  </ShowHideControls>;
+  </ShowHideControls>);
 

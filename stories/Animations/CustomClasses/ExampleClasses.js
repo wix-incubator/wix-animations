@@ -35,7 +35,7 @@ ExampleClasses.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <ExampleClasses/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 

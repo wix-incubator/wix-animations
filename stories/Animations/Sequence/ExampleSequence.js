@@ -58,7 +58,7 @@ ExampleSequence.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <ExampleSequence/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 

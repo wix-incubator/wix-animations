@@ -32,7 +32,7 @@ OpacityExample.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <OpacityExample/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 

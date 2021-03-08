@@ -59,6 +59,6 @@ ExampleTranslate.propTypes = {
 };
 
 export default () =>
-  <ShowHideControls height="190px">
+  (<ShowHideControls height="190px">
     <ExampleTranslate/>
-  </ShowHideControls>;
+  </ShowHideControls>);

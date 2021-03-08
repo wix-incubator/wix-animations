@@ -17,7 +17,7 @@ ExampleInByProp.propTypes = {
 };
 
 export default () =>
-  <ShowHideControls>
+  (<ShowHideControls>
     <ExampleInByProp/>
-  </ShowHideControls>;
+  </ShowHideControls>);
 

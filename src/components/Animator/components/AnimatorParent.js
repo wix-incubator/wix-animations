@@ -21,9 +21,9 @@ class AnimatorParent extends React.Component {
     return (
       <TransitionGroup data-hook={dataHook} className={className}>
         {animatorProps.children.map((item, index) =>
-          <CSSTransitionWrapper skipMountTransition={skipMountTransition} key={item.key || index} index={index} {...item.props} animatorProps={animatorProps}>
+          (<CSSTransitionWrapper skipMountTransition={skipMountTransition} key={item.key || index} index={index} {...item.props} animatorProps={animatorProps}>
             {item}
-          </CSSTransitionWrapper>
+          </CSSTransitionWrapper>)
         )}
         {this.props.debug && <Debug hasChildren={!!animatorProps.children.length} onSelect={debug => this.setState({debug})}/>}
       </TransitionGroup>
