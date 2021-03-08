@@ -1,6 +1,6 @@
 const _ = require('lodash/fp');
 const path = require('path');
-const wixStorybookConfig = require('yoshi/config/webpack.config.storybook');
+const wixStorybookConfig = require('@wix/yoshi/config/webpack.config.storybook');
 
 module.exports = (config, env, defaultConfig) => {
   const newConfig = wixStorybookConfig(defaultConfig);
