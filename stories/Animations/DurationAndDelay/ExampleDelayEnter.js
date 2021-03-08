@@ -19,7 +19,7 @@ ExampleDelayEnter.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <ExampleDelayEnter/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 

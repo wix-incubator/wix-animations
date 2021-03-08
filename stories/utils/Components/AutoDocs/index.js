@@ -24,10 +24,10 @@ const renderPropType = (type = {}) => {
     <span>{name} [{children}]</span>;
 
   const failSafe = type => () =>
-    <span>
+    (<span>
       Sorry, unable to parse this propType:
       <pre>{JSON.stringify(type, null, 2)}</pre>
-    </span>;
+    </span>);
 
   const typeHandlers = {
     custom: () => wrap('custom')(),
@@ -36,10 +36,10 @@ const renderPropType = (type = {}) => {
       <span key={i}><code>{v.value}</code>{allValues[i + 1] && ', '}</span>)),
 
     union: value => wrap('oneOfType')(value.map((v, i, allValues) =>
-      <span key={i}>
+      (<span key={i}>
         {renderPropType(v)}
         {allValues[i + 1] && ', '}
-      </span>
+      </span>)
     )),
 
     shape: value => wrap('shape')(
@@ -48,10 +48,10 @@ const renderPropType = (type = {}) => {
           .keys(value)
           .map(key => ({...value[key], key}))
           .map((v, i) =>
-            <li key={i}>
+            (<li key={i}>
               {v.key}:&nbsp;
               {renderPropType(v)}
-            </li>)
+            </li>))
         }
       </ul>
     ),
@@ -70,13 +70,13 @@ const AutoDocs = ({source = ''}) => {
   const {description, displayName, props} = parse(source, ComponentResolver);
 
   const propRow = (prop, index) =>
-    <tr key={index}>
+    (<tr key={index}>
       <td>{prop.name || '-'}</td>
       <td>{renderPropType(prop.type)}</td>
       <td>{prop.defaultValue && prop.defaultValue.value && <Markdown source={`\`${prop.defaultValue.value}\``}/>}</td>
       <td>{prop.required && 'Required' }</td>
       <td>{prop.description && <Markdown source={prop.description}/>}</td>
-    </tr>;
+    </tr>);
 
   return !shouldHideForE2E && (
     <div className="markdown-body">

@@ -50,7 +50,7 @@ ExampleMockServer.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <ExampleMockServer/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 

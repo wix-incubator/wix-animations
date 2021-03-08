@@ -34,7 +34,7 @@ class ExampleMixedChildren extends React.Component {
 
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <ExampleMixedChildren/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 

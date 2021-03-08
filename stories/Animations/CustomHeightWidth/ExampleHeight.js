@@ -30,6 +30,6 @@ HeightExample.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <HeightExample/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);

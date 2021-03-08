@@ -18,7 +18,7 @@ OpacityScale.propTypes = {
 
 
 export default () =>
-  <ShowHideControls height="80px">
+  (<ShowHideControls height="80px">
     <OpacityScale/>
-  </ShowHideControls>;
+  </ShowHideControls>);
 

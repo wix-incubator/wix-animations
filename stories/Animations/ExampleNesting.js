@@ -24,6 +24,6 @@ DelayAndNestingExample.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <DelayAndNestingExample/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);

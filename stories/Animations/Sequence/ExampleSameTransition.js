@@ -54,7 +54,7 @@ ExampleMixedChildren.propTypes = {
 };
 
 export default () =>
-  <AnimationTemplate>
+  (<AnimationTemplate>
     <ExampleMixedChildren/>
-  </AnimationTemplate>;
+  </AnimationTemplate>);
 
