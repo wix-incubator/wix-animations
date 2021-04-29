@@ -9,9 +9,15 @@ const micro = 'micro';
 const small = 'small';
 const medium = 'medium';
 const large = 'large';
+const slow01 = 'slow01';
+const slow02 = 'slow02';
+const medium01 = 'medium01';
+const medium02 = 'medium02';
+const fast01 = 'fast01';
+const fast02 = 'fast02';
 
 const percentages = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-const timings = [micro, small, medium, large];
+const timings = [micro, small, medium, large, fast01, fast02, medium01, medium02, slow01, slow02];
 const directions = [top, bottom, left, right];
 const sequences = ['default', 'flip', 'reverse', 'reverse-flip'];
 
@@ -19,7 +25,13 @@ const timingMap = {
   micro: 120,
   small: 150,
   medium: 200,
-  large: 300
+  large: 300,
+  fast01: 100,
+  fast02: 150,
+  medium01: 200,
+  medium02: 300,
+  slow01: 450,
+  slow02: 600
 };
 
 const translateMap = {

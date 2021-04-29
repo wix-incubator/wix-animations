@@ -45,6 +45,12 @@ class AnimatedExample extends React.Component {
       {id: 'small', value: 'Small - 150ms'},
       {id: 'medium', value: 'Medium - 200ms'},
       {id: 'large', value: 'Large - 300ms'},
+      {id: 'fast01', value: 'Large - 100ms'},
+      {id: 'fast02', value: 'Large - 150ms'},
+      {id: 'medium01', value: 'Large - 200ms'},
+      {id: 'medium02', value: 'Large - 300ms'},
+      {id: 'slow01', value: 'Large - 450ms'},
+      {id: 'slow02', value: 'Large - 600ms'},
       {id: 'debug', value: 'Debug - 10000ms'},
       {id: 'none', value: 'None'}
     ];

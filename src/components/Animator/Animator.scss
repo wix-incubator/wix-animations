@@ -32,6 +32,7 @@
 $easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
 $easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
 $easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
+$easeStandard: cubic-bezier(0.4, 0, 0.2, 1);
 
 //Basics CSS
 ////////////
@@ -56,6 +57,12 @@ $easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
 // Duration
 ///////////
 
+$timing-fast01: .1s;
+$timing-fast02: .15s;
+$timing-medium01: .2s;
+$timing-medium02: .3s;
+$timing-slow01: .45s;
+$timing-slow02: .6s;
 $timing-micro: .12s;
 $timing-small: .15s;
 $timing-medium: .2s;
@@ -79,10 +86,33 @@ $timing-translate: $timing-large;
     transition-duration: $timing-large;
   }
 
+  .timing-fast01 {
+    transition-duration: $timing-fast01;
+  }
+
+  .timing-fast02 {
+    transition-duration: $timing-fast02;
+  }
+
+  .timing-medium01 {
+    transition-duration: $timing-medium01;
+  }
+
+  .timing-medium02 {
+    transition-duration: $timing-medium02;
+  }
+
+  .timing-slow01 {
+    transition-duration: $timing-slow01;
+  }
+
+  .timing-slow02 {
+    transition-duration: $timing-slow02;
+  }
+
   .translate-wrapper {
     transition-duration: $timing-translate;
   }
-
 }
 
 // TimingFunction
@@ -95,6 +125,15 @@ $timing-translate: $timing-large;
 
   .timing-medium, .timing-large {
     transition-timing-function: $easeOutQuint;
+  }
+
+  .timing-fast01,
+  .timing-fast02,
+  .timing-medium01,
+  .timing-medium02,
+  .timing-slow01,
+  .timing-slow02 {
+    transition-timing-function: $easeStandard;
   }
 }
 
@@ -146,7 +185,13 @@ $timing-translate: $timing-large;
     &.timing-small, &.timing-medium {
       opacity: .5;
     }
-    &.timing-large {
+    &.timing-large,
+    &.timing-fast01,
+    &.timing-fast02,
+    &.timing-medium01,
+    &.timing-medium02,
+    &.timing-slow01,
+    &.timing-slow02 {
       opacity: .66;
     }
   }
@@ -154,7 +199,16 @@ $timing-translate: $timing-large;
 
 @mixin opacityEnterActive() {
   .opacity {
-    &.timing-micro, &.timing-small, &.timing-medium, &.timing-large {
+    &.timing-micro,
+    &.timing-small,
+    &.timing-medium,
+    &.timing-large,
+    &.timing-fast01,
+    &.timing-fast02,
+    &.timing-medium01,
+    &.timing-medium02,
+    &.timing-slow01,
+    &.timing-slow02 {
       opacity: 1;
     }
   }

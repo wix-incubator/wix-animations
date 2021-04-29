@@ -3,7 +3,8 @@ import * as React from 'react';
 declare namespace WixAnimations {
   type Direction = 'top' | 'bottom' | 'left' | 'right';
   type Sequence = 'default' | 'flip' | 'reverse' | 'reverse-flip';
-  type Timing = 'micro' | 'small' | 'medium' | 'large';
+  type Timing = 'micro' | 'small' | 'medium' | 'large' | 'slow01'
+    | 'slow02' | 'medium01' | 'medium02' | 'fast01' | 'fast02';
 
   interface Delay {
     enter?: number;

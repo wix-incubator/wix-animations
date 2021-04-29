@@ -2,7 +2,7 @@
 
 | propName | propType | defaultValue | Valid Values | description |
 |----------|----------|--------------|-------------|-----|
-| timing | string | large | micro, small, medium, large | Sets the duration |
+| timing | string | large | micro, small, medium, large, slow01, slow02, medium01, medium02, fast01, fast02 | Sets the duration |
 | opacity | boolean | false | - | Sets Opacity |
 | scale | boolean | false | - | Sets Scale |
 | translate | translate Object or boolean or string | false | -| Sets translate. examples: translate / translate="left" / or translate={translateObject} (see below) |
