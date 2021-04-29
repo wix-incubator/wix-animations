@@ -1,6 +1,5 @@
 import React from 'react';
 import Animator from '../../../src/components/Animator';
-import * as css from '../Example.scss';
 import AnimationTemplate from '../AnimationTemplate';
 import StyledDiv from '../StyledDiv';
 import PropTypes from 'prop-types';
