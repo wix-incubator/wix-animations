@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, number, object, bool} from 'prop-types';
+import {node, number, object, bool, func} from 'prop-types';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import {transitionClassNames} from '../constants/constants';
 import {Time} from '../class/time-class';
@@ -16,8 +16,10 @@ class CSSTransitionWrapper extends React.Component {
     this.transitionDefault = {
       enter: false,
       entering: false,
+      entered: false,
       exit: false,
-      exiting: false
+      exiting: false,
+      exited: false,
     };
 
     this.state = {
@@ -45,6 +47,8 @@ class CSSTransitionWrapper extends React.Component {
       this.onExit();
     } else if (debug === 'exiting') {
       this.onExiting();
+    } else if (debug === 'exited') {
+      this.onExited();
     }
   }
 
@@ -57,11 +61,17 @@ class CSSTransitionWrapper extends React.Component {
       case 'entering':
         update = {enter: true, entering: true};
         break;
+      case 'entered':
+        update = {enter: true, entering: true, entered: true};
+        break;
       case 'exit':
         update = {exit: true};
         break;
       case 'exiting':
         update = {exit: true, exiting: true};
+        break;
+      case 'exited':
+        update = {exit: true, exiting: true, exited: true};
         break;
       default:
         update = {};
@@ -74,25 +84,41 @@ class CSSTransitionWrapper extends React.Component {
   }
 
   onEnter() {
+    const {onEnter} = this.props;
     this.updateTransitionState('enter');
     this.setSequenceIndex();
+    onEnter && onEnter();
   }
 
   onEntering() {
+    const {onEntering} = this.props;
     this.updateTransitionState('entering');
+    onEntering && onEntering();
   }
 
   onEntered() {
+    const {onEntered} = this.props;
     this.updateTransitionState('entered');
+    onEntered && onEntered();
   }
 
   onExit() {
+    const {onExit} = this.props;
     this.updateTransitionState('exit');
     this.setSequenceIndex();
+    onExit && onExit();
   }
 
   onExiting() {
+    const {onExiting} = this.props;
     this.updateTransitionState('exiting');
+    onExiting && onExiting();
+  }
+
+  onExited() {
+    const {onExitedAnimation} = this.props;
+    this.updateTransitionState('exited');
+    onExitedAnimation && onExitedAnimation();
   }
 
   getTransitionProps() {
@@ -146,6 +172,7 @@ class CSSTransitionWrapper extends React.Component {
         onEntered={() => this.onEntered()}
         onExit={() => this.onExit()}
         onExiting={() => this.onExiting()}
+        onExited={() => this.onExited()}
         >
         <Child
           transition={this.state.transition}
@@ -163,7 +190,13 @@ CSSTransitionWrapper.propTypes = {
   index: number,
   children: node,
   animatorProps: object,
-  skipMountTransition: bool
+  skipMountTransition: bool,
+  onEnter: func,
+  onEntering: func,
+  onEntered: func,
+  onExit: func,
+  onExiting: func,
+  onExitedAnimation: func,
 };
 
 export default CSSTransitionWrapper;

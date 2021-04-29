@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { func } from 'prop-types';
 
 declare namespace WixAnimations {
   type Direction = 'top' | 'bottom' | 'left' | 'right';
@@ -37,6 +38,12 @@ declare namespace WixAnimations {
     childClassName?: string;
     children: React.ReactNode;
     skipMountTransition?: boolean;
+    onEnter?: func;
+    onEntering?: func;
+    onEntered?: func;
+    onExit?: func;
+    onExiting?: func;
+    onExitedAnimation?: func;
   }
 
   export class Animator extends React.Component<AnimatorProps> {}
