@@ -19,12 +19,12 @@ class AnimatorParent extends React.Component {
       className,
       dataHook,
       skipMountTransition,
-      onEnter,
-      onEntering,
-      onEntered,
-      onExit,
-      onExiting,
-      onExitedAnimation,
+      onAnimationEnter,
+      onAnimationEntering,
+      onAnimationEntered,
+      onAnimationExit,
+      onAnimationExiting,
+      onAnimationExited,
     } = this.props;
     const animatorProps = formatProps(this.props);
     animatorProps.debug = this.state.debug;
@@ -37,12 +37,12 @@ class AnimatorParent extends React.Component {
             index={index}
             {...item.props}
             animatorProps={animatorProps}
-            onEnter={onEnter}
-            onEntering={onEntering}
-            onEntered={onEntered}
-            onExit={onExit}
-            onExiting={onExiting}
-            onExitedAnimation={onExitedAnimation}
+            onAnimationEnter={onAnimationEnter}
+            onAnimationEntering={onAnimationEntering}
+            onAnimationEntered={onAnimationEntered}
+            onAnimationExit={onAnimationExit}
+            onAnimationExiting={onAnimationExiting}
+            onAnimationExited={onAnimationExited}
             >
             {item}
           </CSSTransitionWrapper>)
@@ -62,12 +62,12 @@ AnimatorParent.propTypes = {
   dataHook: any,
   debug: bool,
   skipMountTransition: bool,
-  onEnter: func,
-  onEntering: func,
-  onEntered: func,
-  onExit: func,
-  onExiting: func,
-  onExitedAnimation: func,
+  onAnimationEnter: func,
+  onAnimationEntering: func,
+  onAnimationEntered: func,
+  onAnimationExit: func,
+  onAnimationExiting: func,
+  onAnimationExited: func,
 };
 
 AnimatorParent.defaultProps = {

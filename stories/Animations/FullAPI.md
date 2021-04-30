@@ -15,12 +15,12 @@
 | dataHook | string | - | - | will convert to data-hook |
 | childClassName | string | false | - | It will assign a className to the direct children of the Animator component. It is designed for layout purposes |
 | skipMountTransition | boolean | false | - | If set to `true`, doesn't perform transition on Animator mount |
-| onEnter | function | - | - | Callback onEnter  |
-| onEntering | function | - | - | Callback onEntering  |
-| onEntered | function | - | - | Callback onEntered  |
-| onExit | function | - | - | Callback onExit  |
-| onExiting | function | - | - | Callback onExiting  |
-| onExitedAnimation | function | - | - | Callback onExitedAnimation  |
+| onAnimationEnter | function | - | - | Callback onAnimationEnter  |
+| onAnimationEntering | function | - | - | Callback onAnimationEntering  |
+| onAnimationEntered | function | - | - | Callback onAnimationEntered  |
+| onAnimationExit | function | - | - | Callback onAnimationExit  |
+| onAnimationExiting | function | - | - | Callback onAnimationExiting  |
+| onAnimationExited | function | - | - | Callback onAnimationExited  |
 
 # Props of Children of Animator Component
 

@@ -38,12 +38,12 @@ declare namespace WixAnimations {
     childClassName?: string;
     children: React.ReactNode;
     skipMountTransition?: boolean;
-    onEnter?: func;
-    onEntering?: func;
-    onEntered?: func;
-    onExit?: func;
-    onExiting?: func;
-    onExitedAnimation?: func;
+    onAnimationEnter?: func;
+    onAnimationEntering?: func;
+    onAnimationEntered?: func;
+    onAnimationExit?: func;
+    onAnimationExiting?: func;
+    onAnimationExited?: func;
   }
 
   export class Animator extends React.Component<AnimatorProps> {}
