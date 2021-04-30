@@ -185,13 +185,7 @@ $timing-translate: $timing-large;
     &.timing-small, &.timing-medium {
       opacity: .5;
     }
-    &.timing-large,
-    &.timing-fast01,
-    &.timing-fast02,
-    &.timing-medium01,
-    &.timing-medium02,
-    &.timing-slow01,
-    &.timing-slow02 {
+    &.timing-large {
       opacity: .66;
     }
   }
@@ -202,13 +196,7 @@ $timing-translate: $timing-large;
     &.timing-micro,
     &.timing-small,
     &.timing-medium,
-    &.timing-large,
-    &.timing-fast01,
-    &.timing-fast02,
-    &.timing-medium01,
-    &.timing-medium02,
-    &.timing-slow01,
-    &.timing-slow02 {
+    &.timing-large {
       opacity: 1;
     }
   }
