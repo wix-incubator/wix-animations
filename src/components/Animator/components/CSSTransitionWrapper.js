@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, number, object, bool} from 'prop-types';
+import {node, number, object, bool, func} from 'prop-types';
 import CSSTransition from 'react-transition-group/CSSTransition';
 import {transitionClassNames} from '../constants/constants';
 import {Time} from '../class/time-class';
@@ -17,7 +17,7 @@ class CSSTransitionWrapper extends React.Component {
       enter: false,
       entering: false,
       exit: false,
-      exiting: false
+      exiting: false,
     };
 
     this.state = {
@@ -45,6 +45,8 @@ class CSSTransitionWrapper extends React.Component {
       this.onExit();
     } else if (debug === 'exiting') {
       this.onExiting();
+    } else if (debug === 'exited') {
+      this.onExited();
     }
   }
 
@@ -74,25 +76,41 @@ class CSSTransitionWrapper extends React.Component {
   }
 
   onEnter() {
+    const {onAnimationEnter} = this.props;
     this.updateTransitionState('enter');
     this.setSequenceIndex();
+    onAnimationEnter && onAnimationEnter();
   }
 
   onEntering() {
+    const {onAnimationEntering} = this.props;
     this.updateTransitionState('entering');
+    onAnimationEntering && onAnimationEntering();
   }
 
   onEntered() {
+    const {onAnimationEntered} = this.props;
     this.updateTransitionState('entered');
+    onAnimationEntered && onAnimationEntered();
   }
 
   onExit() {
+    const {onAnimationExit} = this.props;
     this.updateTransitionState('exit');
     this.setSequenceIndex();
+    onAnimationExit && onAnimationExit();
   }
 
   onExiting() {
+    const {onAnimationExiting} = this.props;
     this.updateTransitionState('exiting');
+    onAnimationExiting && onAnimationExiting();
+  }
+
+  onExited() {
+    const {onAnimationExited} = this.props;
+    this.updateTransitionState('exited');
+    onAnimationExited && onAnimationExited();
   }
 
   getTransitionProps() {
@@ -146,6 +164,7 @@ class CSSTransitionWrapper extends React.Component {
         onEntered={() => this.onEntered()}
         onExit={() => this.onExit()}
         onExiting={() => this.onExiting()}
+        onExited={() => this.onExited()}
         >
         <Child
           transition={this.state.transition}
@@ -163,7 +182,13 @@ CSSTransitionWrapper.propTypes = {
   index: number,
   children: node,
   animatorProps: object,
-  skipMountTransition: bool
+  skipMountTransition: bool,
+  onAnimationEnter: func,
+  onAnimationEntering: func,
+  onAnimationEntered: func,
+  onAnimationExit: func,
+  onAnimationExiting: func,
+  onAnimationExited: func,
 };
 
 export default CSSTransitionWrapper;

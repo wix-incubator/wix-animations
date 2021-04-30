@@ -1,5 +1,5 @@
 import React from 'react';
-import {node, string, oneOfType, any, bool} from 'prop-types';
+import {node, string, oneOfType, any, bool, func} from 'prop-types';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import formatProps from '../helpers/format-props';
 import CSSTransitionWrapper from './CSSTransitionWrapper';
@@ -15,13 +15,35 @@ class AnimatorParent extends React.Component {
   }
 
   render() {
-    const {className, dataHook, skipMountTransition} = this.props;
+    const {
+      className,
+      dataHook,
+      skipMountTransition,
+      onAnimationEnter,
+      onAnimationEntering,
+      onAnimationEntered,
+      onAnimationExit,
+      onAnimationExiting,
+      onAnimationExited,
+    } = this.props;
     const animatorProps = formatProps(this.props);
     animatorProps.debug = this.state.debug;
     return (
       <TransitionGroup data-hook={dataHook} className={className}>
         {animatorProps.children.map((item, index) =>
-          (<CSSTransitionWrapper skipMountTransition={skipMountTransition} key={item.key || index} index={index} {...item.props} animatorProps={animatorProps}>
+          (<CSSTransitionWrapper
+            skipMountTransition={skipMountTransition}
+            key={item.key || index}
+            index={index}
+            {...item.props}
+            animatorProps={animatorProps}
+            onAnimationEnter={onAnimationEnter}
+            onAnimationEntering={onAnimationEntering}
+            onAnimationEntered={onAnimationEntered}
+            onAnimationExit={onAnimationExit}
+            onAnimationExiting={onAnimationExiting}
+            onAnimationExited={onAnimationExited}
+            >
             {item}
           </CSSTransitionWrapper>)
         )}
@@ -40,6 +62,12 @@ AnimatorParent.propTypes = {
   dataHook: any,
   debug: bool,
   skipMountTransition: bool,
+  onAnimationEnter: func,
+  onAnimationEntering: func,
+  onAnimationEntered: func,
+  onAnimationExit: func,
+  onAnimationExiting: func,
+  onAnimationExited: func,
 };
 
 AnimatorParent.defaultProps = {
