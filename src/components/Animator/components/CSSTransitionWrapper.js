@@ -16,10 +16,8 @@ class CSSTransitionWrapper extends React.Component {
     this.transitionDefault = {
       enter: false,
       entering: false,
-      entered: false,
       exit: false,
       exiting: false,
-      exited: false,
     };
 
     this.state = {
@@ -61,17 +59,11 @@ class CSSTransitionWrapper extends React.Component {
       case 'entering':
         update = {enter: true, entering: true};
         break;
-      case 'entered':
-        update = {enter: true, entering: true, entered: true};
-        break;
       case 'exit':
         update = {exit: true};
         break;
       case 'exiting':
         update = {exit: true, exiting: true};
-        break;
-      case 'exited':
-        update = {exit: true, exiting: true, exited: true};
         break;
       default:
         update = {};
