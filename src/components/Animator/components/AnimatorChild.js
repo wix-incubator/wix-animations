@@ -7,7 +7,6 @@ import ReactDOM from 'react-dom';
 import getDimensions from '../helpers/get-dimensions';
 
 /* eslint-disable */
-
 class AnimatorChild extends Component {
 
   styles;
