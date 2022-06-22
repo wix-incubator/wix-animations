@@ -117,6 +117,8 @@ class CSSTransitionWrapper extends React.Component {
     const {
       animatorProps,
       skipMountTransition,
+      mountOnEnter = true,
+      unmountOnExit = true,
       // Injected by `TransitionGroup`, false if element is being removed from DOM
       // eslint-disable-next-line react/prop-types
       in: inProp
@@ -135,8 +137,8 @@ class CSSTransitionWrapper extends React.Component {
       appear: !skipMountTransition && !!duration,
       timeout: duration,
       classNames: transitionClassNames,
-      mountOnEnter: true,
-      unmountOnExit: true,
+      mountOnEnter,
+      unmountOnExit,
       ...showByProp
     };
   }
@@ -183,6 +185,8 @@ CSSTransitionWrapper.propTypes = {
   children: node,
   animatorProps: object,
   skipMountTransition: bool,
+  mountOnEnter: bool,
+  unmountOnExit: bool,
   onAnimationEnter: func,
   onAnimationEntering: func,
   onAnimationEntered: func,

@@ -38,6 +38,8 @@ declare namespace WixAnimations {
     childClassName?: string;
     children: React.ReactNode;
     skipMountTransition?: boolean;
+    mountOnEnter?: boolean;
+    unmountOnExit?: boolean;
     onAnimationEnter?: func;
     onAnimationEntering?: func;
     onAnimationEntered?: func;
