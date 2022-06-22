@@ -19,6 +19,8 @@ class AnimatorParent extends React.Component {
       className,
       dataHook,
       skipMountTransition,
+      mountOnEnter,
+      unmountOnExit,
       onAnimationEnter,
       onAnimationEntering,
       onAnimationEntered,
@@ -36,6 +38,8 @@ class AnimatorParent extends React.Component {
             key={item.key || index}
             index={index}
             {...item.props}
+            mountOnEnter={mountOnEnter}
+            unmountOnExit={unmountOnExit}
             animatorProps={animatorProps}
             onAnimationEnter={onAnimationEnter}
             onAnimationEntering={onAnimationEntering}
@@ -62,6 +66,8 @@ AnimatorParent.propTypes = {
   dataHook: any,
   debug: bool,
   skipMountTransition: bool,
+  mountOnEnter: bool,
+  unmountOnExit: bool,
   onAnimationEnter: func,
   onAnimationEntering: func,
   onAnimationEntered: func,
@@ -72,6 +78,8 @@ AnimatorParent.propTypes = {
 
 AnimatorParent.defaultProps = {
   skipMountTransition: false,
+  mountOnEnter: true,
+  unmountOnExit: true,
 };
 
 export default AnimatorParent;
